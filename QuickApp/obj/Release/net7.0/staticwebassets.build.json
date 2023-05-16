@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "JbTGroFRXTOvbjnCqB50RHBvBTaOJP1E2AVTmWN9oMg=",
+  "Source": "QuickApp",
+  "BasePath": "_content/QuickApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "QuickApp\\wwwroot",
+      "Source": "QuickApp",
+      "ContentRoot": "D:\\ProjectReact\\CSB_NUMBER_TWO\\React_CanhSatBien\\QuickApp\\wwwroot\\",
+      "BasePath": "_content/QuickApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\ProjectReact\\CSB_NUMBER_TWO\\React_CanhSatBien\\QuickApp\\wwwroot\\favicon.ico",
+      "SourceId": "QuickApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ProjectReact\\CSB_NUMBER_TWO\\React_CanhSatBien\\QuickApp\\wwwroot\\",
+      "BasePath": "_content/QuickApp",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    }
+  ]
+}

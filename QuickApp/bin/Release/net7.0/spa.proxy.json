@@ -1,0 +1,8 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:44450",
+"LaunchCommand": "npm run dev",
+"WorkingDirectory": "D:\\ProjectReact\\CSB_NUMBER_TWO\\React_CanhSatBien\\QuickApp\\ClientApp\\",
+"MaxTimeoutInSeconds": "120"
+}
+}

@@ -1,0 +1,14 @@
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\bin\Release\net7.0\DAL.deps.json
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\bin\Release\net7.0\DAL.runtimeconfig.json
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\bin\Release\net7.0\DAL.dll
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\bin\Release\net7.0\DAL.pdb
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\obj\Release\net7.0\DAL.csproj.AssemblyReference.cache
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\obj\Release\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\obj\Release\net7.0\DAL.AssemblyInfoInputs.cache
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\obj\Release\net7.0\DAL.AssemblyInfo.cs
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\obj\Release\net7.0\DAL.csproj.CoreCompileInputs.cache
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\obj\Release\net7.0\DAL.dll
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\obj\Release\net7.0\refint\DAL.dll
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\obj\Release\net7.0\DAL.pdb
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\obj\Release\net7.0\DAL.genruntimeconfig.cache
+D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\obj\Release\net7.0\ref\DAL.dll

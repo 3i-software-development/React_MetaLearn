@@ -1,0 +1,1334 @@
+2023-05-15T13:14:17.3512022+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T13:14:17.4220896+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T13:14:17.4275285+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T13:14:17.4349430+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T13:14:17.4359667+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T13:14:17.8636470+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T13:14:17.8651781+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T13:14:17.8667132+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T13:14:17.8680534+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T13:14:17.8691906+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T13:14:23.3466802+07:00 0HMQL1EEO8QK9:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T13:14:23.5415433+07:00 0HMQL1EEO8QK9:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T13:14:29.6436077+07:00 0HMQL1EEO8QK9:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T13:14:29.6449044+07:00 0HMQL1EEO8QK9:00000005 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T13:55:36.6560138+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T13:55:37.0000081+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T13:55:37.0039414+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T13:55:37.0118875+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T13:55:37.0131311+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T13:55:37.2977720+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T13:55:37.2994721+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T13:55:37.3009905+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T13:55:37.3022446+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T13:55:37.3033122+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T13:55:42.2501839+07:00 0HMQL25HM0QUQ:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T13:55:42.4077259+07:00 0HMQL25HM0QUQ:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T13:55:45.6522113+07:00 0HMQL25HM0QUQ:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T13:55:47.5676073+07:00 0HMQL25HM0QUQ:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T14:51:30.0537816+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T14:51:30.1246471+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T14:51:30.1284692+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T14:51:30.1356983+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T14:51:30.1370768+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T14:51:30.4551751+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T14:51:30.4565573+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T14:51:30.4579268+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T14:51:30.4589851+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T14:51:30.4600407+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T14:51:35.7899431+07:00 0HMQL34P17F69:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T14:51:35.9501253+07:00 0HMQL34P17F69:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T14:51:39.1522416+07:00 0HMQL34P17F69:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T14:51:41.1008502+07:00 0HMQL34P17F69:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T17:17:11.6003364+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T17:17:11.7152892+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T17:17:11.7201153+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T17:17:11.7291667+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T17:17:11.7305053+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T17:17:12.0831321+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T17:17:12.0843830+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T17:17:12.0858686+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T17:17:12.0870012+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T17:17:12.0881020+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T17:17:16.9642473+07:00 0HMQL5M67KKE1:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T17:17:17.1182670+07:00 0HMQL5M67KKE1:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T17:17:24.4928341+07:00 0HMQL5M67KKE1:00000003 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T17:17:31.6993231+07:00 0HMQL5M67KKE1:00000005 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T17:17:32.5529062+07:00 0HMQL5M67KKE1:00000001 [ERR] Couldn't start the SPA development server with command 'npm run dev'. (d0ae250d)
+2023-05-15T17:17:38.9147858+07:00 0HMQL5M67KKE1:00000007 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T17:17:39.0100572+07:00 0HMQL5M67KKE1:00000007 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T17:17:42.1997287+07:00 0HMQL5M67KKE1:00000009 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T17:17:44.2581109+07:00 0HMQL5M67KKE1:00000007 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T17:19:37.5905466+07:00 0HMQL5M67KKE3:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 48
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:20:09.4934759+07:00 0HMQL5M67KKE3:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId)
+   at lambda_method8(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:20:42.9397562+07:00 0HMQL5M67KKE3:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId)
+   at lambda_method8(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:20:53.3431862+07:00 0HMQL5M67KKE3:00000004 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId)
+   at lambda_method8(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:21:50.3574316+07:00 0HMQL5M67KKE3:00000005 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId)
+   at lambda_method10(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:24:19.8109521+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T17:24:19.8958878+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T17:24:19.8997204+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T17:24:19.9053350+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T17:24:19.9064803+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T17:24:20.3167398+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T17:24:20.3184960+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T17:24:20.3202871+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T17:24:20.3217444+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T17:24:20.3232091+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T17:24:25.2440218+07:00 0HMQL5Q5SA3U6:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T17:24:25.3815031+07:00 0HMQL5Q5SA3U6:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T17:24:28.6630271+07:00 0HMQL5Q5SA3U6:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T17:24:31.1338338+07:00 0HMQL5Q5SA3U6:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T17:24:34.1122227+07:00 0HMQL5Q5SA3U8:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 48
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:24:37.6252367+07:00 0HMQL5Q5SA3U8:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 48
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:28:31.0337531+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T17:28:31.1200851+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T17:28:31.1247442+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T17:28:31.1326797+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T17:28:31.1344433+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T17:28:31.4482768+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T17:28:31.4494876+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T17:28:31.4508303+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T17:28:31.4519565+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T17:28:31.4531157+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T17:28:36.2467613+07:00 0HMQL5SGM57F1:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T17:28:36.4047394+07:00 0HMQL5SGM57F1:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T17:28:39.7629448+07:00 0HMQL5SGM57F1:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T17:28:41.7102259+07:00 0HMQL5SGM57F1:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T17:29:11.4617708+07:00 0HMQL5SGM57F3:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 49
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:29:15.3298079+07:00 0HMQL5SGM57F3:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 49
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:29:19.4732843+07:00 0HMQL5SGM57F3:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 49
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:29:29.7451342+07:00 0HMQL5SGM57F3:00000004 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 49
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:29:38.8652269+07:00 0HMQL5SGM57F3:00000005 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 49
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:29:57.7524681+07:00 0HMQL5SGM57F3:00000006 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 49
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:30:02.4438277+07:00 0HMQL5SGM57F3:00000007 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 49
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T17:30:25.5949576+07:00 0HMQL5SGM57F3:00000008 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 49
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:14:51.3120154+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:14:51.4202178+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:14:51.4302474+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:14:51.4407018+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:14:51.4424780+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:14:51.8228860+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:14:51.8242236+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:14:51.8255360+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:14:51.8266613+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:14:51.8279902+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:14:56.8891890+07:00 0HMQL6MDB7F81:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:14:57.0555726+07:00 0HMQL6MDB7F81:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:15:00.3663704+07:00 0HMQL6MDB7F81:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T18:15:02.5028005+07:00 0HMQL6MDB7F81:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T18:15:16.1539178+07:00 0HMQL6MDB7F83:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:17:41.2362083+07:00 0HMQL6MDB7F83:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:19:54.5339599+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:19:54.6072088+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:19:54.6124012+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:19:54.6182136+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:19:54.6196113+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:19:54.9897298+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:19:54.9908545+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:19:54.9922733+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:19:54.9934383+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:19:54.9945582+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:19:59.7811905+07:00 0HMQL6P7L9641:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:19:59.9454487+07:00 0HMQL6P7L9641:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:20:03.2145346+07:00 0HMQL6P7L9641:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T18:20:05.0971338+07:00 0HMQL6P7L9641:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T18:20:51.2623442+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:20:51.3470208+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:20:51.3537155+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:20:51.3626455+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:20:51.3639792+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:20:51.7990980+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:20:51.8004462+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:20:51.8024788+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:20:51.8039479+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:20:51.8055410+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:20:57.1030653+07:00 0HMQL6POMD84U:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:20:57.2699876+07:00 0HMQL6POMD84U:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:21:00.5511603+07:00 0HMQL6POMD84U:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T18:21:02.4354920+07:00 0HMQL6POMD84U:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T18:22:36.6852061+07:00 0HMQL6POMD850:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:22:57.3819683+07:00 0HMQL6POMD850:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:23:00.7059568+07:00 0HMQL6POMD850:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:23:52.2563810+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:23:52.3755213+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:23:52.3808684+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:23:52.3895321+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:23:52.3906208+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:23:52.7869981+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:23:52.7893482+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:23:52.7910943+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:23:52.7922467+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:23:52.7932622+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:23:57.9634513+07:00 0HMQL6REHJSIH:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:23:58.1071207+07:00 0HMQL6REHJSIH:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:24:01.4061123+07:00 0HMQL6REHJSIH:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T18:24:03.3392675+07:00 0HMQL6REHJSIH:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T18:24:40.4448845+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:24:40.5197920+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:24:40.5257566+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:24:40.5353545+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:24:40.5370236+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:24:40.8791167+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:24:40.8802794+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:24:40.8820496+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:24:40.8833480+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:24:40.8848509+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:24:45.9049693+07:00 0HMQL6RSSPV9M:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:24:46.0601703+07:00 0HMQL6RSSPV9M:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:24:48.7077133+07:00 0HMQL6RSSPV9M:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T18:24:49.6965306+07:00 0HMQL6RSSPV9M:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T18:25:31.5508325+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:25:31.6905657+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:25:31.6983782+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:25:31.7083009+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:25:31.7103043+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:25:32.0709683+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:25:32.0725549+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:25:32.0743306+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:25:32.0759772+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:25:32.0773321+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:25:37.2193723+07:00 0HMQL6SC71IQ0:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:25:37.3971955+07:00 0HMQL6SC71IQ0:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:25:40.8889740+07:00 0HMQL6SC71IQ0:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T18:25:42.9042017+07:00 0HMQL6SC71IQ0:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T18:25:55.1175195+07:00 0HMQL6SC71IQ2:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:26:47.8431845+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:26:47.9205283+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:26:47.9267018+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:26:47.9362647+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:26:47.9379381+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:26:48.4096664+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:26:48.4112357+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:26:48.4132499+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:26:48.4147200+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:26:48.4160559+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:26:53.4372613+07:00 0HMQL6T2U92FG:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:26:53.6286562+07:00 0HMQL6T2U92FG:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:26:57.1459417+07:00 0HMQL6T2U92FG:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T18:26:59.0502302+07:00 0HMQL6T2U92FG:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T18:30:14.2352453+07:00 0HMQL6T2U92FI:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:30:17.4638091+07:00 0HMQL6T2U92FI:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:31:09.7568285+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:31:09.9099080+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:31:09.9174671+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:31:09.9268767+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:31:09.9311049+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:31:10.5167785+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:31:10.5214901+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:31:10.5232670+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:31:10.5247910+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:31:10.5263981+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:31:15.6080972+07:00 0HMQL6VH2DAKP:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:31:15.7905208+07:00 0HMQL6VH2DAKP:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:31:19.2572284+07:00 0HMQL6VH2DAKR:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:31:22.1145911+07:00 0HMQL6VH2DAKR:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:31:23.2945786+07:00 0HMQL6VH2DAKP:00000003 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:31:30.4590550+07:00 0HMQL6VH2DAKP:00000005 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:31:37.6420810+07:00 0HMQL6VH2DAKP:00000007 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:31:44.8129121+07:00 0HMQL6VH2DAKP:00000009 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:31:57.7491849+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:31:57.8211328+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:31:57.8267025+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:31:57.8350528+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:31:57.8364839+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:31:58.2378537+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:31:58.2391466+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:31:58.2406262+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:31:58.2417348+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:31:58.2428796+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:32:03.0570065+07:00 0HMQL6VV64RBQ:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:32:03.2266515+07:00 0HMQL6VV64RBQ:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:32:06.5016795+07:00 0HMQL6VV64RBQ:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T18:32:08.5232128+07:00 0HMQL6VV64RBQ:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T18:32:11.7309140+07:00 0HMQL6VV64RBS:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:32:14.8969145+07:00 0HMQL6VV64RBS:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:32:44.1643256+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:32:44.2714023+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:32:44.2781999+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:32:44.2876305+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:32:44.2892206+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:32:44.6168159+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:32:44.6181165+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:32:44.6195772+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:32:44.6207388+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:32:44.6222070+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:32:49.8379611+07:00 0HMQL70D49LAB:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:32:50.0205270+07:00 0HMQL70D49LAB:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:32:52.6722380+07:00 0HMQL70D49LAB:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T18:32:53.5620972+07:00 0HMQL70D49LAB:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T18:32:56.1761441+07:00 0HMQL70D49LAD:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:32:59.2607442+07:00 0HMQL70D49LAD:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:34:11.0492464+07:00 0HMQL70D49LAD:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:34:15.0146259+07:00 0HMQL70D49LAD:00000004 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:42:25.7028969+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:42:25.8197348+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:42:25.8255684+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:42:25.8384399+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:42:25.8399825+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:42:26.3058054+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:42:26.3071717+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:42:26.3089479+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:42:26.3100917+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:42:26.3114874+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:42:31.2997729+07:00 0HMQL75QD3PVF:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:42:31.4685208+07:00 0HMQL75QD3PVF:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:42:35.0601086+07:00 0HMQL75QD3PVF:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T18:42:36.8626398+07:00 0HMQL75QD3PVF:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T18:42:38.1136040+07:00 0HMQL75QD3PVH:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:42:41.2642072+07:00 0HMQL75QD3PVH:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:43:41.6520319+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:43:41.7544619+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:43:41.7611604+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:43:41.7688761+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:43:41.7703342+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:43:42.1137261+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:43:42.1152981+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:43:42.1170244+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:43:42.1185782+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:43:42.1202488+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:43:47.1703127+07:00 0HMQL76H1DPT5:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:43:47.3953127+07:00 0HMQL76H1DPT5:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:43:50.6818042+07:00 0HMQL76H1DPT5:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T18:43:52.5527772+07:00 0HMQL76H1DPT5:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T18:45:47.8662063+07:00 0HMQL76H1DPT7:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:47:24.7198721+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:47:24.8428570+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:47:24.8546314+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:47:24.8667775+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:47:24.8730869+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:47:25.2969612+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:47:25.2984486+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:47:25.3004309+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:47:25.3019307+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:47:25.3032567+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:47:30.4183557+07:00 0HMQL78JIRISM:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:47:30.5890049+07:00 0HMQL78JIRISM:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:47:34.0019235+07:00 0HMQL78JIRISM:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T18:47:36.0457211+07:00 0HMQL78JIRISM:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T18:48:43.0891943+07:00 0HMQL78JIRISO:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:48:55.0785702+07:00 0HMQL78JIRISO:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at QuickApp.Controllers.DetailArticle.ContentArticle(Int32 ItemId) in D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp\Controllers\DetailArticleController.cs:line 65
+   at lambda_method6(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IdentityServerOptions options, IEndpointRouter router, IUserSession userSession, IEventService events, IIssuerNameService issuerNameService, ISessionCoordinationService sessionCoordinationService) in /_/src/IdentityServer/Hosting/IdentityServerMiddleware.cs:line 120
+   at Duende.IdentityServer.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes) in /_/src/IdentityServer/Hosting/MutualTlsEndpointMiddleware.cs:line 94
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Duende.IdentityServer.Hosting.DynamicProviders.DynamicSchemeAuthenticationMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/DynamicProviders/DynamicSchemes/DynamicSchemeAuthenticationMiddleware.cs:line 47
+   at Duende.IdentityServer.Hosting.BaseUrlMiddleware.Invoke(HttpContext context) in /_/src/IdentityServer/Hosting/BaseUrlMiddleware.cs:line 27
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-15T18:50:19.3139303+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T18:50:19.4409028+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T18:50:19.4448128+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T18:50:19.4518739+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T18:50:19.4543069+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T18:50:19.9528493+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T18:50:19.9543563+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T18:50:19.9558541+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T18:50:19.9573864+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T18:50:19.9598791+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T18:50:24.9280502+07:00 0HMQL7A7GVPD0:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T18:50:25.1401970+07:00 0HMQL7A7GVPD0:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T18:50:27.7524723+07:00 0HMQL7A7GVPD0:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T18:50:28.5978409+07:00 0HMQL7A7GVPD0:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T19:21:49.5978082+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T19:21:49.6995890+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T19:21:49.7064697+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T19:21:49.7167271+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T19:21:49.7184163+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T19:21:50.0019057+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T19:21:50.0034532+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T19:21:50.0055830+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T19:21:50.0066094+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T19:21:50.0076197+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T19:21:54.8553772+07:00 0HMQL7RQQHRVA:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T19:21:55.0078481+07:00 0HMQL7RQQHRVA:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T19:21:58.2653047+07:00 0HMQL7RQQHRVA:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T19:22:00.2673875+07:00 0HMQL7RQQHRVA:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T19:36:15.9005406+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.5") (ae753c2a)
+2023-05-15T19:36:15.9861636+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T19:36:15.9899705+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T19:36:15.9958915+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T19:36:15.9969258+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T19:36:16.3081772+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T19:36:16.3095235+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T19:36:16.3109431+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T19:36:16.3122236+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T19:36:16.3131388+07:00  [INF] Content root path: "D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\QuickApp" (cc26f24e)
+2023-05-15T19:36:21.4144743+07:00 0HMQL83T2KMSM:00000001 [INF] No SPA development server running at https://localhost:44450 found. (faa82a70)
+2023-05-15T19:36:21.6052515+07:00 0HMQL83T2KMSM:00000001 [INF] SPA proxy is not ready. Returning temporary landing page. (72ef90a5)
+2023-05-15T19:36:24.9254341+07:00 0HMQL83T2KMSM:00000003 [INF] SPA proxy is ready. Redirecting to https://localhost:44450. (8ea0a81a)
+2023-05-15T19:36:26.7967962+07:00 0HMQL83T2KMSM:00000001 [INF] SPA development server running at 'https://localhost:44450' (88247629)
+2023-05-15T20:13:22.1155342+07:00  [INF] Starting Duende IdentityServer version "6.2.1+bda14c367eb8a85f3dae614fa0ac1005bb13dfdc" (".NET 7.0.1") (ae753c2a)
+2023-05-15T20:13:22.4438402+07:00  [WRN] You do not have a valid license key for the Duende software. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please start a conversation with us: https://duendesoftware.com/contact (c0bcb7a8)
+2023-05-15T20:13:22.4480842+07:00  [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation. (553c312b)
+2023-05-15T20:13:22.4534930+07:00  [INF] Using the default authentication scheme "Bearer" for IdentityServer (4a54f457)
+2023-05-15T20:13:22.4545041+07:00  [INF] Authentication scheme "Bearer" is configured for IdentityServer, but it is not a scheme that supports signin (like cookies). If you support interactive logins via the browser, then a cookie-based scheme should be used. (70b7fc41)
+2023-05-15T20:13:23.3814485+07:00  [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert. (f9d94507)
+2023-05-15T20:13:23.4213667+07:00  [INF] Now listening on: "https://localhost:44350" (d826f4b8)
+2023-05-15T20:13:23.4225496+07:00  [INF] Now listening on: "http://localhost:5050" (d826f4b8)
+2023-05-15T20:13:23.4239966+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-15T20:13:23.4250279+07:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-15T20:13:23.4260352+07:00  [INF] Content root path: "E:\React_CanhSatBien\QuickApp" (cc26f24e)
