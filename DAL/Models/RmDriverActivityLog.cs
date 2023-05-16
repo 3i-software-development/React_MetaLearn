@@ -2,27 +2,37 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Keyless]
+[Table("RM_DRIVER_ACTIVITY_LOG")]
+public partial class RmDriverActivityLog
 {
-    [Table("RM_DRIVER_ACTIVITY_LOG")]
-    public class RmDriverActivityLog
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string UserName { get; set; }
+    [Column("USER_NAME")]
+    [StringLength(100)]
+    public string UserName { get; set; }
 
-        public string CdataJson { get; set; }
+    [Column("CDATA_JSON")]
+    public string CdataJson { get; set; }
 
-        public DateTime? UpdateTime { get; set; }
+    [Column("UPDATE_TIME")]
+    public DateTime? UpdateTime { get; set; }
 
-        public DateTime? SysDate { get; set; }
-        public string NodeGIS { get; set; }
-        public int DriverId { get; set; }
+    [Column("SYS_DATE")]
+    public DateTime? SysDate { get; set; }
 
-    }
+    [Column("CHANEL")]
+    [StringLength(100)]
+    public string Chanel { get; set; }
+
+    [Column("NODE_GIS")]
+    public string NodeGis { get; set; }
+
+    [Column("DRIVER_ID")]
+    public int? DriverId { get; set; }
 }
-

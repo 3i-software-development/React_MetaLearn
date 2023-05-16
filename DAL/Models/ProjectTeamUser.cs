@@ -2,19 +2,36 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PROJECT_TEAM_USER")]
+public partial class ProjectTeamUser
 {
-    [Table("PROJECT_TEAM_USER")]
-    public class ProjectTeamUser
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string TeamCode { get; set; }
-        public string UserId { get; set; }
-        public string UserName { get; set; }
-        public string Table { get; set; }
-        public bool IsDeleted { get; set; }
-    }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
+
+    [Column("TEAM_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string TeamCode { get; set; }
+
+    [Column("USER_ID")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string UserId { get; set; }
+
+    [Column("USER_NAME")]
+    [StringLength(255)]
+    public string UserName { get; set; }
+
+    [Column("TABLE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Table { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 }

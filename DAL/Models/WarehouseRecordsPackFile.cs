@@ -2,35 +2,48 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Table("WAREHOUSE_RECORDS_PACK_FILES")]
+public partial class WarehouseRecordsPackFile
 {
-    [Table("WAREHOUSE_RECORDS_PACK_FILES")]
-    public class WarehouseRecordsPackFile
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string FileCode { get; set; }
+    [Column("FILE_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string FileCode { get; set; }
 
-        public string PackCode { get; set; }
+    [Column("PACK_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string PackCode { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(100)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 }

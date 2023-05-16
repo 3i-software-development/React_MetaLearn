@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("EDMS_BOX_FILE")]
+public partial class EdmsBoxFile
 {
-    [Table("EDMS_BOX_FILE")]
-    public class EDMSBoxFile
-    { 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public int? BoxId { get; set; }
-        public int? FileId { get; set; }
-    }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
+
+    [Column("BOX_ID")]
+    public int? BoxId { get; set; }
+
+    [Column("FILE_ID")]
+    public int? FileId { get; set; }
 }

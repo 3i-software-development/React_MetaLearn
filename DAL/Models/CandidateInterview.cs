@@ -2,24 +2,38 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("CANDIDATE_INTERVIEW")]
+public partial class CandidateInterview
 {
-    [Table("CANDIDATE_INTERVIEW")]
-    public class CandidateInterview
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        
-        [StringLength(255)]
-        public string CandidateCode { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public DateTime InterviewDate { get; set; }
+    [Required]
+    [Column("CANDIDATE_CODE")]
+    [StringLength(255)]
+    public string CandidateCode { get; set; }
 
-        [StringLength(255)]
-        public string Status { get; set; }
+    /// <summary>
+    /// Ngày tới phỏng vấn
+    /// </summary>
+    [Column("INTERVIEW_DATE")]
+    public DateTime InterviewDate { get; set; }
 
-        public bool? IsPresent { get; set; }
-    }
+    /// <summary>
+    /// Trạng thái
+    /// </summary>
+    [Column("STATUS")]
+    [StringLength(255)]
+    public string Status { get; set; }
+
+    /// <summary>
+    /// Có mặt
+    /// </summary>
+    [Column("IS_PRESENT")]
+    public bool? IsPresent { get; set; }
 }

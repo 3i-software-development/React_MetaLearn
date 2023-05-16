@@ -2,44 +2,60 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("EDMS_TIME_OF_DOCUMENT_PRESERVATION")]
+public partial class EdmsTimeOfDocumentPreservation
 {
-    [Table("EDMS_TIME_OF_DOCUMENT_PRESERVATION")]
-    public class EDMSTimeOfDocumentPreservation
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string Code { get; set; }
+    [Required]
+    [Column("CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string Code { get; set; }
 
-        [StringLength(500)]
-        public string Title { get; set; }
-        
-        public int StorageTimeLimit { get; set; }
+    [Required]
+    [Column("TITLE")]
+    [StringLength(500)]
+    public string Title { get; set; }
 
-        [StringLength(500)]
-        public string TypeLevel1 { get; set; }
+    [Column("STORAGE_TIME_LIMIT")]
+    public int StorageTimeLimit { get; set; }
 
-        [StringLength(255)]
-        public string TypeLevel2 { get; set; }
+    [Column("TYPE_LEVEL1")]
+    [StringLength(500)]
+    public string TypeLevel1 { get; set; }
 
-        [StringLength(255)]
-        public string GroupLevel1 { get; set; }
+    [Column("TYPE_LEVEL2")]
+    [StringLength(255)]
+    public string TypeLevel2 { get; set; }
 
-        [StringLength(255)]
-        public string GroupLevel2 { get; set; }
+    [Column("GROUP_LEVEL1")]
+    [StringLength(255)]
+    public string GroupLevel1 { get; set; }
 
-        [StringLength(255)]
-        public string GroupLevel3 { get; set; }
+    [Column("GROUP_LEVEL2")]
+    [StringLength(255)]
+    public string GroupLevel2 { get; set; }
 
-        [StringLength(1500)]
-        public string TitleFull { get; set; }
-        public bool IsDeleted { get; set; }
+    [Column("GROUP_LEVEL3")]
+    [StringLength(255)]
+    public string GroupLevel3 { get; set; }
 
-        [StringLength(100)]
-        public string CodeTableCommon { get; set; }
-    }
+    [Column("TITLE_FULL")]
+    [StringLength(1500)]
+    public string TitleFull { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
+
+    [Required]
+    [Column("CODE_TABLE_COMMON")]
+    [StringLength(100)]
+    public string CodeTableCommon { get; set; }
 }

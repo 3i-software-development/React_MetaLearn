@@ -2,53 +2,53 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("EDMS_REQUEST_TRACKING")]
+public partial class EdmsRequestTracking
 {
-    [Table("EDMS_REQUEST_TRACKING")]
-    public class EDMSRequestTracking
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string Reason { get; set; }
+    [Column("REASON")]
+    [StringLength(255)]
+    public string Reason { get; set; }
 
-        [StringLength(255)]
-        public string BrCode { get; set; }
-        public int? RqId { get; set; }
+    [Column("BR_CODE")]
+    [StringLength(255)]
+    public string BrCode { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("RQ_ID")]
+    public int? RqId { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        [StringLength(255)]
-        public string RqStatus { get; set; }
-    }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 
-    public class EDMSRequestTrackingModel
-    {
-        public int Id { get; set; }
-
-        [StringLength(255)]
-        public string Reason { get; set; }
-
-        [StringLength(255)]
-        public string BrCode { get; set; }
-        public int? RqId { get; set; }
-    }
+    [Column("RQ_STATUS")]
+    [StringLength(255)]
+    public string RqStatus { get; set; }
 }

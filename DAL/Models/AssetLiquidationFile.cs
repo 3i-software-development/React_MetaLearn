@@ -2,23 +2,28 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ASSET_LIQUIDATION_FILE")]
+public partial class AssetLiquidationFile
 {
-    [Table("ASSET_LIQUIDATION_FILE")]
-    public class AssetLiquidationFile
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string FileCode { get; set; }
+    [Column("FILE_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string FileCode { get; set; }
 
-        [StringLength(100)]
-        public string FileName { get; set; }
+    [Column("TICKET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string TicketCode { get; set; }
 
-        [StringLength(100)]
-        public string TicketCode { get; set; }
-    }
+    [Column("FILE_NAME")]
+    [StringLength(100)]
+    public string FileName { get; set; }
 }

@@ -2,30 +2,64 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Table("JC_OBJECT_ID_RELATIVE")]
+public partial class JcObjectIdRelative
 {
-    [Table("JC_OBJECT_ID_RELATIVE")]
-    public class JcObjectIdRelative
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        public string ObjTypeCode { get; set; }
-        public string ObjID { get; set; }
-        public string Relative { get; set; }
-        public string CardCode { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime CreatedTime { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
-        public bool IsDeleted { get; set; }
-        public decimal? Weight { get; set; }
-        public string ItemCode { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        //RESULT_PERCENT
-        public decimal? ResultPercent { get; set; }
-    }
+    [Column("OBJ_TYPE_CODE")]
+    [StringLength(255)]
+    public string ObjTypeCode { get; set; }
+
+    [Column("OBJ_ID")]
+    [StringLength(255)]
+    public string ObjId { get; set; }
+
+    [Column("RELATIVE")]
+    [StringLength(255)]
+    public string Relative { get; set; }
+
+    [Column("CARD_CODE")]
+    [StringLength(255)]
+    public string CardCode { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
+
+    [Column("WEIGHT", TypeName = "decimal(14, 2)")]
+    public decimal? Weight { get; set; }
+
+    [Column("ITEM_CODE")]
+    [StringLength(255)]
+    public string ItemCode { get; set; }
+
+    [Column("RESULT_PERCENT", TypeName = "decimal(14, 2)")]
+    public decimal? ResultPercent { get; set; }
 }

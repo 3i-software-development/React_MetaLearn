@@ -2,35 +2,41 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("EDMS_ENTITY_MAPPING")]
+public partial class EdmsEntityMapping
 {
-    [Table("EDMS_ENTITY_MAPPING")]
-    public class EDMSEntityMapping
-    { 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string WHS_Code { get; set; }
+    [Column("WHS_CODE")]
+    [StringLength(255)]
+    public string WhsCode { get; set; }
 
-        [StringLength(255)]
-        public string FloorCode { get; set; }
+    [Column("FLOOR_CODE")]
+    [StringLength(255)]
+    public string FloorCode { get; set; }
 
-        [StringLength(255)]
-        public string LineCode { get; set; }
+    [Column("LINE_CODE")]
+    [StringLength(255)]
+    public string LineCode { get; set; }
 
-        [StringLength(255)]
-        public string RackCode { get; set; }
+    [Column("RACK_CODE")]
+    [StringLength(255)]
+    public string RackCode { get; set; }
 
-        [StringLength(255)]
-        public string RackPosition { get; set; }
+    [Column("RACK_POSITION")]
+    [StringLength(255)]
+    public string RackPosition { get; set; }
 
-        [StringLength(255)]
-        public string Ordering { get; set; }
+    [Column("ORDERING")]
+    [StringLength(255)]
+    public string Ordering { get; set; }
 
-        [StringLength(255)]
-        public string BoxCode { get; set; }
-    }
+    [Column("BOX_CODE")]
+    [StringLength(255)]
+    public string BoxCode { get; set; }
 }

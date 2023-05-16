@@ -2,52 +2,85 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Table("HR_EMPLOYEE_MOBILIZATION")]
+public partial class HrEmployeeMobilization
 {
-    [Table("HR_EMPLOYEE_MOBILIZATION")]
-    public class HREmployeeMobilization
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string DecisionId { get; set; }
+    [Column("DECISION_ID")]
+    [StringLength(255)]
+    public string DecisionId { get; set; }
 
-        public string EmployeeId { get; set; }
+    [Column("EMPLOYEE_ID")]
+    [StringLength(255)]
+    public string EmployeeId { get; set; }
 
-        public string DepartmentIdOld { get; set; }
+    [Column("DEPARTMENT_ID_OLD")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DepartmentIdOld { get; set; }
 
-        public string RoleIdOld { get; set; }
+    [Column("ROLE_ID_OLD")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string RoleIdOld { get; set; }
 
-        public string DepartmentIdNew { get; set; }
+    [Column("DEPARTMENT_ID_NEW")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DepartmentIdNew { get; set; }
 
-        public string RoleIdNew { get; set; }
+    [Column("ROLE_ID_NEW")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string RoleIdNew { get; set; }
 
-        public string Wage { get; set; }
+    [Column("WAGE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Wage { get; set; }
 
-        public string WageLevel { get; set; }
+    [Column("WAGE_LEVEL")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WageLevel { get; set; }
 
-        public string Reason { get; set; }
+    [Column("REASON")]
+    public string Reason { get; set; }
 
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? FormDate { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? ToDate { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public string CreatedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public string UpdatedBy { get; set; }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("FORM_DATE")]
+    public DateTime? FormDate { get; set; }
 
-        public string DeletedBy { get; set; }
-
-        public DateTime? DeletedTime { get; set; }
-
-        public bool IsDeleted { get; set; }
-    }
+    [Column("TO_DATE")]
+    public DateTime? ToDate { get; set; }
 }

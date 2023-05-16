@@ -1,21 +1,26 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Keyless]
+[Table("ZOOM_REPORT_ERROR")]
+public partial class ZoomReportError
 {
-    [Table("ZOOM_REPORT_ERROR")]
-    public class ZoomReportError
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string ErrorContent { get; set; }
+    [Column("ERROR_CONTENT")]
+    [StringLength(2000)]
+    public string ErrorContent { get; set; }
 
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
-    }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 }

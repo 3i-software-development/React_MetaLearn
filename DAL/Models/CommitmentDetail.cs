@@ -2,19 +2,25 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("COMMITMENT_DETAIL")]
+public partial class CommitmentDetail
 {
-    [Table("COMMITMENT_DETAIL")]
-    public class CommitmentDetail
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        [StringLength(50)]
-        public string CommitmentCode { get; set; }
-        public string ItemCode { get; set; }
-        [StringLength(50)]
-        public bool? Flag { get; set; }
-    }
+    [Column("ID")]
+    public int Id { get; set; }
+
+    [Column("COMMITMENT_CODE")]
+    [StringLength(255)]
+    public string CommitmentCode { get; set; }
+
+    [Column("ITEM_CODE")]
+    [StringLength(255)]
+    public string ItemCode { get; set; }
+
+    [Column("FLAG")]
+    public bool? Flag { get; set; }
 }

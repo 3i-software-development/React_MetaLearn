@@ -2,164 +2,368 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Keyless]
+[Table("RM_HR_EMPLOYEE")]
+public partial class RmHrEmployee
 {
-    [Table("RM_HR_EMPLOYEE")]
-    public class RmHrEmployee
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    /// <summary>
+    /// id - Id
+    /// </summary>
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string FullName { get; set; }
+    /// <summary>
+    /// Họ vs tên - FullName
+    /// </summary>
+    [Required]
+    [Column("FULLNAME")]
+    [StringLength(50)]
+    public string Fullname { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string NickName { get; set; }
+    /// <summary>
+    /// Tên thường dùng - NickName
+    /// </summary>
+    [Required]
+    [Column("NICKNAME")]
+    [StringLength(50)]
+    public string Nickname { get; set; }
 
-        public int? Gender { get; set; }
+    /// <summary>
+    /// Giới tính - Gender
+    /// </summary>
+    [Column("GENDER")]
+    public int? Gender { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string Nation { get; set; }
+    /// <summary>
+    /// Dân tộc - Nation
+    /// </summary>
+    [Column("NATION")]
+    [StringLength(50)]
+    public string Nation { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string Religion { get; set; }
-        public DateTime? Birthday { get; set; }
+    /// <summary>
+    /// Tôn giáo - Religion
+    /// </summary>
+    [Column("RELIGION")]
+    [StringLength(50)]
+    public string Religion { get; set; }
 
-        [StringLength(maximumLength: 200)]
-        public string Birthofplace { get; set; }
+    /// <summary>
+    /// Ngày sinh - Birthday
+    /// </summary>
+    [Column("BIRTHDAY")]
+    public DateTime? Birthday { get; set; }
 
-        [StringLength(maximumLength: 200)]
-        public string PermanenTresidence { get; set; }
+    /// <summary>
+    /// Nguyên quán - BirthOfPlace
+    /// </summary>
+    [Column("BIRTHOFPLACE")]
+    [StringLength(200)]
+    public string Birthofplace { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string Phone { get; set; }
+    /// <summary>
+    /// Hộ khẩu thường trú - PermanentResidence
+    /// </summary>
+    [Column("PERMANENTRESIDENCE")]
+    [StringLength(200)]
+    public string Permanentresidence { get; set; }
 
-        public DateTime? FactionDate { get; set; }
+    /// <summary>
+    /// Số điện thoại - Phone
+    /// </summary>
+    [Column("PHONE")]
+    [StringLength(50)]
+    public string Phone { get; set; }
 
+    /// <summary>
+    /// Ngày vào đảng - FactionDate
+    /// </summary>
+    [Column("FACTIONDATE", TypeName = "datetime")]
+    public DateTime? Factiondate { get; set; }
 
+    /// <summary>
+    /// Trình độ văn hóa - EducationalLevel
+    /// </summary>
+    [Column("EDUCATIONALLEVEL")]
+    [StringLength(50)]
+    public string Educationallevel { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string EducationalLevel { get; set; }
+    /// <summary>
+    /// Trình độ ngoại ngử - LanguageLevel
+    /// </summary>
+    [Column("LANGUAGELEVEL")]
+    [StringLength(50)]
+    public string Languagelevel { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string LanguageLevel { get; set; }
+    /// <summary>
+    /// Sức khẻo - Health
+    /// </summary>
+    [Column("HEALTH")]
+    [StringLength(50)]
+    public string Health { get; set; }
 
+    /// <summary>
+    /// Chứng minh nhân dân - IdentityCard
+    /// </summary>
+    [Column("IDENTITYCARD")]
+    [StringLength(12)]
+    [Unicode(false)]
+    public string Identitycard { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string Health { get; set; }
+    /// <summary>
+    /// Ngày cấp chứng minh thư - IdentityCardDate
+    /// </summary>
+    [Column("IDENTITYCARDDATE")]
+    public DateTime? Identitycarddate { get; set; }
 
-        [StringLength(maximumLength: 12)]
-        public string IdentityCard { get; set; }
-        [StringLength(maximumLength: 255)]
-        public string CompanyCode { get; set; }
-        public DateTime? IdentityCarddate { get; set; }
+    /// <summary>
+    /// Nới cấp chứng minh thư - IdentityCardPlace
+    /// </summary>
+    [Column("IDENTITYCARDPLACE")]
+    [StringLength(20)]
+    public string Identitycardplace { get; set; }
 
+    /// <summary>
+    /// Số bảo hiểm xã hội - SocialInsurance
+    /// </summary>
+    [Column("SOCIALINSURANCE")]
+    [StringLength(12)]
+    [Unicode(false)]
+    public string Socialinsurance { get; set; }
 
-        [StringLength(maximumLength: 20)]
-        public string Identitycardplace { get; set; }
+    /// <summary>
+    /// Ngày cấp bảo hiểm xa hội - SocialInsuranceDate
+    /// </summary>
+    [Column("SOCIALINSURANCEDATE")]
+    public DateTime? Socialinsurancedate { get; set; }
 
-        [StringLength(maximumLength: 12)]
-        public string Socialinsurance { get; set; }
+    /// <summary>
+    /// Nơi cấp bảo hiểm xã hội - SocialInsurancePlace
+    /// </summary>
+    [Column("SOCIALINSURANCEPLACE")]
+    [StringLength(20)]
+    public string Socialinsuranceplace { get; set; }
 
-        public DateTime? Socialinsurancedate { get; set; }
+    /// <summary>
+    /// Nhận dạng - Identification
+    /// </summary>
+    [Column("IDENTIFICATION")]
+    [StringLength(100)]
+    public string Identification { get; set; }
 
-        [StringLength(maximumLength: 20)]
-        public string Socialinsuranceplace { get; set; }
+    /// <summary>
+    /// Đơn vị - Unit
+    /// </summary>
+    [Column("UNIT")]
+    public int? Unit { get; set; }
 
-        [StringLength(maximumLength: 100)]
-        public string Identification { get; set; }
+    /// <summary>
+    /// Bậc lương - Wage
+    /// </summary>
+    [Column("WAGE")]
+    [StringLength(20)]
+    [Unicode(false)]
+    public string Wage { get; set; }
 
-        public int? Unit { get; set; }
+    /// <summary>
+    /// Loại lương - SalaryType
+    /// </summary>
+    [Column("SALARYTYPE")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string Salarytype { get; set; }
 
+    /// <summary>
+    /// Nhóm lương - SalaryGroup
+    /// </summary>
+    [Column("SALARYGROUP")]
+    [StringLength(12)]
+    [Unicode(false)]
+    public string Salarygroup { get; set; }
 
-        [StringLength(maximumLength: 20)]
-        public string Wage { get; set; }
+    /// <summary>
+    /// Hệ số lương - SalaryFactor
+    /// </summary>
+    [Column("SALARYFACTOR")]
+    public double? Salaryfactor { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string SalaryType { get; set; }
+    /// <summary>
+    /// Trường đào tạo - TrainingSchool
+    /// </summary>
+    [Column("TRAININGSCHOOL")]
+    [StringLength(50)]
+    public string Trainingschool { get; set; }
 
+    /// <summary>
+    /// Thời gian đào tạo - TrainingTime
+    /// </summary>
+    [Column("TRAININGTIME")]
+    [StringLength(200)]
+    public string Trainingtime { get; set; }
 
-        [StringLength(maximumLength: 12)]
-        public string SalaryGroup { get; set; }
+    /// <summary>
+    ///  TrainingType
+    /// </summary>
+    [Column("TRAININGTYPE")]
+    [StringLength(50)]
+    public string Trainingtype { get; set; }
 
-        public double? SalaryFactor { get; set; }
+    /// <summary>
+    /// Ngành học - Disciplines
+    /// </summary>
+    [Column("DISCIPLINES")]
+    [StringLength(50)]
+    public string Disciplines { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string TrainingSchool { get; set; }
+    /// <summary>
+    /// Chuyên ngành - Specialized
+    /// </summary>
+    [Column("SPECIALIZED")]
+    [StringLength(50)]
+    public string Specialized { get; set; }
 
-        [StringLength(maximumLength: 200)]
-        public string TrainingTime { get; set; }
+    /// <summary>
+    /// Id Hình ảnh - Picture
+    /// </summary>
+    [Column("PICTURE")]
+    [StringLength(255)]
+    public string Picture { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string TrainingType { get; set; }
+    /// <summary>
+    /// Mã số thuế - TaxCode
+    /// </summary>
+    [Column("TAXCODE")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string Taxcode { get; set; }
 
+    /// <summary>
+    /// Chức vụ - Position
+    /// </summary>
+    [Column("POSITION")]
+    [StringLength(255)]
+    public string Position { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string Disciplines { get; set; }
+    /// <summary>
+    /// Loại hình nhân viên - EmployeeKind
+    /// </summary>
+    [Column("EMPLOYEEKIND")]
+    public int? Employeekind { get; set; }
 
+    /// <summary>
+    /// EmailUser
+    /// </summary>
+    [Column("EMAILUSER")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string Emailuser { get; set; }
 
+    /// <summary>
+    /// EmailPassword
+    /// </summary>
+    [Column("EMAILPASSWORD")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string Emailpassword { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string Specialized { get; set; }
+    /// <summary>
+    /// Quốc tịch - Nationlaty
+    /// </summary>
+    [Column("NATIONLATY")]
+    [StringLength(100)]
+    public string Nationlaty { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string Picture { get; set; }
-        [StringLength(maximumLength: 50)]
-        public string TaxCode { get; set; }
-        [StringLength(maximumLength: 255)]
-        public string Position { get; set; }
-        public int? EmployeeKind { get; set; }
+    /// <summary>
+    /// Trạng thái - Status
+    /// </summary>
+    [Column("STATUS")]
+    public int? Status { get; set; }
 
-        [StringLength(maximumLength: 100)]
-        public string EmailUser { get; set; }
+    /// <summary>
+    /// Kiểu nhân viên - EmployeeType
+    /// </summary>
+    [Column("EMPLOYEETYPE")]
+    public int? Employeetype { get; set; }
 
-        [StringLength(maximumLength: 100)]
-        public string EmailPassword { get; set; }
-        [StringLength(maximumLength: 100)]
-        public string Nationlaty { get; set; }
+    /// <summary>
+    /// Ngân hàng - Bank
+    /// </summary>
+    [Column("BANK")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string Bank { get; set; }
 
-        public int? Status { get; set; }
+    /// <summary>
+    /// Chủ tài khoản - AccountHolder
+    /// </summary>
+    [Column("ACCOUNTHOLDER")]
+    [StringLength(50)]
+    public string Accountholder { get; set; }
 
-        public int? EmployeeType { get; set; }
+    /// <summary>
+    /// Nơi mở tài khoản - AccountOpenPlace
+    /// </summary>
+    [Column("ACCOUNTOPENPLACE")]
+    [StringLength(100)]
+    public string Accountopenplace { get; set; }
 
-        [StringLength(maximumLength: 100)]
-        public string Bank { get; set; }
+    /// <summary>
+    /// Số tài khoản - AccountNumber
+    /// </summary>
+    [Column("ACCOUNTNUMBER")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string Accountnumber { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string AccountHolder { get; set; }
-        [StringLength(maximumLength: 100)]
-        public string AccounTopenplace { get; set; }
+    /// <summary>
+    /// Tình trạng hôn nhân - MaritalStatus
+    /// </summary>
+    [Column("MARITALSTATUS")]
+    public int? Maritalstatus { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string AccountNumber { get; set; }
+    /// <summary>
+    /// Trình độ tin học - ComputerSkill
+    /// </summary>
+    [Column("COMPUTERSKILL")]
+    [StringLength(250)]
+    public string Computerskill { get; set; }
 
-        public int? MaritalStatus { get; set; }
+    /// <summary>
+    /// 1: Nhân viên
+    /// 2: Giáo viên
+    /// 3: Gia sư
+    /// 4: Thực tập - EmployeeGroup
+    /// </summary>
+    [Column("EMPLOYEEGROUP")]
+    public int? Employeegroup { get; set; }
 
-        public int? IdDriver { get; set; }
+    [Column("CREATETIME", TypeName = "datetime")]
+    public DateTime? Createtime { get; set; }
 
+    [Column("UPDATETIME", TypeName = "datetime")]
+    public DateTime? Updatetime { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string ComputerSkill { get; set; }
+    [Column("LANGUAGE")]
+    [StringLength(10)]
+    public string Language { get; set; }
 
+    [Column("FLAG")]
+    public int? Flag { get; set; }
 
-        public int? EmployeeGroup { get; set; }
+    [Column("CREATE_BY")]
+    public int? CreateBy { get; set; }
 
-        public DateTime? Createtime { get; set; }
-        public DateTime? Updatetime { get; set; }
+    [Column("UPDATED_BY")]
+    public int? UpdatedBy { get; set; }
 
+    [Column("ID_DRIVER")]
+    public int? IdDriver { get; set; }
 
-        [StringLength(maximumLength: 10)]
-        public string Language { get; set; }
-
-        public int? Flag { get; set; }
-
-        public int? CreateBy { get; set; }
-
-
-        public int? UpdatedBy { get; set; }
-
-
-    }
+    [Column("COMPANY_CODE")]
+    [StringLength(255)]
+    public string CompanyCode { get; set; }
 }

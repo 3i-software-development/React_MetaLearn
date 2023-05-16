@@ -1,60 +1,42 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("AD_PERMISSION")]
+public partial class AdPermission
 {
-    [Table("AD_PERMISSION")]
-    public class AdPermission
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PermissionId { get; set; }
+    [Column("APPLICATION_CODE")]
+    [StringLength(50)]
+    public string ApplicationCode { get; set; }
 
-        [StringLength(50)]
-        public string ApplicationCode { get; set; }
-        [JsonIgnore]
-        public virtual AdApplication Application { get; set; }
+    [Column("FUNCTION_CODE")]
+    [StringLength(50)]
+    public string FunctionCode { get; set; }
 
-        [StringLength(50)]
-        public string FunctionCode { get; set; }
-        [JsonIgnore]
-        public virtual AdFunction Function { get; set; }
+    [Column("RESOURCE_CODE")]
+    [StringLength(100)]
+    public string ResourceCode { get; set; }
 
-        [StringLength(100)]
-        public string ResourceCode { get; set; }
-        [JsonIgnore]
-        public virtual AdResource Resource { get; set; }
+    [Column("GROUP_USER_CODE")]
+    [StringLength(50)]
+    public string GroupUserCode { get; set; }
 
-        [StringLength(50)]
-        public string GroupUserCode { get; set; }
-        [JsonIgnore]
-        public virtual AdGroupUser GroupUser { get; set; }
+    [Column("USER_ID")]
+    [StringLength(50)]
+    public string UserId { get; set; }
 
-        [StringLength(50)]
-        public string UserId { get; set; }
-        [JsonIgnore]
-        public virtual AspNetUser User { get; set; }
+    [Column("ROLE_ID")]
+    [StringLength(50)]
+    public string RoleId { get; set; }
 
-        [StringLength(50)]
-        public string RoleId { get; set; }
-        [JsonIgnore]
-        public virtual AspNetRole Role { get; set; }
+    [Column("EXPIRED_DATE")]
+    public DateTime? ExpiredDate { get; set; }
 
-        public DateTime? ExpiredDate { get; set; }
-    }
-
-    public class PermissionModel
-    {
-        public string ApplicationCode { get; set; }
-        public string FunctionCode { get; set; }
-        public string GroupUserCode { get; set; }
-        public string RoleId { get; set; }
-        public bool IsMultiple { get; set; }
-
-        public List<AdResourcePermission> Resources { get; set; }
-        public List<AdUserInGroup> UserInGroups { get; set; }
-        public List<string> GroupCodes { get; set; }
-    }
+    [Key]
+    [Column("PERMISSION_ID")]
+    public int PermissionId { get; set; }
 }

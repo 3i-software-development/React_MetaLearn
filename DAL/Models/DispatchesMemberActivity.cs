@@ -1,42 +1,52 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("DISPATCHES_MEMBER_ACTIVITY")]
+public partial class DispatchesMemberActivity
 {
-    [Table("DISPATCHES_MEMBER_ACTIVITY")]
-    public class DispatchesMemberActivity
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string ProcessCode { get; set; }
+    [Column("PROCESS_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ProcessCode { get; set; }
 
-        [StringLength(255)]
-        public string Assigner { get; set; }
+    [Column("ASSIGNER")]
+    [StringLength(255)]
+    public string Assigner { get; set; }
 
-        [StringLength(50)]
-        public string UserId { get; set; }
+    [Column("USER_ID")]
+    [StringLength(50)]
+    public string UserId { get; set; }
 
-        [JsonIgnore]
-        public virtual AspNetUser User { get; set; }
+    [Column("ROLE")]
+    public int? Role { get; set; }
 
-        public int Role { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("GROUP_USER_CODE")]
+    [StringLength(255)]
+    public string GroupUserCode { get; set; }
 
-        [StringLength(255)]
-        public string GroupUserCode { get; set; }
+    [Column("COMMENT")]
+    [StringLength(2000)]
+    public string Comment { get; set; }
 
-        public string Comment { get; set; }
+    [Column("ASSIGNEE_CONFIRM")]
+    [StringLength(255)]
+    public string AssigneeConfirm { get; set; }
 
-        [StringLength(255)]
-        public string AssigneeConfirm { get; set; }
+    [Column("CONFIRM_TIME")]
+    public DateTime? ConfirmTime { get; set; }
 
-        public DateTime? ConfirmTime { get; set; }
-
-        public DateTime? DeadLine { get; set; }
-    }
+    [Column("DEAD_LINE")]
+    public DateTime? DeadLine { get; set; }
 }

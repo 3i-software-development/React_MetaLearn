@@ -2,58 +2,70 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("BOT_SOCIAL_MANAGEMENT")]
+public partial class BotSocialManagement
 {
-    [Table("BOT_SOCIAL_MANAGEMENT")]
-    public class BotSocialManagement
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string BotSocialCode { get; set; }
-        
-        public string BotSocialName { get; set; }
-        [StringLength(maximumLength: 255)]
-        public string BotSocialType { get; set; }
+    [Column("BOT_SOCIAL_CODE")]
+    [StringLength(50)]
+    public string BotSocialCode { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string UserName { get; set; }
+    [Column("BOT_SOCIAL_NAME")]
+    public string BotSocialName { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string PassWord { get; set; }
+    [Column("BOT_SOCIAL_TYPE")]
+    [StringLength(50)]
+    public string BotSocialType { get; set; }
 
-      
-        public string Credential { get; set; }
+    [Column("USER_NAME")]
+    [StringLength(255)]
+    public string UserName { get; set; }
 
+    [Column("PASS_WORD")]
+    public string PassWord { get; set; }
 
-        public string Tocken { get; set; }
+    [Column("CREDENTIAL")]
+    [StringLength(255)]
+    public string Credential { get; set; }
 
-        public string ConditionStatement { get; set; }
+    [Column("TOCKEN")]
+    public string Tocken { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string Description { get; set; }
+    [Column("CONDITION_STATEMENT")]
+    public string ConditionStatement { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string CreatedBy { get; set; }
+    [Column("DESCRIPTION")]
+    [StringLength(255)]
+    public string Description { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public Boolean IsDeleted { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-
-        [StringLength(maximumLength: 50)]
-        public string DeletedBy { get; set; }
-
-    }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 }

@@ -2,37 +2,47 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PROJECT_ATTRIBUTE")]
+public partial class ProjectAttribute
 {
-    [Table("PROJECT_ATTRIBUTE")]
-    public class ProjectAttribute
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public int Id { get; set; }
+    [Column("PROJECT_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ProjectCode { get; set; }
 
-        [StringLength(100)]
-        public string ProjectCode { get; set; }
+    [Key]
+    [Column("ATTR_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string AttrCode { get; set; }
 
-        [StringLength(50)]
-        public string AttrCode { get; set; }
+    [Column("ATTR_VALUE")]
+    [StringLength(255)]
+    public string AttrValue { get; set; }
 
-        [StringLength(255)]
-        public string AttrValue { get; set; }
+    [Column("ATTR_GROUP")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string AttrGroup { get; set; }
 
-        [StringLength(50)]
-        public string AttrGroup { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
-
-        public DateTime? UpdatedTime { get; set; }
-    }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 }

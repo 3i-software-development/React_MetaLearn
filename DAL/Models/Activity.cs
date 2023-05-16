@@ -2,58 +2,99 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("ACTIVITY")]
+public partial class Activity
 {
-    [Table("ACTIVITY")]
-    public class Activity
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string ActivityCode { get; set; }
+    [Column("ACTIVITY_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ActivityCode { get; set; }
 
-        public string Title { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        public decimal Duration { get; set; }
+    [Column("DURATION", TypeName = "decimal(18, 0)")]
+    public decimal? Duration { get; set; }
 
-        public string Unit { get; set; }
+    [Column("UNIT")]
+    [StringLength(255)]
+    public string Unit { get; set; }
 
-        public string Located { get; set; }
+    [Column("LOCATED")]
+    [StringLength(255)]
+    public string Located { get; set; }
 
-        public string Status { get; set; }
+    [Column("STATUS")]
+    public string Status { get; set; }
 
-        public string Desc { get; set; }
+    [Column("DESC")]
+    public string Desc { get; set; }
 
-        public string ShapeJson { get; set; }
+    [Column("SHAPE_JSON")]
+    public string ShapeJson { get; set; }
 
-        public string Group { get; set; }
+    [Column("GROUP")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Group { get; set; }
 
-        public string Type { get; set; }
+    [Column("TYPE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Type { get; set; }
 
-        public string WorkflowCode { get; set; }
+    [Column("WORKFLOW_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WorkflowCode { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(100)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
-        public int? Level { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        public string NestedWF { get; set; }
-        public string RoleDefault { get; set; }
-        public string ListGroupData { get; set; }
-    }
+    [Column("NESTED_WF")]
+    public string NestedWf { get; set; }
+
+    [Column("ROLE_DEFAULT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string RoleDefault { get; set; }
+
+    [Column("LIST_GROUP_DATA")]
+    public string ListGroupData { get; set; }
+
+    [Column("LEVEL")]
+    public int? Level { get; set; }
 }

@@ -2,45 +2,61 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("FILE_RECRUITMENT")]
+public partial class FileRecruitment
 {
-    [Table("FILE_RECRUITMENT")]
-    public class FileRecruitment
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string FileCode { get; set; }
+    [Column("FILE_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string FileCode { get; set; }
 
-        [StringLength(255)]
-        public string FileName { get; set; }
+    [Column("FILE_NAME")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string FileName { get; set; }
 
-        [StringLength(255)]
-        public string Url { get; set; }
+    [Column("OBJECT_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ObjectCode { get; set; }
 
-        [StringLength(100)]
-        public string ObjectCode { get; set; }
+    [Column("OBJECT_TYPE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ObjectType { get; set; }
 
-        [StringLength(50)]
-        public string ObjectType { get; set; }
+    [Column("URL")]
+    public string Url { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 }

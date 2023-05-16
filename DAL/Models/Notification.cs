@@ -2,55 +2,81 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("NOTIFICATION")]
+public partial class Notification
 {
-    [Table("NOTIFICATION")]
-    public class Notification 
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int NotifyID { get; set; }
+    /// <summary>
+    /// Customer Id
+    /// </summary>
+    [Key]
+    [Column("NOTIFY_ID")]
+    public int NotifyId { get; set; }
 
-        public string NotifyCode { get; set; }
+    [Column("NOTIFY_CODE")]
+    [StringLength(100)]
+    public string NotifyCode { get; set; }
 
-        [StringLength(100)]
-        public string Title { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        [StringLength(255)]
-        public string Content { get; set; }
+    [Column("CONTENT")]
+    public string Content { get; set; }
 
-        public DateTime? DateEvent { get; set; }
+    [Column("DATE_EVENT")]
+    public DateTime? DateEvent { get; set; }
 
-        public DateTime? DateWarning { get; set; }
+    [Column("DATE_WARNING")]
+    public DateTime? DateWarning { get; set; }
 
-        public string IsWarning { get; set; }
+    [Column("IS_WARNING")]
+    public bool? IsWarning { get; set; }
 
-        public string Status { get; set; }
+    [Column("LST_CONTRACT_CODE")]
+    [StringLength(100)]
+    public string LstContractCode { get; set; }
 
-        public string LstContractCode { get; set; }
+    [Column("RECEIVER")]
+    [StringLength(255)]
+    public string Receiver { get; set; }
 
-        [StringLength(100)]
-        public string Receiver { get; set; }
+    [Column("RECEIVER_CONFIRM")]
+    [StringLength(50)]
+    public string ReceiverConfirm { get; set; }
 
-        [StringLength(255)]
-        public string ReceiverConfirm { get; set; }
+    [Column("CONFIRM_TIME")]
+    public DateTime? ConfirmTime { get; set; }
 
-        public DateTime? ConfirmTime { get; set; }
+    [Column("STATUS")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string Status { get; set; }
 
-        [StringLength(50)]
-        public string CreateBy { get; set; }
+    [Column("CREATE_BY")]
+    [StringLength(50)]
+    public string CreateBy { get; set; }
 
-        public DateTime? CreateTime { get; set; }
+    [Column("CREATE_TIME")]
+    public DateTime? CreateTime { get; set; }
 
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public string DeletedBy { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 }

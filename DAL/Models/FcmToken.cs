@@ -2,21 +2,31 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("FCM_TOKEN")]
+public partial class FcmToken
 {
-    [Table("FCM_TOKEN")]
-    public class FcmToken
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(50)]
-        public string UserId { get; set; }
+    [Key]
+    [Column("USER_ID")]
+    [StringLength(50)]
+    public string UserId { get; set; }
 
-        public string Token { get; set; }
-        public string Device { get; set; }
-        public string AppCode { get; set; }
-    }
+    [Column("TOKEN")]
+    public string Token { get; set; }
+
+    [Column("DEVICE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Device { get; set; }
+
+    [Column("APP_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string AppCode { get; set; }
 }

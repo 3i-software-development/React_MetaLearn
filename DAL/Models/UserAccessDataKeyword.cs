@@ -2,17 +2,25 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("USER_ACCESS_DATA_KEYWORD")]
+public partial class UserAccessDataKeyword
 {
-    [Table("USER_ACCESS_DATA_KEYWORD")]
-    public class UserAccessDataKeyword
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        public string User { get; set; }
-        public string Group { get; set; }
-        public string KeyWordList { get; set; }
-    }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
+
+    [Column("USER")]
+    [StringLength(255)]
+    public string User { get; set; }
+
+    [Column("GROUP")]
+    [StringLength(255)]
+    public string Group { get; set; }
+
+    [Column("KEY_WORD_LIST")]
+    public string KeyWordList { get; set; }
 }

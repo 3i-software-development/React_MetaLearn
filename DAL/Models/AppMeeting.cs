@@ -2,17 +2,34 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("APP_MEETING")]
+public partial class AppMeeting
 {
-    [Table("APP_MEETING")]
-    public class AppMeeting
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string ZoomId { get; set; }
-        public string ZoomPasswork { get; set; }
-        public string DisplayName { get; set; }
-        public string Imei { get; set; }
-    }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
+
+    [Column("ZOOM_ID")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ZoomId { get; set; }
+
+    [Column("ZOOM_PASSWORK")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ZoomPasswork { get; set; }
+
+    [Column("DISPLAY_NAME")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DisplayName { get; set; }
+
+    [Column("IMEI")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Imei { get; set; }
 }

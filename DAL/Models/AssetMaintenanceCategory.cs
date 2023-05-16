@@ -1,64 +1,84 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ASSET_MAINTENANCE_CATEGORY")]
+public partial class AssetMaintenanceCategory
 {
-    [Table("ASSET_MAINTENANCE_CATEGORY")]
-    public class AssetMaintenanceCategory
-	{
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CategoryID { get; set; }
+    [Key]
+    [Column("CATEGORY_ID")]
+    public int CategoryId { get; set; }
 
-		[StringLength(maximumLength: 100)]
-		public string CategoryCode { get; set; }
+    [Column("CATEGORY_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string CategoryCode { get; set; }
 
-		[StringLength(maximumLength: 255)]
-		public string CategoryName { get; set; }
+    [Column("CATEGORY_NAME")]
+    [StringLength(255)]
+    public string CategoryName { get; set; }
 
-		public int Quantity { get; set; }
+    [Column("QUANTITY")]
+    public int? Quantity { get; set; }
 
-		public long Price { get; set; }
+    [Column("PRICE")]
+    public long? Price { get; set; }
 
-		public long TotalMoneyCategory { get; set; }
+    [Column("STATUS_CATEGORY")]
+    [StringLength(255)]
+    public string StatusCategory { get; set; }
 
-		[StringLength(maximumLength: 255)]
-		public string StatusCategory { get; set; }		
+    [Column("NOTE_CATEGORY")]
+    [StringLength(500)]
+    public string NoteCategory { get; set; }
 
-		[StringLength(maximumLength: 500)]
-		public string NoteCategory { get; set; }
+    [Column("ASSET_CODE_CATEGORY")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string AssetCodeCategory { get; set; }
 
-		[StringLength(maximumLength: 50)]
-		public string AssetCodeCategory { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    public string CreatedBy { get; set; }
 
-		[StringLength(maximumLength: 255)]
-		public string UserCategory { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-		[StringLength(maximumLength: 100)]
-		public string TicketCodeCategory { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(100)]
+    public string UpdatedBy { get; set; }
 
-		[StringLength(maximumLength: 100)]
-		public string CreatedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-		public DateTime? CreatedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    public string DeletedBy { get; set; }
 
-		[StringLength(maximumLength: 100)]
-		public string UpdatedBy { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-		public DateTime? UpdatedTime { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-		[StringLength(maximumLength: 100)]
-		public string DeletedBy { get; set; }
+    [Column("TOTAL_MONEY_CATEGORY")]
+    public long? TotalMoneyCategory { get; set; }
 
-		public DateTime? DeletedTime { get; set; }
+    [Column("USER_CATEGORY")]
+    [StringLength(255)]
+    public string UserCategory { get; set; }
 
-		public bool IsDeleted { get; set; }
+    [Column("TICKET_CODE_CATEGORY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string TicketCodeCategory { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string Currency { get; set; }
-
-    }
+    [Column("CURRENCY")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string Currency { get; set; }
 }

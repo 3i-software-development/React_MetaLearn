@@ -1,20 +1,23 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("LMS_USER_CLASS")]
+public partial class LmsUserClass
 {
-    [Table("LMS_USER_CLASS")]
-    public class LmsUserClass
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string ClassCode { get; set; }
+    [Column("CLASS_CODE")]
+    [StringLength(255)]
+    public string ClassCode { get; set; }
 
-        public string UserName { get; set; }
-    }
+    [Column("USER_NAME")]
+    [StringLength(255)]
+    public string UserName { get; set; }
 }

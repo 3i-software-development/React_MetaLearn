@@ -1,23 +1,23 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("MOBILE_APP_FUNCTION")]
+public partial class MobileAppFunction
 {
-    [Table("MOBILE_APP_FUNCTION")]
-    public class MobileAppFunction
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int AppFunctionId { get; set; }
+    [Column("APPLICATION_CODE")]
+    [StringLength(50)]
+    public string ApplicationCode { get; set; }
 
-        [StringLength(50)]
-        public string ApplicationCode { get; set; }
-        [JsonIgnore]
-        public virtual AdApplication Application { get; set; }
+    [Column("FUNCTION_CODE")]
+    [StringLength(50)]
+    public string FunctionCode { get; set; }
 
-        [StringLength(50)]
-        public string FunctionCode { get; set; }
-        [JsonIgnore]
-        public virtual MobileFunction Function { get; set; }
-    }
+    [Key]
+    [Column("APP_FUNCTION_ID")]
+    public int AppFunctionId { get; set; }
 }

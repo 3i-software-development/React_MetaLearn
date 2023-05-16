@@ -2,25 +2,37 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("RM_JNANA_COUNT_REQUEST_GOOGLE")]
+public partial class RmJnanaCountRequestGoogle
 {
-    [Table("RM_JNANA_COUNT_REQUEST_GOOGLE")]
-    public class RmJnanaCountRequestGoogle
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public int NumRequest { get; set; }
-        [StringLength(maximumLength: 255)]
-        public string Device { get; set; }
-        [StringLength(maximumLength: 50)]
-        public string ServiceType { get; set; }
-        public string Key { get; set; }
-        public string Date { get; set; }      
-        public DateTime CreateTime { get; set; }
-        public DateTime UpdateTime { get; set; }
-        public int IsLimit { get; set; }
-    }
+    [Key]
+    public int Id { get; set; }
+
+    [Column("Create_time")]
+    public DateTime CreateTime { get; set; }
+
+    public string Date { get; set; }
+
+    [Column("Is_limit")]
+    public int IsLimit { get; set; }
+
+    public string Key { get; set; }
+
+    [Column("Num_request")]
+    public int NumRequest { get; set; }
+
+    [Column("Service_type")]
+    [StringLength(50)]
+    public string ServiceType { get; set; }
+
+    [Column("Update_time")]
+    public DateTime UpdateTime { get; set; }
+
+    [Column("device")]
+    [StringLength(255)]
+    public string Device { get; set; }
 }

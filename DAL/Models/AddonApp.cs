@@ -2,49 +2,67 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("ADDON_APP")]
+public partial class AddonApp
 {
-    [Table("ADDON_APP")]
-    public class AddonApp
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [Key]
-        [StringLength(50)]
-        public string AppCode { get; set; }
+    [Required]
+    [Column("APP_CODE")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string AppCode { get; set; }
 
-        [StringLength(255)]
-        public string AppTitle { get; set; }
+    [Column("APP_TITLE")]
+    [StringLength(255)]
+    public string AppTitle { get; set; }
 
-        public DateTime? AppDate { get; set; }
+    /// <summary>
+    /// Ngày xuất bản
+    /// </summary>
+    [Column("APP_DATE")]
+    public DateTime? AppDate { get; set; }
 
-        [StringLength(255)]
-        public string Icon { get; set; }
+    [Column("ICON")]
+    [StringLength(255)]
+    public string Icon { get; set; }
 
-        [StringLength(50)]
-        public string LinkChplay { get; set; }
+    [Column("LINK_CHPLAY")]
+    [StringLength(50)]
+    public string LinkChplay { get; set; }
 
-        [StringLength(50)]
-        public string LinkIOS { get; set; }
+    [Column("LINK_IOS")]
+    [StringLength(50)]
+    public string LinkIos { get; set; }
 
-        [StringLength(50)]
-        public string Status { get; set; }
+    [Column("STATUS")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string Status { get; set; }
 
-        public string Note { get; set; }
+    [Column("NOTE")]
+    public string Note { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 }

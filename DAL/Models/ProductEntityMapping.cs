@@ -2,120 +2,83 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PRODUCT_ENTITY_MAPPING")]
+public partial class ProductEntityMapping
 {
-    [Table("PRODUCT_ENTITY_MAPPING")]
-    public class ProductEntityMapping
-    {
-        public ProductEntityMapping()
-        {
-            ListCoil = new List<ProdPackageInfoCustom>();
-            ListLogs = new List<ProductEntityLog>();
-        }
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string Ordering { get; set; }
+    [Column("MAPPING_CODE")]
+    [StringLength(1000)]
+    public string MappingCode { get; set; }
 
-        public string MappingCode { get; set; }
+    [Column("WHS_CODE")]
+    [StringLength(255)]
+    public string WhsCode { get; set; }
 
-        [NotMapped]
-        public List<ProductEntityLog> ListLogs { get; set; }
-        
-        public string MappingLog
-        {
-            get => JsonConvert.SerializeObject(ListLogs);
-            set =>
-                ListLogs = string.IsNullOrEmpty(value)
-                    ? new List<ProductEntityLog>()
-                    : JsonConvert.DeserializeObject<List<ProductEntityLog>>(value);
-        }
+    [Column("MAPPING_LOG")]
+    public string MappingLog { get; set; }
 
-        [StringLength(255)]
-        public string ProductQrCode { get; set; }
+    [Column("ORDERING")]
+    [StringLength(255)]
+    public string Ordering { get; set; }
 
-        public string ProductCode { get; set; }
+    [Column("PRODUCT_QR_CODE")]
+    [StringLength(255)]
+    public string ProductQrCode { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("PRODUCT_CODE")]
+    [StringLength(255)]
+    public string ProductCode { get; set; }
 
-        public decimal? Quantity { get; set; }
-        [StringLength(50)]
-        public string Unit { get; set; }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string CreatedBy { get; set; }
+    [Column("QUANTITY", TypeName = "decimal(18, 2)")]
+    public decimal? Quantity { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("UNIT")]
+    [StringLength(50)]
+    public string Unit { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public string TicketImpCode { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(255)]
-        public string WHS_Code { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(255)]
-        public string FloorCode { get; set; }
+    [Column("TICKET_IMP_CODE")]
+    [StringLength(255)]
+    public string TicketImpCode { get; set; }
 
-        [StringLength(255)]
-        public string LineCode { get; set; }
+    [Column("FLOOR_CODE")]
+    [StringLength(255)]
+    public string FloorCode { get; set; }
 
-        [StringLength(255)]
-        public string RackCode { get; set; }
+    [Column("LINE_CODE")]
+    [StringLength(255)]
+    public string LineCode { get; set; }
 
-        [StringLength(255)]
-        public string RackPosition { get; set; }
+    [Column("RACK_CODE")]
+    [StringLength(255)]
+    public string RackCode { get; set; }
 
-        [NotMapped]
-        public List<ProdPackageInfoCustom> ListCoil { get; set; }
+    [Column("RACK_POSITION")]
+    [StringLength(255)]
+    public string RackPosition { get; set; }
 
-        [NotMapped]
-        public string PositionInStore { get; set; }
-        [NotMapped]
-        public string TicketCode { get; set; }
-        [NotMapped]
-        public decimal? Remain { get; set; }
-
-        [NotMapped]
-        public decimal? Size { get; set; }
-        [NotMapped]
-        public string UnitCode { get; set; }
-        [NotMapped]
-        public string ProductType { get; set; }
-        [NotMapped]
-        public string PackType { get; set; }
-        [NotMapped]
-        public ProductEntityLog EntryLog { get; set; }
-        public string ProductNo
-        {
-            get => string.Join(", ", ListProductNo ?? new List<int>());
-            set =>
-                ListProductNo = string.IsNullOrEmpty(value)
-                    ? new List<int>()
-                    : value.Split(", ").Select(int.Parse).ToList();
-        }
-        [NotMapped]
-        public List<int> ListProductNo { get; set; }
-        [NotMapped]
-        public int? StartNo { get; set; }
-        [NotMapped]
-        public int? EndNo { get; set; }
-    }
-
-    public class ProductEntityLog
-    {
-        public string OldMappingCode { get; set; }
-        public string NewMappingCode { get; set; }
-        public decimal Value { get; set; }
-        public DateTime? CreatedTime { get; set; }
-        public string CreatedBy { get; set; }
-    }
+    [Column("PRODUCT_NO")]
+    public string ProductNo { get; set; }
 }

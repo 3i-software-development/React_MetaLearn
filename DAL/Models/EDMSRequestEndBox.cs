@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("EDMS_REQUEST_END_BOX")]
+public partial class EdmsRequestEndBox
 {
-    [Table("EDMS_REQUEST_END_BOX")]
-    public class EDMSRequestEndBox
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string RqCode { get; set; }
+    [Column("RQ_CODE")]
+    [StringLength(255)]
+    public string RqCode { get; set; }
 
-        [StringLength(255)]
-        public string BoxCode { get; set; }
-
-    }
+    [Column("BOX_CODE")]
+    [StringLength(255)]
+    public string BoxCode { get; set; }
 }

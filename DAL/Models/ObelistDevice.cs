@@ -2,25 +2,50 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
-{ 
-    [Table("OBE_LIST_DEVICE")]
-    public class ObeListDevice
+namespace DAL.Models;
 
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+[Table("OBE_LIST_DEVICE")]
+public partial class ObeListDevice
+{
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string DeviceId { get; set; }
+    [Required]
+    [Column("DEVICE_ID")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DeviceId { get; set; }
 
-        public string DeviceTitle { get; set; }
-        public string Vendor { get; set; }
-        public string PositionDevice { get; set; }
-        public string Account { get; set; }
-        public string Describe { get; set; }
-        public string DeviceType { get; set; }
-        public int Status { get; set; }
-    }
+    [Column("DEVICE_TITLE")]
+    [StringLength(150)]
+    public string DeviceTitle { get; set; }
+
+    [Column("VENDOR")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string Vendor { get; set; }
+
+    [Column("POSITION_DEVICE")]
+    [StringLength(255)]
+    public string PositionDevice { get; set; }
+
+    [Column("ACCOUNT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Account { get; set; }
+
+    [Column("DESCRIBE")]
+    [StringLength(255)]
+    public string Describe { get; set; }
+
+    [Column("DEVICE_TYPE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DeviceType { get; set; }
+
+    [Column("STATUS")]
+    public int Status { get; set; }
 }

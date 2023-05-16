@@ -2,155 +2,175 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("PO_SALE_HEADER")]
+public partial class PoSaleHeader
 {
-    [Table("PO_SALE_HEADER")]
-    public class PoSaleHeader
-    {
-        public PoSaleHeader()
-        {
-            ListStatusObjectLog = new List<JsonLog>();
-        }
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ContractHeaderID { get; set; }
+    /// <summary>
+    /// Customer Id
+    /// </summary>
+    [Key]
+    [Column("CONTRACT_HEADER_ID")]
+    public int ContractHeaderId { get; set; }
 
-        [StringLength(100)]
-        public string ContractCode { get; set; }
+    [Column("CONTRACT_CODE")]
+    [StringLength(100)]
+    public string ContractCode { get; set; }
 
-        [StringLength(1000)]
-        public string Title { get; set; }
+    [Column("TITLE")]
+    [StringLength(1000)]
+    public string Title { get; set; }
 
-        [StringLength(50)]
-        public string ContractType { get; set; }
+    [Column("CONTRACT_TYPE")]
+    [StringLength(255)]
+    public string ContractType { get; set; }
 
-        public DateTime? ContractDate { get; set; }
+    [Column("CONTRACT_DATE")]
+    public DateTime? ContractDate { get; set; }
 
-        [StringLength(100)]
-        public string ContractNo { get; set; }
+    [Column("CONTRACT_NO")]
+    [StringLength(100)]
+    public string ContractNo { get; set; }
 
-        [StringLength(10)]
-        public string Duration { get; set; }
+    [Column("DURATION")]
+    [StringLength(100)]
+    public string Duration { get; set; }
 
-        public int Version { get; set; }
+    [Column("VERSION")]
+    public int? Version { get; set; }
 
-        [StringLength(100)]
-        public string Signer { get; set; }
+    [Column("STATUS")]
+    public string Status { get; set; }
 
-        [StringLength(255)]
-        public string MainService { get; set; }
+    [Column("SIGNER")]
+    [StringLength(100)]
+    public string Signer { get; set; }
 
-        [StringLength(20)]
-        public string Currency { get; set; }
+    [Column("MAIN_SERVICE")]
+    [StringLength(255)]
+    public string MainService { get; set; }
 
-        [StringLength(255)]
-        public string LocationHardCopy { get; set; }
+    [Column("BUDGET", TypeName = "decimal(18, 2)")]
+    public decimal? Budget { get; set; }
 
-        [StringLength(500)]
-        public string Describe { get; set; }
+    [Column("CURRENCY")]
+    [StringLength(20)]
+    public string Currency { get; set; }
 
-        [StringLength(100)]
-        public string CusCode { get; set; }
+    [Column("LOCATION_HARD_COPY")]
+    [StringLength(255)]
+    public string LocationHardCopy { get; set; }
 
-        public string ContractRelative { get; set; }
+    [Column("DESCRIBE")]
+    [StringLength(500)]
+    public string Describe { get; set; }
 
-        [StringLength(50)]
-        public string Tags { get; set; }
+    [Column("CUS_CODE")]
+    [StringLength(100)]
+    public string CusCode { get; set; }
 
-        [DataType("decimal(18,2)")]
-        public decimal? Budget { get; set; }
+    [Column("CONTRACT_RELATIVE")]
+    public string ContractRelative { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("TAGS")]
+    [StringLength(50)]
+    public string Tags { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
-        public bool IsDeleted { get; set; }
-        public DateTime? EffectiveDate { get; set; }
-        public DateTime? EndDate { get; set; }
-        [NotMapped]
-        public string sEffectiveDate { get; set; }
-        [NotMapped]
-        public string sEndDate { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        [DataType("decimal(18,2)")]
-        public decimal? RealBudget { get; set; }
-        public string Confirm { get; set; }
-        public DateTime? EstimateTime { get; set; }
-        public string LogProductDetail { get; set; }
-        public string PrjCode { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        [DataType("decimal(18,2)")]
-        public decimal? BudgetExcludeTax { get; set; }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 
-        [DataType("decimal(18,2)")]
-        public decimal? TaxAmount { get; set; }
+    [Column("EFFECTIVE_DATE")]
+    public DateTime? EffectiveDate { get; set; }
 
-        [DataType("decimal(18,2)")]
-        public decimal? ExchangeRate { get; set; }
+    [Column("END_DATE")]
+    public DateTime? EndDate { get; set; }
 
-        public DateTime? AcceptanceTime { get; set; }
-        public int? Maintenance { get; set; }
-        public string LogData { get; set; }
-        public decimal? Commission { get; set; }
-        public decimal? Discount { get; set; }
-        public decimal? LastBudget { get; set; }
-        public bool? IsChangeProduct { get; set; }
-        public string ListUserView { get; set; }
-        public string WorkflowCat { get; set; }
-        public string JsonData { get; set; }
-        public string Status { get; set; }
-        public string StatusObject { get; set; }
-        public string StatusObjectLog
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatusObjectLog);
-            }
-            set
-            {
-                ListStatusObjectLog = string.IsNullOrEmpty(value)
-                ? new List<JsonLog>()
-                : JsonConvert.DeserializeObject<List<JsonLog>>(value);
-            }
-        }
+    [Column("REAL_BUDGET", TypeName = "decimal(18, 2)")]
+    public decimal? RealBudget { get; set; }
 
-        [NotMapped]
-        public List<JsonLog> ListStatusObjectLog { get; set; }
-    }
+    [Column("CONFIRM")]
+    public string Confirm { get; set; }
 
-    public class LogProductDetail
-    {
-        public string ContractCode { get; set; }
-        public string ProductCode { get; set; }
-        public string ProductType { get; set; }
-        public DateTime? CreatedTime { get; set; }
-        public double ImpQuantity { get; set; }
-        public DateTime EstimateDate { get; set; }
+    [Column("ESTIMATE_TIME")]
+    public DateTime? EstimateTime { get; set; }
 
-    }
-    public class ContractRelativeModel
-    {
-        public int? Id { get; set; }
-        public string ContractCode { get; set; }
-        public string Relative { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime CreatedTime { get; set; }
-    }
-    public class RelativeModel
-    {
-        public string ContractCode { get; set; }
-        public ContractRelativeModel ContractRelative { get; set; }
-    }
+    [Column("LOG_PRODUCT_DETAIL")]
+    public string LogProductDetail { get; set; }
+
+    [Column("PRJ_CODE")]
+    [StringLength(255)]
+    public string PrjCode { get; set; }
+
+    [Column("BUDGET_EXCLUDE_TAX", TypeName = "decimal(18, 2)")]
+    public decimal? BudgetExcludeTax { get; set; }
+
+    [Column("TAX_AMOUNT", TypeName = "decimal(18, 2)")]
+    public decimal? TaxAmount { get; set; }
+
+    [Column("EXCHANGE_RATE", TypeName = "decimal(18, 2)")]
+    public decimal? ExchangeRate { get; set; }
+
+    [Column("ACCEPTANCE_TIME")]
+    public DateTime? AcceptanceTime { get; set; }
+
+    [Column("MAINTENANCE")]
+    public int? Maintenance { get; set; }
+
+    [Column("LOG_DATA")]
+    public string LogData { get; set; }
+
+    [Column("COMMISSION", TypeName = "decimal(18, 2)")]
+    public decimal? Commission { get; set; }
+
+    [Column("DISCOUNT", TypeName = "decimal(18, 2)")]
+    public decimal? Discount { get; set; }
+
+    [Column("LAST_BUDGET", TypeName = "decimal(18, 2)")]
+    public decimal? LastBudget { get; set; }
+
+    [Column("IS_CHANGE_PRODUCT")]
+    public bool? IsChangeProduct { get; set; }
+
+    [Column("LIST_USER_VIEW")]
+    [Unicode(false)]
+    public string ListUserView { get; set; }
+
+    [Column("WORKFLOW_CAT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WorkflowCat { get; set; }
+
+    [Column("JSON_DATA")]
+    public string JsonData { get; set; }
+
+    [Column("STATUS_OBJECT")]
+    [StringLength(255)]
+    public string StatusObject { get; set; }
+
+    [Column("STATUS_OBJECT_LOG")]
+    public string StatusObjectLog { get; set; }
 }

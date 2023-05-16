@@ -2,50 +2,52 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Keyless]
+[Table("RM_JNANA_NEWS_ARTICLE")]
+public partial class RmJnanaNewsArticle
 {
-    [Table("RM_JNANA_NEWS_ARTICLE")]
-    public class RmJnanaNewsArticle
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string ArticleCode { get; set; }
+    [Column("ARTICLE_CODE")]
+    [StringLength(250)]
+    public string ArticleCode { get; set; }
 
+    [Column("ARTICLE_TITLE")]
+    [StringLength(1000)]
+    public string ArticleTitle { get; set; }
 
-        [StringLength(maximumLength: 1000)]
-        public string ArticleTitle { get; set; }
+    [Column("CREATED_BY")]
+    public int? CreatedBy { get; set; }
 
-        public int? ArtileOrder { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
 
-        public int? CreatedBy { get; set; }
-        public int? UpdateBy { get; set; }
+    [Column("UPDATE_BY")]
+    public int? UpdateBy { get; set; }
 
-        [StringLength(maximumLength: 1000)]
-        public string ArticleContent { get; set; }
+    [Column("UPDATE_TIME")]
+    public DateTime? UpdateTime { get; set; }
 
-        [StringLength(maximumLength: 1000)]
-        public string ArticleAvarta { get; set; }
+    [Column("ARTICLE_STATUS")]
+    public int ArticleStatus { get; set; }
 
-      
-        public DateTime? CreatedTime { get; set; }
-        public DateTime? UpdateTime { get; set; }
-        public int ArticleStatus { get; set; }
+    [Column("ARTICLE_AVARTA")]
+    [StringLength(1000)]
+    public string ArticleAvarta { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string CatCode { get; set; }
+    [Column("CAT_CODE")]
+    [StringLength(250)]
+    public string CatCode { get; set; }
 
-    }
-    public class SeachNewsModel
-    {
-        public string CatCode { get; set; }
-        public string Title { get; set; }
-        public string FromDate { get; set; }
-        public string ToDate { get; set; }
-        public int Page { get; set; }
-        public int Length { get; set; }
-    }
+    [Column("ARTICLE_CONTENT")]
+    [StringLength(1000)]
+    public string ArticleContent { get; set; }
+
+    [Column("ARTILE_ORDER")]
+    public int? ArtileOrder { get; set; }
 }

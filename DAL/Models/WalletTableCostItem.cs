@@ -2,59 +2,52 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Keyless]
+[Table("WALLET_TABLE_COST_ITEM")]
+public partial class WalletTableCostItem
 {
-    [Table("WALLET_TABLE_COST_ITEM")]
-    public class WalletTableCostItem
-    {
-        public WalletTableCostItem()
-        {
-            ListLogs = new List<LogCost>();
-        }
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string ItemType { get; set; }
-        [StringLength(255)]
-        public string ItemCode { get; set; }
+    [Column("ITEM_TYPE")]
+    [StringLength(255)]
+    public string ItemType { get; set; }
 
-        public decimal Coin { get; set; }
-        public string LogCostHistory
-        {
-            get => JsonConvert.SerializeObject(ListLogs);
-            set =>
-                ListLogs = string.IsNullOrEmpty(value)
-                    ? new List<LogCost>()
-                    : JsonConvert.DeserializeObject<List<LogCost>>(value);
-        }
-        [NotMapped]
-        public List<LogCost> ListLogs { get; set; }
+    [Column("ITEM_CODE")]
+    [StringLength(255)]
+    public string ItemCode { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("COIN", TypeName = "decimal(18, 0)")]
+    public decimal? Coin { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("LOG_COST_HISTORY")]
+    public string LogCostHistory { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
-    }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-    public class LogCost
-    {
-        public decimal OldValue { get; set; }
-        public decimal NewValue { get; set; }
-        public DateTime TimeStamp { get; set; }
-    }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 }

@@ -1,66 +1,83 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ASSET_INVENTORY_HEADER")]
+public partial class AssetInventoryHeader
 {
-    [Table("ASSET_INVENTORY_HEADER")]
-    public class AssetInventoryHeader
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int AssetID { get; set; }
-        
-        [StringLength(maximumLength: 100)]
-        public string TicketCode { get; set; }
-        
-        [StringLength(maximumLength: 255)]
-        public string Title { get; set; }
+    [Key]
+    [Column("ASSET_ID")]
+    public int AssetId { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string Branch { get; set; }
+    [Column("TICKET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string TicketCode { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string Person { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string Note { get; set; }
+    [Column("BRANCH")]
+    [StringLength(255)]
+    public string Branch { get; set; }
 
-        public string Status { get; set; }
+    [Column("PERSON")]
+    [StringLength(100)]
+    public string Person { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string CreatedBy { get; set; }
+    [Column("NOTE")]
+    [StringLength(500)]
+    public string Note { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("STATUS")]
+    public string Status { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string DeletedBy { get; set; }
-        
-        public DateTime? DeletedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(100)]
+    public string UpdatedBy { get; set; }
 
-        public Boolean IsDeleted { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? InventoryTime { get; set; }
-        
-        [StringLength(maximumLength: 255)]
-        public string Adress { get; set; }
-        
-        [StringLength(100)]
-        public string ObjActCode { get; set; }
-        
-        [NotMapped]
-        [StringLength(maximumLength: 50)]
-        public string sStartTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    public string DeletedBy { get; set; }
 
-        public string WorkflowCat { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-    }
-   
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
+
+    [Column("INVENTORY_TIME")]
+    public DateTime? InventoryTime { get; set; }
+
+    [Column("ADRESS")]
+    [StringLength(255)]
+    public string Adress { get; set; }
+
+    [Column("LOG_STATUS")]
+    public string LogStatus { get; set; }
+
+    [Column("OBJ_ACT_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ObjActCode { get; set; }
+
+    [Column("WORKFLOW_CAT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WorkflowCat { get; set; }
 }

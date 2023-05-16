@@ -2,39 +2,82 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ACTIVITY_INST_FILE")]
+public partial class ActivityInstFile
 {
-    [Table("ACTIVITY_INST_FILE")]
-    public class ActivityInstFile
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string ActivityInstCode { get; set; }
-        public string FileID { get; set; }
-        public string FileName { get; set; }
-        public string FilePath { get; set; }
-        public string FileType { get; set; }
-        public decimal FileSize { get; set; }
+    [Column("ACTIVITY_INST_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ActivityInstCode { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
+    [Column("FILE_ID")]
+    [StringLength(255)]
+    public string FileId { get; set; }
 
-        [StringLength(100)]
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
+    [Column("FILE_NAME")]
+    [StringLength(255)]
+    public string FileName { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
-        public bool IsDeleted { get; set; }
-        public string ParentFile { get; set; }
-        public bool IsSign { get; set; }
-        public string LstUserSign { get; set; }
-        public bool SignatureRequire { get; set; }
-        public string SignatureJson { get; set; }
-    }
+    [Column("FILE_PATH")]
+    [StringLength(255)]
+    public string FilePath { get; set; }
+
+    [Column("FILE_TYPE")]
+    [StringLength(255)]
+    public string FileType { get; set; }
+
+    [Column("FILE_SIZE", TypeName = "decimal(18, 0)")]
+    public decimal? FileSize { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string UpdatedBy { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
+
+    [Column("PARENT_FILE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ParentFile { get; set; }
+
+    [Column("IS_SIGN")]
+    public bool? IsSign { get; set; }
+
+    [Column("LST_USER_SIGN")]
+    public string LstUserSign { get; set; }
+
+    [Column("SIGNATURE_REQUIRE")]
+    public bool? SignatureRequire { get; set; }
+
+    [Column("SIGNATURE_JSON")]
+    public string SignatureJson { get; set; }
 }

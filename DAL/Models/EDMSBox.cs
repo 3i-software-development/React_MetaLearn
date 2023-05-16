@@ -2,209 +2,125 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("EDMS_BOX")]
+public partial class EdmsBox
 {
-    [Table("EDMS_BOX")]
-    public class EDMSBox
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string BoxCode { get; set; }
+    [Column("BOX_CODE")]
+    [StringLength(255)]
+    public string BoxCode { get; set; }
 
-        public string QR_Code { get; set; }
+    [Column("QR_CODE")]
+    [StringLength(255)]
+    public string QrCode { get; set; }
 
-        [StringLength(255)]
-        public string DepartCode { get; set; }
+    [Column("DEPART_CODE")]
+    [StringLength(255)]
+    public string DepartCode { get; set; }
 
-        [StringLength(255)]
-        public string TypeProfile { get; set; }
+    [Column("TYPE_PROFILE")]
+    [StringLength(255)]
+    public string TypeProfile { get; set; }
 
-        [StringLength(255)]
-        public string BoxSize { get; set; }
+    [Column("BOX_SIZE")]
+    [StringLength(255)]
+    public string BoxSize { get; set; }
 
-        [StringLength(255)]
-        public string M_CNT_Brief { get; set; }
+    [Column("M_CNT_BRIEF")]
+    [StringLength(255)]
+    public string MCntBrief { get; set; }
 
-        [StringLength(255)]
-        public string CNT_Brief { get; set; }
+    [Column("CNT_BRIEF")]
+    [StringLength(255)]
+    public string CntBrief { get; set; }
 
-        public DateTime? StartTime { get; set; }
-        public DateTime? EndTime { get; set; }
+    [Column("START_TIME", TypeName = "datetime")]
+    public DateTime? StartTime { get; set; }
 
-        [StringLength(255)]
-        public string NumBoxth { get; set; }
+    [Column("NUM_BOXTH")]
+    [StringLength(255)]
+    public string NumBoxth { get; set; }
 
-        public DateTime? StorageTime { get; set; }
+    [Column("STORAGE_TIME", TypeName = "datetime")]
+    public DateTime? StorageTime { get; set; }
 
-        [StringLength(255)]
-        public string Note { get; set; }
+    [Column("NOTE")]
+    [StringLength(255)]
+    public string Note { get; set; }
 
-        [StringLength(255)]
-        public string LstMemberId { get; set; }
+    [Column("LST_MEMBER_ID")]
+    [StringLength(255)]
+    public string LstMemberId { get; set; }
 
-        [StringLength(255)]
-        public string StatusBox { get; set; }
+    [Column("STATUS_BOX")]
+    [StringLength(255)]
+    public string StatusBox { get; set; }
 
-        [StringLength(255)]
-        public string WHS_Code { get; set; }
+    [Column("WHS_CODE")]
+    [StringLength(255)]
+    public string WhsCode { get; set; }
 
-        [StringLength(255)]
-        public string FloorCode { get; set; }
+    [Column("FLOOR_CODE")]
+    [StringLength(255)]
+    public string FloorCode { get; set; }
 
-        [StringLength(255)]
-        public string LineCode { get; set; }
+    [Column("LINE_CODE")]
+    [StringLength(255)]
+    public string LineCode { get; set; }
 
-        [StringLength(255)]
-        public string RackCode { get; set; }
+    [Column("RACK_CODE")]
+    [StringLength(255)]
+    public string RackCode { get; set; }
 
-        [StringLength(255)]
-        public string RackPosition { get; set; }
+    [Column("CNT_CELL")]
+    [StringLength(255)]
+    public string CntCell { get; set; }
 
-        [StringLength(255)]
-        public string CNT_Cell { get; set; }
+    [Column("END_TIME", TypeName = "datetime")]
+    public DateTime? EndTime { get; set; }
 
-        [StringLength(255)]
-        public string StatusSecurity { get; set; }
+    [Column("STATUS_SECURITY")]
+    [StringLength(255)]
+    public string StatusSecurity { get; set; }
 
-        public int StoragePeriod { get; set; }
+    [Column("STORAGE_PERIOD")]
+    public int? StoragePeriod { get; set; }
 
-        [StringLength(255)]
-        public string RqCode { get; set; }
+    [Column("RQ_CODE")]
+    [StringLength(255)]
+    public string RqCode { get; set; }
 
-        [StringLength(255)]
-        public string RcCode { get; set; }
+    [Column("LST_TYPE_PROFILE_ID")]
+    [StringLength(255)]
+    public string LstTypeProfileId { get; set; }
 
-        [StringLength(255)]
-        public string RcExCode { get; set; }
+    [Column("RC_CODE")]
+    [StringLength(255)]
+    public string RcCode { get; set; }
 
-        [StringLength(255)]
-        public string RqExCode { get; set; }
+    [Column("RACK_POSITION")]
+    [StringLength(255)]
+    public string RackPosition { get; set; }
 
-        [StringLength(255)]
-        public string LstTypeProfileId { get; set; }
+    [Column("ORDERING")]
+    [StringLength(255)]
+    public string Ordering { get; set; }
 
-        [StringLength(255)]
-        public string Ordering { get; set; }
-        public bool IsStored { get; set; }
-    }
+    [Column("IS_STORED")]
+    public bool? IsStored { get; set; }
 
-    public class EDMSBoxModel
-    {
-        public EDMSBoxModel()
-        {
-            ListFileBox = new List<FileUpload>();
-            ListFileBoxRemove = new List<FileUpload>();
-        }
-        public int Id { get; set; }
+    [Column("RC_EX_CODE")]
+    [StringLength(255)]
+    public string RcExCode { get; set; }
 
-        [StringLength(255)]
-        public string BoxCode { get; set; }
-
-        public string QR_Code { get; set; }
-
-        [StringLength(255)]
-        public string DepartCode { get; set; }
-
-        [StringLength(255)]
-        public string BrCode { get; set; }
-
-        [StringLength(255)]
-        public string TypeProfile { get; set; }
-
-        [StringLength(255)]
-        public string BranchName { get; set; }
-
-        [StringLength(255)]
-        public string TypeProfileName { get; set; }
-
-        [StringLength(255)]
-        public string BoxSize { get; set; }
-
-        [StringLength(255)]
-        public string M_CNT_Brief { get; set; }
-
-        [StringLength(255)]
-        public string CNT_Brief { get; set; }
-
-        public string StartTime { get; set; }
-        public string EndTime { get; set; }
-
-        [StringLength(255)]
-        public string NumBoxth { get; set; }
-
-        public string StorageTime { get; set; }
-
-        [StringLength(255)]
-        public string Note { get; set; }
-
-        [StringLength(255)]
-        public string LstMemberId { get; set; }
-
-        [StringLength(255)]
-        public string StatusBox { get; set; }
-
-        [StringLength(255)]
-        public string WHS_Code { get; set; }
-
-        [StringLength(255)]
-        public string FloorCode { get; set; }
-
-        [StringLength(255)]
-        public string LineCode { get; set; }
-
-        [StringLength(255)]
-        public string RackCode { get; set; }
-
-        [StringLength(255)]
-        public string RackPosition { get; set; }
-
-        [StringLength(255)]
-        public string CNT_Cell { get; set; }
-
-        [StringLength(255)]
-        public string StatusSecurity { get; set; }
-
-        public int StoragePeriod { get; set; }
-
-        [StringLength(255)]
-        public string RqCode { get; set; }
-
-        [StringLength(255)]
-        public string RcCode { get; set; }
-
-        [StringLength(255)]
-        public string RcExCode { get; set; }
-
-        [StringLength(255)]
-        public string RqExCode { get; set; }
-
-        [StringLength(255)]
-        public string LstTypeProfileId { get; set; }
-
-        [StringLength(255)]
-        public string Ordering { get; set; }
-
-        public bool IsStored { get; set; }
-
-        public List<FileUpload> ListFileBox { get; set; }
-        public List<FileUpload> ListFileBoxRemove { get; set; }
-    }
-
-    public class BoxInfo : EDMSBoxModel
-    {
-        public BoxInfo()
-        {
-            BoxPosition = string.Format("{0}, {1}, {2}, {3}", BoxName, RackName, LineName, FloorName, WareHouseName);
-        }
-        public string WareHouseName { get; set; }
-        public string FloorName { get; set; }
-        public string LineName { get; set; }
-        public string RackName { get; set; }
-        public string BoxName { get; set; }
-        public string BoxPosition { get; set; }
-    }
+    [Column("RQ_EX_CODE")]
+    [StringLength(255)]
+    public string RqExCode { get; set; }
 }

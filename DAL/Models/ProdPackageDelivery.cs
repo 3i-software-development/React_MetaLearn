@@ -2,64 +2,97 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PROD_PACKAGE_DELIVERY")]
+public partial class ProdPackageDelivery
 {
-    [Table("PROD_PACKAGE_DELIVERY")]
-    public class ProdPackageDelivery
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string CoilCode { get; set; }
-        [NotMapped]
-        public string ProductCoil { get; set; }
-        [NotMapped]
-        public string ProductCoilRelative { get; set; }
+    [Column("COIL_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CoilCode { get; set; }
 
-        [StringLength(255)]
-        public decimal? Size { get; set; }
+    [Column("SIZE", TypeName = "decimal(18, 2)")]
+    public decimal? Size { get; set; }
 
-        [StringLength(255)]
-        public decimal? Remain { get; set; }
+    [Column("REMAIN", TypeName = "decimal(18, 2)")]
+    public decimal? Remain { get; set; }
 
-        [StringLength(255)]
-        public string PositionInStore { get; set; }
-        [NotMapped]
-        public string LineCode { get; set; }
+    [Column("POSITION_IN_STORE")]
+    [StringLength(255)]
+    public string PositionInStore { get; set; }
 
-        [StringLength(255)]
-        public string RackCode { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(255)]
-        public string RackPosition { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("TICKET_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string TicketCode { get; set; }
 
-        public bool IsDeleted { get; set; }
-        public string TicketCode { get; set; }
-        public string CoilRelative { get; set; }
-        public string PackType { get; set; }
-        public string ProductQrCode { get; set; }
-        public string TicketExpCode { get; set; }
-        public string ProductLot { get; set; }
-        [StringLength(100)]
-        public string ProductCode { get; set; }
-        [StringLength(50)]
-        public string ProductType { get; set; }
-    }
+    [Column("COIL_RELATIVE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CoilRelative { get; set; }
+
+    [Column("PACK_TYPE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string PackType { get; set; }
+
+    [Column("PRODUCT_QR_CODE")]
+    [StringLength(255)]
+    public string ProductQrCode { get; set; }
+
+    [Column("RACK_CODE")]
+    [StringLength(255)]
+    public string RackCode { get; set; }
+
+    [Column("RACK_POSITION")]
+    [StringLength(255)]
+    public string RackPosition { get; set; }
+
+    [Column("TICKET_EXP_CODE")]
+    [StringLength(255)]
+    public string TicketExpCode { get; set; }
+
+    [Column("PRODUCT_LOT")]
+    [StringLength(255)]
+    public string ProductLot { get; set; }
+
+    [Column("PRODUCT_CODE")]
+    [StringLength(100)]
+    public string ProductCode { get; set; }
+
+    [Column("PRODUCT_TYPE")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string ProductType { get; set; }
 }

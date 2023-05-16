@@ -2,24 +2,51 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Keyless]
+[Table("USER_DO_EXERCISE_RESULT")]
+public partial class UserDoExerciseResult
 {
-    [Table("USER_DO_EXERCISE_RESULT")]
-    public class UserDoExerciseResult
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        public string QuizCode { get; set; }
-        public string UserChoose { get; set; }
-        public bool? Result { get; set; }
-        public string SessionCode { get; set; }
-        public string TypeTraining { get; set; }
-        public string ObjectCode { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
-    }
+    [Column("ID")]
+    public int Id { get; set; }
+
+    [Column("QUIZ_CODE")]
+    [StringLength(255)]
+    public string QuizCode { get; set; }
+
+    [Column("USER_CHOOSE")]
+    [StringLength(255)]
+    public string UserChoose { get; set; }
+
+    [Column("RESULT")]
+    public bool? Result { get; set; }
+
+    [Column("SESSION_CODE")]
+    [StringLength(255)]
+    public string SessionCode { get; set; }
+
+    [Column("TYPE_TRAINING")]
+    [StringLength(255)]
+    public string TypeTraining { get; set; }
+
+    [Column("OBJECT_CODE")]
+    [StringLength(255)]
+    public string ObjectCode { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 }

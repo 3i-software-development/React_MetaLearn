@@ -2,64 +2,97 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("MATERIAL_STORE")]
+public partial class MaterialStore
 {
-    [Table("MATERIAL_STORE")]
-    public class MaterialStore
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int StoreId { get; set; }
+    [Key]
+    [Column("STORE_ID")]
+    public int StoreId { get; set; }
 
-        [StringLength(100)]
-        public string StoreCode { get; set; }
+    [Column("STORE_CODE")]
+    [StringLength(100)]
+    public string StoreCode { get; set; }
 
-        [StringLength(250)]
-        public string StoreName { get; set; }
+    [Column("STORE_NAME")]
+    [StringLength(250)]
+    public string StoreName { get; set; }
 
-        [StringLength(500)]
-        public string Description { get; set; }
+    [Column("DESCRIPTION")]
+    [StringLength(500)]
+    public string Description { get; set; }
 
-        public int? Flag { get; set; }
+    [Column("FLAG")]
+    public int? Flag { get; set; }
 
-        [StringLength(250)]
-        public string Location { get; set; }
+    [Column("LOCATION")]
+    [StringLength(250)]
+    public string Location { get; set; }
 
-        [StringLength(255)]
-        public string UserId { get; set; }
-        [NotMapped]
-        public string UserName { get; set; }
+    [Column("USER_ID")]
+    [StringLength(255)]
+    public string UserId { get; set; }
 
-        public int? Province { get; set; }
+    [Column("PROVINCE")]
+    public int? Province { get; set; }
 
-        public int? District { get; set; }
+    [Column("DISTRICT")]
+    public int? District { get; set; }
 
-        public int? Ward { get; set; }
+    [Column("WARD")]
+    public int? Ward { get; set; }
 
-        public int? BranchId { get; set; }
+    [Column("BRANCH_ID")]
+    public int? BranchId { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
-        public string Area { get; set; }
-        public string Status { get; set; }
-        public string Extend { get; set; }
-        public string Type { get; set; }
-        public int CountFloor { get; set; }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 
-    }
+    [Column("AREA")]
+    [StringLength(255)]
+    public string Area { get; set; }
+
+    [Column("STATUS")]
+    [StringLength(255)]
+    public string Status { get; set; }
+
+    [Column("EXTEND")]
+    [StringLength(255)]
+    public string Extend { get; set; }
+
+    [Column("TYPE")]
+    [StringLength(255)]
+    public string Type { get; set; }
+
+    [Column("COUNT_FLOOR")]
+    public int? CountFloor { get; set; }
+
+    [Column("QR_CODE")]
+    [StringLength(500)]
+    [Unicode(false)]
+    public string QrCode { get; set; }
 }

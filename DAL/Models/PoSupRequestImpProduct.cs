@@ -2,18 +2,28 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PO_SUP_REQUEST_IMP_PRODUCT")]
+public partial class PoSupRequestImpProduct
 {
-    [Table("PO_SUP_REQUEST_IMP_PRODUCT")]
-    public class PoSupRequestImpProduct
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string PoSupCode { get; set; }
+    /// <summary>
+    /// Mã Po sup
+    /// </summary>
+    [Column("PO_SUP_CODE")]
+    [StringLength(255)]
+    public string PoSupCode { get; set; }
 
-        public string ReqCode { get; set; }
-    }
+    /// <summary>
+    /// Mã yêu cầu nhập khẩu
+    /// </summary>
+    [Column("REQ_CODE")]
+    [StringLength(255)]
+    public string ReqCode { get; set; }
 }

@@ -2,43 +2,59 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("RECRUITMENT_SCHEDULER")]
+public partial class RecruitmentScheduler
 {
-    [Table("RECRUITMENT_SCHEDULER")]
-    public class RecruitmentScheduler
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string ListUser { get; set; }
+    [Column("LIST_USER")]
+    public string ListUser { get; set; }
 
-        public DateTime StartDate { get; set; }
+    [Column("START_DATE")]
+    public DateTime? StartDate { get; set; }
 
-        public DateTime EndDate { get; set; }
+    [Column("END_DATE")]
+    public DateTime? EndDate { get; set; }
 
-        public string Location { get; set; }
+    [Column("LOCATION")]
+    [StringLength(255)]
+    public string Location { get; set; }
 
-        public string Content { get; set; }
+    [Column("CONTENT")]
+    [StringLength(255)]
+    public string Content { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(100)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        public string Result { get; set; }
-    }
+    [Column("RESULT")]
+    [StringLength(255)]
+    public string Result { get; set; }
 }

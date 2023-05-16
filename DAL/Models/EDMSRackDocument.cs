@@ -2,51 +2,57 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("EDMS_RACK_DOCUMENT")]
+public partial class EdmsRackDocument
 {
-    [Table("EDMS_RACK_DOCUMENT")]
-    public class EDMSRackDocument
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string RackCode { get; set; }
+    [Column("RACK_CODE")]
+    [StringLength(255)]
+    public string RackCode { get; set; }
 
-        [StringLength(255)]
-        public string RackName { get; set; }
+    [Column("QR_CODE")]
+    [StringLength(255)]
+    public string QrCode { get; set; }
 
-        [StringLength(255)]
-        public string QR_Code { get; set; }
+    [Column("R_SIZE")]
+    [StringLength(255)]
+    public string RSize { get; set; }
 
-        [StringLength(255)]
-        public string R_Size { get; set; }
+    [Column("MATERIAL")]
+    [StringLength(255)]
+    public string Material { get; set; }
 
-        [StringLength(255)]
-        public string R_Status { get; set; }
+    [Column("CNT_CELL")]
+    [StringLength(255)]
+    public string CntCell { get; set; }
 
-        public int CNT_Box { get; set; }
+    [Column("R_STATUS")]
+    [StringLength(255)]
+    public string RStatus { get; set; }
 
-        [StringLength(255)]
-        public string CNT_Cell { get; set; }
+    [Column("NOTE")]
+    [StringLength(255)]
+    public string Note { get; set; }
 
-        [StringLength(255)]
-        public string Note { get; set; }
+    [Column("CNT_BOX")]
+    public int? CntBox { get; set; }
 
-        [StringLength(255)]
-        public string LineCode { get; set; }
+    [Column("LINE_CODE")]
+    [StringLength(255)]
+    public string LineCode { get; set; }
 
-        [StringLength(255)]
-        public string Material { get; set; }
+    [Column("RACK_NAME")]
+    [StringLength(255)]
+    public string RackName { get; set; }
 
-        [StringLength(255)]
-        public string Ordering { get; set; }
-    }
-
-    public class EDMSRackDocumentModel : EDMSRackDocument
-    {
-        public string RackPositionText { get; set; }
-    }
+    [Column("ORDERING")]
+    [StringLength(255)]
+    public string Ordering { get; set; }
 }

@@ -1,103 +1,64 @@
-﻿
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("REQUEST_PRICE_HEADER")]
+public partial class RequestPriceHeader
 {
-    [Table("REQUEST_PRICE_HEADER")]
-    public class RequestPriceHeader
-    {
-        public RequestPriceHeader()
-        {
-            ListProductDetail = new List<RequestPriceDetail>();
-        }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string ReqCode { get; set; }
-        public string Title { get; set; }
-        public string Status { get; set; }
-        public DateTime CreatedTime { get; set; }
-        public string CreatedBy { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
-        public bool IsDeleted { get; set; }
-        [NotMapped]
-        public List<RequestPriceDetail> ListProductDetail { get; set; }
-        public DateTime? ExpectedDate { get; set; }
-        [NotMapped]
-        public string sExpectedDate { get; set; }
-        [NotMapped]
-        public EDMSFile File { get; set; }
-        [NotMapped]
-        public List<EDMSStatus> ListStatus { get; set; }
-        public string LogStatus
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatus);
-            }
-            set
-            {
-                ListStatus = string.IsNullOrEmpty(value)
-                        ? new List<EDMSStatus>()
-                        : JsonConvert.DeserializeObject<List<EDMSStatus>>(value);
-            }
-        }
-    }
+    [Column("REQ_CODE")]
+    [StringLength(255)]
+    public string ReqCode { get; set; }
 
-    public class RequestPriceHeaderModel
-    {
-        public RequestPriceHeaderModel()
-        {
-            ListProductDetail = new List<RequestPriceDetail>();
-        }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string ReqCode { get; set; }
-        public string Title { get; set; }
-        public string Status { get; set; }
-        public DateTime CreatedTime { get; set; }
-        public string CreatedBy { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
-        public bool IsDeleted { get; set; }
-        [NotMapped]
-        public List<RequestPriceDetail> ListProductDetail { get; set; }
-        public string sExpectedDate { get; set; }
-        public EDMSFile File { get; set; }
-        [NotMapped]
-        public List<EDMSStatus> ListStatus { get; set; }
-        public string LogStatus
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatus);
-            }
-            set
-            {
-                ListStatus = string.IsNullOrEmpty(value)
-                        ? new List<EDMSStatus>()
-                        : JsonConvert.DeserializeObject<List<EDMSStatus>>(value);
-            }
-        }
-    }
+    [Column("STATUS")]
+    [StringLength(255)]
+    public string Status { get; set; }
 
-    public class EDMSStatus
-    {
-        public string Type { get; set; }
-        public string Status { get; set; }
-        public string Reason { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
-    }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
+
+    [Column("NOTE")]
+    [StringLength(255)]
+    public string Note { get; set; }
+
+    [Column("LOG_STATUS")]
+    public string LogStatus { get; set; }
+
+    [Column("EXPECTED_DATE")]
+    public DateTime? ExpectedDate { get; set; }
 }

@@ -1,93 +1,98 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Table("ASSET_ALLOCATE_HEADER")]
+public partial class AssetAllocateHeader
 {
-    [Table("ASSET_ALLOCATE_HEADER")]
-    public class AssetAllocateHeader
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string TicketCode { get; set; }
+    [Column("TICKET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string TicketCode { get; set; }
 
-        [StringLength(100)]
-        public string ObjActCode { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        [StringLength(255)]
-        public string Title { get; set; }
+    [Column("DEPARTMENT_SEND")]
+    [StringLength(255)]
+    public string DepartmentSend { get; set; }
 
-        [StringLength(255)]
-        public string DepartmentSend { get; set; }
+    [Column("USER_ALLOCATE")]
+    [StringLength(255)]
+    public string UserAllocate { get; set; }
 
-        [StringLength(255)]
-        public string UserAllocate { get; set; }
+    [Column("LOCATION_SEND")]
+    [StringLength(255)]
+    public string LocationSend { get; set; }
 
-        [StringLength(255)]
-        public string LocationSend { get; set; }
+    [Column("ALLOCATE_TIME")]
+    public DateTime? AllocateTime { get; set; }
 
-        [StringLength(50)]
-        public string UserReceiver { get; set; }
+    [Column("USER_RECEIVER")]
+    [StringLength(50)]
+    public string UserReceiver { get; set; }
 
-        [StringLength(255)]
-        public string DepartmentReceive { get; set; }
+    [Column("DEPARTMENT_RECEIVE")]
+    [StringLength(255)]
+    public string DepartmentReceive { get; set; }
 
-        [StringLength(1000)]
-        public string Note { get; set; }
+    [Column("NOTE")]
+    [StringLength(1000)]
+    public string Note { get; set; }
 
-        public string Status { get; set; }
+    [Column("STATUS")]
+    public string Status { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("LOG_STATUS")]
+    public string LogStatus { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        [StringLength(100)]
-        public string UpdateBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? UpdateTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? AllocateTime { get; set; }
+    [Column("UPDATE_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string UpdateBy { get; set; }
 
-        [NotMapped]
-        [StringLength(50)]
-        public string sAllocateTime { get; set; }
+    [Column("UPDATE_TIME")]
+    public DateTime? UpdateTime { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        [NotMapped]
-        public List<EDMSStatus> ListStatus { get; set; }
+    [Column("OBJ_ACT_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ObjActCode { get; set; }
 
-        public string LogStatus
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatus);
-            }
-            set
-            {
-                ListStatus = string.IsNullOrEmpty(value)
-                ? new List<EDMSStatus>()
-                : JsonConvert.DeserializeObject<List<EDMSStatus>>(value);
-            }
-        }
-        public string WorkflowCat { get; set; }
-    }
+    [Column("WORKFLOW_CAT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WorkflowCat { get; set; }
 
-    //public class EDMSStatus
-    //{
-    //    public string Type { get; set; }
-    //    public string Status { get; set; }
-    //    public string Reason { get; set; }
-    //    public string CreatedBy { get; set; }
-    //    public DateTime? CreatedTime { get; set; }
-    //}
+    [Column("QR_CODE")]
+    [Unicode(false)]
+    public string QrCode { get; set; }
 }

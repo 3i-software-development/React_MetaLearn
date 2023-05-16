@@ -2,28 +2,57 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Table("JC_PRODUCT")]
+public partial class JcProduct
 {
-    [Table("JC_PRODUCT")]
-    public class JcProduct
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        public string ProductCode { get; set; }
-        public int Quantity { get; set; }
-        public string JcAct { get; set; }
-        public string Unit { get; set; }
-        public string CardCode { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime CreatedTime { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime UpdatedTime { get; set; }
-        public string DeletedBy { get; set; }
-        public DateTime DeletedTime { get; set; }
-        public bool IsDeleted { get; set; }
-        [NotMapped]
-        public string UserId { get; set; }
-    }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
+
+    [Column("PRODUCT_CODE")]
+    [StringLength(255)]
+    public string ProductCode { get; set; }
+
+    [Column("QUANTITY")]
+    public int? Quantity { get; set; }
+
+    [Column("UNIT")]
+    [StringLength(255)]
+    public string Unit { get; set; }
+
+    [Column("JC_ACT")]
+    [StringLength(255)]
+    public string JcAct { get; set; }
+
+    [Column("CARD_CODE")]
+    [StringLength(255)]
+    public string CardCode { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 }

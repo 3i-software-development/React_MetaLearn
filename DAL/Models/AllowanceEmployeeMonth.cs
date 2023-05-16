@@ -2,63 +2,128 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ALLOWANCE_EMPLOYEE_MONTH")]
+public partial class AllowanceEmployeeMonth
 {
-	[Table("ALLOWANCE_EMPLOYEE_MONTH")]
-	public class AllowanceEmployeeMonth
-    {
-		public AllowanceEmployeeMonth()
-		{
-		}
-		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-		[StringLength(100)]
-		public string EmployeeId { get; set; }
-        public string EmployeeName { get; set; }
-        public DateTime Month { get; set; }
-        public string DepartmentCode { get; set; }
-        public string DepartmentName { get; set; }
-        public decimal? C { get; set; }
-        public decimal? D { get; set; }
-        public decimal? E { get; set; }
-        public decimal? F { get; set; }
-        public decimal? G { get; set; }
-        public decimal? H { get; set; }
-        public decimal? I { get; set; }
-        public decimal? J { get; set; }
-        public decimal? K { get; set; }
-        public decimal? L { get; set; }
-        public decimal? M { get; set; }
-        public decimal? N { get; set; }
-        public decimal? O { get; set; }
-        public decimal? P { get; set; }
-        public decimal? Q { get; set; }
-        public decimal? R { get; set; }
-        public decimal? S { get; set; }
-        public decimal? T { get; set; }
-        public decimal? U { get; set; }
-        public decimal? V { get; set; }
-        public decimal? W { get; set; }
-        public decimal? X { get; set; }
-        public decimal? Y { get; set; }
+    [Column("EMPLOYEE_ID")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string EmployeeId { get; set; }
 
-        [StringLength(50)]
-		public string CreatedBy { get; set; }
+    [Column("EMPLOYEE_NAME")]
+    [StringLength(255)]
+    public string EmployeeName { get; set; }
 
-		public DateTime? CreatedTime { get; set; }
-		[StringLength(50)]
-		public string UpdatedBy { get; set; }
+    [Column("DEPARTMENT_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DepartmentCode { get; set; }
 
-		public DateTime? UpdatedTime { get; set; }
+    [Column("DEPARTMENT_NAME")]
+    [StringLength(255)]
+    public string DepartmentName { get; set; }
 
-		[StringLength(50)]
-		public string DeletedBy { get; set; }
+    [Column("MONTH", TypeName = "date")]
+    public DateTime Month { get; set; }
 
-		public DateTime? DeletedTime { get; set; }
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? C { get; set; }
 
-		public bool IsDeleted { get; set; }
-	}
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? D { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? E { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? F { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? G { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? H { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? I { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? J { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? K { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? L { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? M { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? N { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? O { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? P { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? Q { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? R { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? S { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? T { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? U { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? V { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? W { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? X { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal? Y { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 }

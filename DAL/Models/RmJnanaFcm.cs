@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("RM_JNANA_FCM")]
+public partial class RmJnanaFcm
 {
-    [Table("RM_JNANA_FCM")]
-    public class RmJnanaFcm
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public int UserId { get; set; }
-        [StringLength(maximumLength: 250)]
-        public string Token { get; set; }
-    }
+    [Key]
+    public int Id { get; set; }
+
+    [StringLength(250)]
+    public string Token { get; set; }
+
+    [Column("User_id")]
+    public int UserId { get; set; }
 }

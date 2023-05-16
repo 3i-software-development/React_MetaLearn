@@ -2,43 +2,54 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ACTIVITY_TRANSITION")]
+public partial class ActivityTransition
 {
-    [Table("ACTIVITY_TRANSITION")]
-     public class ActivityTransition
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(50)]
-        public string WfCode { get; set; }
+    [Column("WF_CODE")]
+    [StringLength(255)]
+    public string WfCode { get; set; }
 
-        [StringLength(250)]
-        public string ActInitial { get; set; }
-        [StringLength(250)]
-        public string Condition { get; set; }
-        [StringLength(1000)]
+    [Column("ACT_INITIAL")]
+    [StringLength(255)]
+    public string ActInitial { get; set; }
 
-        public string ActDestination { get; set; }
-        
+    [Column("CONDITION")]
+    [StringLength(255)]
+    public string Condition { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
+    [Column("ACT_DESTINATION")]
+    [StringLength(255)]
+    public string ActDestination { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public bool? IsDeleted { get; set; }
-    }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 }

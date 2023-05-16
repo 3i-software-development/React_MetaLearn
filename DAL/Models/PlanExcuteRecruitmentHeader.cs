@@ -1,65 +1,67 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("PLAN_EXCUTE_RECRUITMENT_HEADER")]
+public partial class PlanExcuteRecruitmentHeader
 {
-    [Table("PLAN_EXCUTE_RECRUITMENT_HEADER")]
-    public class PlanExcuteRecruitmentHeader
-    {
-        public PlanExcuteRecruitmentHeader()
-        {
-            ListStatus = new List<JsonStatus>();
-        }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string RecruitmentCode { get; set; }
-        public string PlanNumber { get; set; }
-        public string Title { get; set; }
-        [NotMapped]
-        public string sStartTime { get; set; }
-        [NotMapped]
-        public string sEndTime { get; set; }
-        public DateTime? StartTime { get; set; }
-        public DateTime? EndTime { get; set; }
-        public string SubjectCode { get; set; }
-        public string Status { get; set; }
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
+    [Column("RECRUITMENT_CODE")]
+    [StringLength(255)]
+    public string RecruitmentCode { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("START_TIME")]
+    public DateTime? StartTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("END_TIME")]
+    public DateTime? EndTime { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("SUBJECT_CODE")]
+    [StringLength(255)]
+    public string SubjectCode { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("PLAN_NUMBER")]
+    [StringLength(255)]
+    public string PlanNumber { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("STATUS")]
+    public string Status { get; set; }
 
-        [NotMapped]
-        public List<JsonStatus> ListStatus { get; set; }
+    [Column("STATUS_LOG")]
+    public string StatusLog { get; set; }
 
-        public string StatusLog
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatus);
-            }
-            set
-            {
-                ListStatus = string.IsNullOrEmpty(value)
-                ? new List<JsonStatus>()
-                : JsonConvert.DeserializeObject<List<JsonStatus>>(value);
-            }
-        }
-    }
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(100)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 }

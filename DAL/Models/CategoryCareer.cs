@@ -2,33 +2,61 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("CATEGORY_CAREER")]
+public partial class CategoryCareer
 {
-    [Table("CATEGORY_CAREER")]
-    public class CategoryCareer
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    public int Id { get; set; }
 
-        public string CareerCode { get; set; }
-        public string CareerName { get; set; }
-        public string CareerGroup { get; set; }
-        public string CareerType{ get; set; }
-        public string PayGradesCode { get; set; }
-        public string Note { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
+    [Column("CAREER_CODE")]
+    [StringLength(255)]
+    public string CareerCode { get; set; }
 
-        public string UpdatedBy { get; set; }
+    [Column("CAREER_NAME")]
+    [StringLength(255)]
+    public string CareerName { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("CAREER_GROUP")]
+    [StringLength(255)]
+    public string CareerGroup { get; set; }
 
-        public string DeletedBy { get; set; }
+    [Column("CAREER_TYPE")]
+    [StringLength(255)]
+    public string CareerType { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    public string CreatedBy { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(255)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
+
+    [Column("PAY_GRADES_CODE")]
+    [StringLength(255)]
+    public string PayGradesCode { get; set; }
+
+    [Column("NOTE")]
+    [StringLength(1000)]
+    public string Note { get; set; }
 }

@@ -1,272 +1,132 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("FUND_ACC_ENTRY")]
+public partial class FundAccEntry
 {
-    [Table("FUND_ACC_ENTRY")]
-    public class FundAccEntry
-    {
-        public FundAccEntry()
-        {
-            ListStatusObjectLog = new List<JsonLog>();
-        }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Required]
+    [Column("AET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string AetCode { get; set; }
 
-        [StringLength(100)]
-        public string AetCode { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        [StringLength(255)]
-        public string Title { get; set; }
+    [Column("AET_TYPE")]
+    [StringLength(255)]
+    public string AetType { get; set; }
 
-        [StringLength(255)]
-        public string AetType { get; set; }
+    [Column("AET_DESCRIPTION")]
+    [StringLength(255)]
+    public string AetDescription { get; set; }
 
-        [StringLength(255)]
-        public string AetDescription { get; set; }
+    [Column("IS_PLAN")]
+    public bool? IsPlan { get; set; }
 
-        public bool? IsPlan { get; set; }
-        public bool? IsCompleted { get; set; }
-        [StringLength(100)]
-        public string CatCode { get; set; }
+    [Column("CAT_CODE")]
+    [StringLength(100)]
+    public string CatCode { get; set; }
 
-        public DateTime? DeadLine { get; set; }
+    [Column("DEAD_LINE")]
+    public DateTime? DeadLine { get; set; }
 
-        [StringLength(255)]
-        public string AetRelative { get; set; }
+    [Column("AET_RELATIVE")]
+    [StringLength(255)]
+    public string AetRelative { get; set; }
 
-        [StringLength(255)]
-        public string AetRelativeType { get; set; }
+    [Column("AET_RELATIVE_TYPE")]
+    [StringLength(255)]
+    public string AetRelativeType { get; set; }
 
-        [StringLength(255)]
-        public string Payer { get; set; }
+    [Column("PAYER")]
+    [StringLength(255)]
+    public string Payer { get; set; }
 
-        [StringLength(255)]
-        public string Receiptter { get; set; }
+    [Column("RECEIPTTER")]
+    [StringLength(255)]
+    public string Receiptter { get; set; }
 
-        public decimal Total { get; set; }
+    [Column("TOTAL", TypeName = "decimal(18, 0)")]
+    public decimal? Total { get; set; }
 
-        [StringLength(100)]
-        public string Currency { get; set; }
+    [Column("CURRENCY")]
+    [StringLength(100)]
+    public string Currency { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 
-        [StringLength(500)]
-        public string GoogleMap { get; set; }
+    [Column("GOOGLE_MAP")]
+    [StringLength(255)]
+    public string GoogleMap { get; set; }
 
-        [StringLength(255)]
-        public string Address { get; set; }
+    [Column("ADDRESS")]
+    [StringLength(255)]
+    public string Address { get; set; }
 
-        public string Status { get; set; }
+    /// <summary>
+    /// CREATED,CANCEL,PENDING,REFUSE,ACCEPT
+    /// </summary>
+    [Column("STATUS")]
+    public string Status { get; set; }
 
-        public string LogData { get; set; }
+    [Column("LOG_DATA")]
+    public string LogData { get; set; }
 
-        public string StatusObject { get; set; }
+    [Column("IS_COMPLETED")]
+    public bool? IsCompleted { get; set; }
 
-        public string StatusObjectLog
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatusObjectLog);
-            }
-            set
-            {
-                ListStatusObjectLog = string.IsNullOrEmpty(value)
-                ? new List<JsonLog>()
-                : JsonConvert.DeserializeObject<List<JsonLog>>(value);
-            }
-        }
+    [Column("OBJ_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ObjCode { get; set; }
 
-        [NotMapped]
-        public List<JsonLog> ListStatusObjectLog { get; set; }
+    [Column("OBJ_TYPE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ObjType { get; set; }
 
-        [StringLength(100)]
-        public string ObjCode { get; set; }
+    [Column("WORKFLOW_CAT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WorkflowCat { get; set; }
 
-        [StringLength(50)]
-        public string ObjType { get; set; }
-        public string WorkflowCat { get; set; }
-    }
-    public class FundAccEntryModel
-    {
-        public FundAccEntryModel()
-        {
-            ListFileAccEntry = new List<FundFile>();
-            ListFileAccEntryRemove = new List<FundFile>();
-            ListStatusObjectLog = new List<JsonLog>();
-        }
-        public int Id { get; set; }
+    [Column("STATUS_OBJECT")]
+    [StringLength(255)]
+    public string StatusObject { get; set; }
 
-        [StringLength(100)]
-        public string AetCode { get; set; }
-
-        [StringLength(255)]
-        public string Title { get; set; }
-
-        [StringLength(255)]
-        public string AetType { get; set; }
-
-        [StringLength(255)]
-        public string AetDescription { get; set; }
-
-        public bool? IsPlan { get; set; }
-        public bool? IsCompleted { get; set; }
-        [StringLength(100)]
-        public string CatCode { get; set; }
-
-        public string DeadLine { get; set; }
-
-        [StringLength(255)]
-        public string AetRelative { get; set; }
-
-        [StringLength(255)]
-        public string AetRelativeType { get; set; }
-
-        [StringLength(255)]
-        public string Payer { get; set; }
-
-        [StringLength(255)]
-        public string Receiptter { get; set; }
-
-        public decimal Total { get; set; }
-
-        [StringLength(100)]
-        public string Currency { get; set; }
-
-        [StringLength(500)]
-        public string GoogleMap { get; set; }
-
-        [StringLength(255)]
-        public string Address { get; set; }
-
-        [StringLength(255)]
-        public string Status { get; set; }
-
-        [StringLength(255)]
-        public string StatusObject { get; set; }
-
-        public List<JsonLog> ListStatusObjectLog { get; set; }
-
-        public string LogData { get; set; }
-
-        [StringLength(255)]
-        public string Note { get; set; }
-        [StringLength(255)]
-        public string CreateBy { get; set; }
-
-        public List<FundFile> ListFileAccEntry { get; set; }
-
-        public List<FundFile> ListFileAccEntryRemove { get; set; }
-
-        public string ObjCode { get; set; }
-
-        public string ObjType { get; set; }
-
-        public string WorkflowCat { get; set; }
-        public string ActRepeat { get; set; }
-    }
-
-    public class FundAccEntryResultModel
-    {
-        public FundAccEntryResultModel()
-        {
-            ListFundAccEntry = new List<FundAccEntry>();
-        }
-        public List<FundAccEntry> ListFundAccEntry { get; set; }
-     
-        public decimal TotalReceipt { get; set; }
-        public decimal TotalExpense { get; set; }
-        public decimal TotalSurplus { get; set; }
-    }
-
-    public class FundFile
-    {
-        public int? Id { get; set; }
-        public string FileName { get; set; }
-        public string FilePath { get; set; }
-        public string FileType { get; set; }
-        public string ContentType { get; set; }
-    }
-
-    public class FundAccChartModel
-    {
-        public FuncAccEntryCountModel CountModel { get; set; }
-        public string Date { get; set; }
-    }
-
-    public class FuncAccEntryCountModel
-    {
-        public decimal TotalReceipt { get; set; }
-        public decimal TotalExpense { get; set; }
-        public decimal TotalSurplus { get; set; }
-
-        public decimal TotalReceiptApproved { get; set; }
-        public decimal TotalExpenseApproved { get; set; }
-        public decimal TotalSurplusApproved { get; set; }
-        public bool? IsVnd { get; set; }
-    }
-
-    //List danh sách thu chi tổng tiền trong danh sách, tìm kiếm
-    public class ViewAccEntry
-    {
-        public int Id { get; set; }
-        public string AetCode { get; set; }
-        public string Title { get; set; }
-        public string AetType { get; set; }
-        public string AetTypeName { get; set; }
-        public string CatCode { get; set; }
-        public string CatName { get; set; }
-        public DateTime? DeadLine { get; set; }
-        public string Payer { get; set; }
-        public string Receiptter { get; set; }
-        public decimal Total { get; set; }
-        public string Currency { get; set; }
-        public string CreatedBy { get; set; }
-        public string SCreatedTime { get; set; }
-        public DateTime? CreatedTime { get; set; }
-        public string Status { get; set; }
-        public string AetRelativeType { get; set; }
-        public string AetDescription { get; set; }
-        public int IsApprove { get; set; }
-        public string TimeAlive { get; set; }
-        public int IsOutTime { get; set; }
-        //public ActGrid LastAct { get; set; }
-        public JsonLog LastLog { get; set; }
-        public string SLastLog { get; set; }
-        public bool IsEndActApproved { get; set; }
-        //public List<ActGrid> ListAct { get; set; }
-    }
-    public class FundAccEntryExportModel
-    {
-        public int? No { get; set; }
-        public string DeadLine { get; set; }
-        public string CatName { get; set; }
-        public string Title { get; set; }
-        public string AetType { get; set; }
-        public decimal Total { get; set; }
-        public string Currency { get; set; }
-        public string Payer { get; set; }
-        public string Receiptter { get; set; }
-        public string Status { get; set; }
-    }
+    [Column("STATUS_OBJECT_LOG")]
+    public string StatusObjectLog { get; set; }
 }

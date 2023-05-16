@@ -2,69 +2,112 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("LMS_PRACTICE_TEST_HEADER")]
+public partial class LmsPracticeTestHeader
 {
-    [Table("LMS_PRACTICE_TEST_HEADER")]
-    public class LmsPracticeTestHeader : IPurchasableObject/*, StringExtensions.IEntity<int>*/
-    {
-        //		EXAM_CODE nvarchar(255)   Checked
-        //EXAM_TITLE  nvarchar(255)   Checked
-        //DESCRIPTION nvarchar(1000)  Checked
-        //DURATION    int Checked
-        //UNIT nvarchar(255)   Checked
-        //[LEVEL] nvarchar(255)   Checked
-        //MARK_PASS   int Checked
-        //VIEW_RESULT bit Checked
-        //RE_WORK bit Checked
-        //WORK_SEQUENCE bit Checked
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string PracticeTestCode { get; set; }
-        public string PracticeTestTitle { get; set; }
-        public string Description { get; set; }
-        public int? Duration { get; set; }
-        public string Unit { get; set; }
-        public string Level { get; set; }
-        public decimal? Rating { get; set; }
-        public string RatingLog { 
-            get => JsonConvert.SerializeObject(ListRating);
-            set =>
-                ListRating = string.IsNullOrEmpty(value)
-                    ? new List<LmsPracticeRating>()
-                    : JsonConvert.DeserializeObject<List<LmsPracticeRating>>(value);
-        }
-        [NotMapped]
-        public List<LmsPracticeRating> ListRating { get; set; }
-        public int? MarkPass { get; set; }
-        public int? MarkTotal { get; set; }
-        public int? NumQuiz { get; set; }
-        public string Status { get; set; }
-        public bool? ViewResult { get; set; }
-        public bool? IsPublished { get; set; }
-        public bool? Rework { get; set; }
-        public bool? WorkSequence { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
-        public bool IsDeleted { get; set; }
-        public string SubjectCode { get; set; }
-        public string Share { get; set; }
-        public string FilePath { get; set; }
-        public string HashTag { get; set; }
-        public decimal? Price { get; set; }
-        [NotMapped]
-        public bool? IsPurchased { get; set; }
-    }
-    public class LmsPracticeRating
-    {
-        public string Id { get; set; }
-        public int Rating { get; set; }
-        public string UserName {get; set;}
-    }
+    [Column("ID")]
+    public int Id { get; set; }
+
+    [Column("PRACTICE_TEST_CODE")]
+    [StringLength(255)]
+    public string PracticeTestCode { get; set; }
+
+    [Column("PRACTICE_TEST_TITLE")]
+    [StringLength(255)]
+    public string PracticeTestTitle { get; set; }
+
+    [Column("DESCRIPTION")]
+    [StringLength(1000)]
+    public string Description { get; set; }
+
+    [Column("DURATION")]
+    public int? Duration { get; set; }
+
+    [Column("UNIT")]
+    [StringLength(255)]
+    public string Unit { get; set; }
+
+    [Column("LEVEL")]
+    [StringLength(255)]
+    public string Level { get; set; }
+
+    [Column("MARK_PASS")]
+    public int? MarkPass { get; set; }
+
+    [Column("MARK_TOTAL")]
+    public int? MarkTotal { get; set; }
+
+    [Column("NUM_QUIZ")]
+    public int? NumQuiz { get; set; }
+
+    [Column("STATUS")]
+    [StringLength(255)]
+    public string Status { get; set; }
+
+    [Column("VIEW_RESULT")]
+    public bool? ViewResult { get; set; }
+
+    [Column("REWORK")]
+    public bool? Rework { get; set; }
+
+    [Column("WORK_SEQUENCE")]
+    public bool? WorkSequence { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string UpdatedBy { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
+
+    [Column("SUBJECT_CODE")]
+    [StringLength(255)]
+    public string SubjectCode { get; set; }
+
+    [Column("IS_PUBLISHED")]
+    public bool? IsPublished { get; set; }
+
+    [Column("SHARE")]
+    public string Share { get; set; }
+
+    [Column("RATING_LOG")]
+    public string RatingLog { get; set; }
+
+    [Column("RATING", TypeName = "decimal(18, 0)")]
+    public decimal? Rating { get; set; }
+
+    [Column("FILE_PATH")]
+    public string FilePath { get; set; }
+
+    [Column("PRICE", TypeName = "decimal(18, 0)")]
+    public decimal? Price { get; set; }
+
+    [Column("HASH_TAG")]
+    [StringLength(1000)]
+    public string HashTag { get; set; }
 }

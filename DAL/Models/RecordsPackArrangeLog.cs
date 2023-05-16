@@ -2,28 +2,37 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("RECORDS_PACK_ARRANGE_LOG")]
+public partial class RecordsPackArrangeLog
 {
-    [Table("RECORDS_PACK_ARRANGE_LOG")]
-    public class RecordPackArrangeLog
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string Action { get; set; }
+    [Column("ACTION")]
+    [StringLength(255)]
+    public string Action { get; set; }
 
-        public string ObjectType { get; set; }
+    [Column("OBJECT_TYPE")]
+    [StringLength(255)]
+    public string ObjectType { get; set; }
 
-        public string ObjectCode { get; set; }
+    [Column("OBJECT_CODE")]
+    [StringLength(255)]
+    public string ObjectCode { get; set; }
 
-        public string Message { get; set; }
+    [Column("MESSAGE")]
+    [StringLength(255)]
+    public string Message { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
-        
-    }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 }

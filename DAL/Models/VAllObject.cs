@@ -1,22 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Keyless]
+public partial class VAllObject
 {
-    [Table("V_ALL_OBJECT")]
-    public class VAllObject
-    {
-        [Key]
-        public Guid Id { get; set; }
+    [Column("ID")]
+    public Guid? Id { get; set; }
 
-        [StringLength(100)]
-        public string Code { get; set; }
+    [Column("CODE")]
+    [StringLength(100)]
+    public string Code { get; set; }
 
-        [StringLength(255)]
-        public string Name { get; set; }
+    [Required]
+    [Column("NAME")]
+    [StringLength(1004)]
+    public string Name { get; set; }
 
-        [StringLength(255)]
-        public string ObjectType { get; set; }
-    }
+    [Required]
+    [Column("OBJECT_TYPE")]
+    [StringLength(8)]
+    [Unicode(false)]
+    public string ObjectType { get; set; }
 }

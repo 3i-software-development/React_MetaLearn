@@ -2,37 +2,45 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("EDMS_MOVE_BOX_LOG_DOCUMENT")]
+public partial class EdmsMoveBoxLogDocument
 {
-    [Table("EDMS_MOVE_BOX_LOG_DOCUMENT")]
-    public class EDMSMoveBoxLogDocument
-    { 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string BoxCode { get; set; }
+    [Column("BOX_CODE")]
+    [StringLength(255)]
+    public string BoxCode { get; set; }
 
-        [StringLength(255)]
-        public string RackCodeOld { get; set; }
+    [Column("RACK_CODE_OLD")]
+    [StringLength(255)]
+    public string RackCodeOld { get; set; }
 
-        [StringLength(255)]
-        public string RackCodeNew { get; set; }
+    [Column("RACK_CODE_NEW")]
+    [StringLength(255)]
+    public string RackCodeNew { get; set; }
 
-        [StringLength(255)]
-        public string RackPosition { get; set; }
+    [Column("RACK_POSITION")]
+    [StringLength(255)]
+    public string RackPosition { get; set; }
 
-        [StringLength(255)]
-        public string Ordering { get; set; }
+    [Column("ORDERING")]
+    [StringLength(255)]
+    public string Ordering { get; set; }
 
-        [StringLength(255)]
-        public string Note { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
 
-        public DateTime CreatedTime { get; set; }
-    }
+    [Column("NOTE")]
+    [StringLength(255)]
+    public string Note { get; set; }
 }

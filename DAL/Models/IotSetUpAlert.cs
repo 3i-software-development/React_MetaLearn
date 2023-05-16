@@ -2,27 +2,38 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Table("IOT_SET_UP_ALERT")]
+public partial class IotSetUpAlert
 {
-    [Table("IOT_SET_UP_ALERT")]
-    public class IotSetUpAlert
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public DateTime? FromDate { get; set; }
+    [Column("FROM_DATE")]
+    public DateTime? FromDate { get; set; }
 
-        public DateTime? ToDate { get; set; }
+    [Column("TO_DATE")]
+    public DateTime? ToDate { get; set; }
 
-        public string Device { get; set; }
+    [Column("DEVICE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Device { get; set; }
 
-        public string Unit { get; set; }
+    [Column("UNIT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Unit { get; set; }
 
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
-
-    }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 }

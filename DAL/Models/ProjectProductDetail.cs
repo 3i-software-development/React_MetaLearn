@@ -2,46 +2,62 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Keyless]
+[Table("PROJECT_PRODUCT_DETAIL")]
+public partial class ProjectProductDetail
 {
-    [Table("PROJECT_PRODUCT_DETAIL")]
-    public class ProjectProductDetail
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public int Id { get; set; }
+    [Column("TICKET_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string TicketCode { get; set; }
 
-        [StringLength(255)]
-        public string TicketCode { get; set; }
+    [Column("PRODUCT_CODE")]
+    [StringLength(100)]
+    public string ProductCode { get; set; }
 
-        [StringLength(100)]
-        public string ProductCode { get; set; }
+    [Column("QUANTITY", TypeName = "decimal(18, 2)")]
+    public decimal? Quantity { get; set; }
 
-        [DataType("decimal(18,2)")]
-        public decimal? Quantity { get; set; }
+    [Column("UNIT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Unit { get; set; }
 
-        [StringLength(255)]
-        public string Unit { get; set; }
-        public string SupplierCode { get; set; }
+    [Column("COST", TypeName = "decimal(18, 0)")]
+    public decimal? Cost { get; set; }
 
-        public decimal? Cost { get; set; }
-				
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("SUPPLIER_CODE")]
+    [StringLength(255)]
+    public string SupplierCode { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(255)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 }

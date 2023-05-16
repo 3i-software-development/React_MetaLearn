@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("VC_JNANA_FCM")]
+public partial class VcJnanaFcm
 {
-    [Table("VC_JNANA_FCM")]
-    public class VCJnanaFcm
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public int User_id { get; set; }
-        [StringLength(maximumLength: 250)]
-        public string Token { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-    }
+    [Column("TOKEN")]
+    [StringLength(250)]
+    public string Token { get; set; }
+
+    [Column("USER_ID")]
+    public int UserId { get; set; }
 }

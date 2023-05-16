@@ -1,57 +1,74 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("VC_PRODUCT_CAT")]
+public partial class VcProductCat
 {
-    [Table("VC_PRODUCT_CAT")]
-    public class VcProductCat
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    /// <summary>
+    /// Customer Id
+    /// </summary>
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string ProductCode { get; set; }
+    [Column("PRODUCT_CODE")]
+    [StringLength(100)]
+    public string ProductCode { get; set; }
 
-        [StringLength(255)]
-        public string ProductName { get; set; }
+    [Column("PRODUCT_NAME")]
+    [StringLength(255)]
+    public string ProductName { get; set; }
 
-        [StringLength(50)]
-        public string Unit { get; set; }
+    [Column("UNIT")]
+    [StringLength(50)]
+    public string Unit { get; set; }
 
-        [StringLength(500)]
-        public string PathImg { get; set; }
+    [Column("PATH_IMG")]
+    [StringLength(500)]
+    public string PathImg { get; set; }
 
-        [StringLength(500)]
-        public string Note { get; set; }
+    [Column("NOTE")]
+    [StringLength(500)]
+    public string Note { get; set; }
 
-        [StringLength(100)]
-        public string ProductGroup { get; set; }
+    [Column("PRODUCT_GROUP")]
+    [StringLength(100)]
+    public string ProductGroup { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 
+    [Column("PATH_FILE")]
+    [StringLength(500)]
+    public string PathFile { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
-
-        public bool IsDeleted { get; set; }
-
-        [StringLength(500)]
-        public string PathFile { get; set; }
-
-        [StringLength(250)]
-        public string FileName { get; set; }
-    }
+    [Column("FILE_NAME")]
+    [StringLength(255)]
+    public string FileName { get; set; }
 }

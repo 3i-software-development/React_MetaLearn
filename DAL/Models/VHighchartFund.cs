@@ -1,16 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+public partial class VHighchartFund
 {
-    [Table("V_HIGHCHART_FUND")]
-    public class VHighchartFund
-    {
-        [Key]
-        public Guid Id { get; set; }
-        public int? Month { get; set; }
-        public string Name { get; set; }
-        public decimal? Total { get; set; }
-    }
+    [Column("ID")]
+    public Guid? Id { get; set; }
+
+    [Column("MONTH")]
+    public int? Month { get; set; }
+
+    [Required]
+    [Column("NAME")]
+    [StringLength(3)]
+    [Unicode(false)]
+    public string Name { get; set; }
+
+    [Column("TOTAL", TypeName = "decimal(38, 0)")]
+    public decimal? Total { get; set; }
 }

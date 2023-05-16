@@ -1,94 +1,87 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ASSET_LIQUIDATION_HEADER")]
+public partial class AssetLiquidationHeader
 {
-    [Table("ASSET_LIQUIDATION_HEADER")]
-    public class AssetLiquidationHeader
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string TicketCode { get; set; }
+    [Column("TICKET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string TicketCode { get; set; }
 
-        [StringLength(1000)]
-        public string ObjActCode { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        [StringLength(255)]
-        public string Title { get; set; }
+    [Column("BRANCH_LIQUIDATION")]
+    [StringLength(255)]
+    public string BranchLiquidation { get; set; }
 
-        [StringLength(255)]
-        public string BranchLiquidation { get; set; }
+    [Column("LIQUIDATION_TIME")]
+    public DateTime? LiquidationTime { get; set; }
 
-        public DateTime? LiquidationTime { get; set; }
+    [Column("USER_LIQUIDATION")]
+    [StringLength(50)]
+    public string UserLiquidation { get; set; }
 
-        [NotMapped]
-        public string sLiquidationTime { get; set; }
+    [Column("LOCATION_LIQUIDATION")]
+    [StringLength(255)]
+    public string LocationLiquidation { get; set; }
 
-        [StringLength(50)]
-        public string UserLiquidation { get; set; }
+    [Column("STATUS")]
+    public string Status { get; set; }
 
-        [StringLength(255)]
-        public string LocationLiquidation { get; set; }
+    [Column("LOG_STATUS")]
+    public string LogStatus { get; set; }
 
-        [StringLength(50)]
-        public string Status { get; set; }
+    [Column("DESCRIPTION")]
+    [StringLength(1000)]
+    public string Description { get; set; }
 
-        [StringLength(1000)]
-        public string Description { get; set; }
+    [Column("USER_BUY")]
+    [StringLength(50)]
+    public string UserBuy { get; set; }
 
-        [StringLength(50)]
-        public string UserBuy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
-        public DateTime? UpdatedTime { get; set; }
-        public DateTime? DeletedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(100)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(100)]
-        public string UpdatedBy { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    public string DeletedBy { get; set; }
 
-        [NotMapped]
-        public List<AssetLiquidationStatus> ListStatus { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        public string LogStatus
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatus);
-            }
-            set
-            {
-                ListStatus = string.IsNullOrEmpty(value)
-                ? new List<AssetLiquidationStatus>()
-                : JsonConvert.DeserializeObject<List<AssetLiquidationStatus>>(value);
-            }
-        }
+    [Column("OBJ_ACT_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ObjActCode { get; set; }
 
-        public string WorkflowCat { get; set; }
-
-        [NotMapped]
-        public string ActRepeat { get; set; }
-    }
-
-    public class AssetLiquidationStatus
-    {
-        public string Type { get; set; }
-        public string Status { get; set; }
-        public string Reason { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
-    }
+    [Column("WORKFLOW_CAT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WorkflowCat { get; set; }
 }

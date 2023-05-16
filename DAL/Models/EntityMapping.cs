@@ -2,26 +2,34 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ENTITY_MAPPING")]
+public partial class EntityMapping
 {
-    [Table("ENTITY_MAPPING")]
-    public class EntityMapping
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string PoSaleCode { get; set; }
+    [Column("PO_SALE_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string PoSaleCode { get; set; }
 
-        [StringLength(100)]
-        public string PoBuyerCode { get; set; }
+    [Column("PO_BUYER_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string PoBuyerCode { get; set; }
 
-        [StringLength(100)]
-        public string ReqCode { get; set; }
+    [Column("REQ_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ReqCode { get; set; }
 
-        [StringLength(100)]
-        public string ProjectCode { get; set; }
-    }
+    [Column("PROJECT_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ProjectCode { get; set; }
 }

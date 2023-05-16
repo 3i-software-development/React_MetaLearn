@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[PrimaryKey("UserId", "RoleId")]
+[Table("ASP_NET_USER_ROLES")]
+[Index("RoleId", Name = "IX_ASP_NET_USER_ROLES_ROLE_ID")]
+public partial class AspNetUserRole
 {
-    public class AspNetUserRole
-    {
-        public string UserId { get; set; }
-        public string RoleId { get; set; }
+    [Key]
+    [Column("USER_ID")]
+    public string UserId { get; set; }
 
-        public virtual AspNetRole Role { get; set; }
-        public virtual AspNetUser User { get; set; }
-    }
+    [Key]
+    [Column("ROLE_ID")]
+    public string RoleId { get; set; }
 }

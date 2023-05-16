@@ -1,33 +1,56 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("CAT_WORK_FLOW")]
+public partial class CatWorkFlow
 {
-    [Table("CAT_WORK_FLOW")]
-    public class CatWorkFlow
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        [StringLength(100)]
-        public string WorkFlowCode { get; set; }
-        [StringLength(255)]
-        public string Name { get; set; }
-        [StringLength(1000)]
-        public string Note { get; set; }
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
-        [StringLength(100)]
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
-        public bool IsDeleted { get; set; }
-        public string Type { get; set; }
-    }
+    [Column("WORK_FLOW_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string WorkFlowCode { get; set; }
+
+    [Column("NAME")]
+    [StringLength(255)]
+    public string Name { get; set; }
+
+    [Column("NOTE")]
+    [StringLength(1000)]
+    public string Note { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(100)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    public string DeletedBy { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
+
+    [Column("TYPE")]
+    [StringLength(255)]
+    public string Type { get; set; }
 }

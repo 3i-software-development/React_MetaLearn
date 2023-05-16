@@ -1,105 +1,96 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ASEAN_DOCUMENT")]
+public partial class AseanDocument
 {
-    [Table("ASEAN_DOCUMENT")]
-    public class AseanDocument
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(maximumLength: 100)]
-        public string File_Code { get; set; }
+    [Column("FILE_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string FileCode { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string Title { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string Subdesc { get; set; }
+    [Column("SUBDESC")]
+    [StringLength(255)]
+    public string Subdesc { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string File_Type { get; set; }
+    [Column("FILE_TYPE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string FileType { get; set; }
 
-        public int Version { get; set; }
+    [Column("VERSION")]
+    public int? Version { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string File_Name { get; set; }
+    [Column("FILE_NAME")]
+    [StringLength(255)]
+    public string FileName { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string File_Site { get; set; }
+    [Column("FILE_SITE")]
+    [StringLength(255)]
+    public string FileSite { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string File_Path { get; set; }
+    [Column("FILE_PATH")]
+    [StringLength(255)]
+    public string FilePath { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string Description { get; set; }
+    [Column("DESCRIPTION")]
+    [StringLength(255)]
+    public string Description { get; set; }
 
-        public int Parent_Id { get; set; }
+    [Column("PARENT_ID")]
+    public int? ParentId { get; set; }
 
-        [StringLength(255)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(255)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
-        public bool IsEdited { get; set; }
-        [StringLength(255)]
-        public string DeletedBy { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(255)]
+    public string DeletedBy { get; set; }
 
-        [StringLength(100)]
-        public string CateCode { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        [StringLength(500)]
-        public string FullPathView { get; set; }
+    [Column("CATE_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string CateCode { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string ViewPath { get; set; }
+    [Column("FULL_PATH_VIEW")]
+    [StringLength(500)]
+    public string FullPathView { get; set; }
 
-        [NotMapped]
-        [StringLength(maximumLength: 50)]
-        public string sCreatedTime { get; set; }
+    [Column("IS_EDITED")]
+    public bool? IsEdited { get; set; }
 
-        [NotMapped]
-        public bool? IsEdit { get; set; }
-
-        [NotMapped]
-        public bool? IsFileMaster { get; set; }
-
-        [NotMapped]
-        public int? FileParentId { get; set; }
-
-        [NotMapped]
-        public string EditedFileBy { get; set; }
-
-        [NotMapped]
-        public DateTime? EditedFileTime { get; set; }
-        [NotMapped]
-        public int? Mode { get; set; }
-
-        [NotMapped]
-        public string FirstPage { get; set; }
-
-        [NotMapped]
-        public bool IsSign { get; set; }
-
-        [NotMapped]
-        public string ObjCode { get; set; }
-
-        [NotMapped]
-        public string ObjType { get; set; }
-
-        [NotMapped]
-        public string WfInstCode { get; set; }
-    }
+    [Column("VIEW_PATH")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ViewPath { get; set; }
 }

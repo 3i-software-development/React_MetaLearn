@@ -2,34 +2,45 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("PAYMENT_GATEWAY")]
+public partial class PaymentGateway
 {
-    [Table("PAYMENT_GATEWAY")]
-    public class PaymentGateway
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(50)]
-        public string ServiceType { get; set; }
+    [Column("SERVICE_TYPE")]
+    [StringLength(50)]
+    public string ServiceType { get; set; }
 
-        [StringLength(255)]
-        public string Logo { get; set; }
+    [Column("LOGO")]
+    [StringLength(1000)]
+    public string Logo { get; set; }
 
-        [StringLength(255)]
-        public string GatewayCode { get; set; }
+    [Column("GATEWAY_CODE")]
+    [StringLength(255)]
+    public string GatewayCode { get; set; }
 
-        [StringLength(255)]
-        public string GatewayName { get; set; }
+    [Column("GATEWAY_NAME")]
+    [StringLength(255)]
+    public string GatewayName { get; set; }
 
-        [StringLength(255)]
-        public string Email { get; set; }
+    [Column("EMAIL")]
+    [StringLength(255)]
+    public string Email { get; set; }
 
-        public string ConfigJson { get; set; }
-				
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
-    }
+    [Column("CONFIG_JSON")]
+    public string ConfigJson { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 }

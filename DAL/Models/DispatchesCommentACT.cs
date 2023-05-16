@@ -1,27 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("DISPATCHES_COMMENT_ACT")]
+public partial class DispatchesCommentAct
 {
-    [Table("DISPATCHES_COMMENT_ACT")]
-    public class DispatchesCommentACT
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string ProcessCode { get; set; }
+    [Column("PROCESS_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ProcessCode { get; set; }
 
-        public string Comment { get; set; }
+    [Column("COMMENT")]
+    public string Comment { get; set; }
 
-        [StringLength(50)]
-        public string UserId { get; set; }
+    [Column("USER_ID")]
+    [StringLength(50)]
+    public string UserId { get; set; }
 
-        [JsonIgnore]
-        public virtual AspNetUser User { get; set; }
-
-        public DateTime? CreatedTime { get; set; }
-    }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 }

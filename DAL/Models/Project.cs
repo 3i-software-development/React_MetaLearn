@@ -2,165 +2,124 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PROJECT")]
+public partial class Project
 {
-    [Table("PROJECT")]
-    public class Project
-    {
-        public Project()
-        {
-            ListStatusObjectLog = new List<JsonLog>();
-        }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Column("PROJECT_CODE")]
+    [StringLength(100)]
+    public string ProjectCode { get; set; }
 
-        public int Id { get; set; }
+    [Column("PROJECT_TITLE")]
+    [StringLength(255)]
+    public string ProjectTitle { get; set; }
 
-        [StringLength(100)]
-        public string ProjectCode { get; set; }
+    [Column("BUDGET")]
+    public double? Budget { get; set; }
 
-        [StringLength(255)]
-        public string ProjectTitle { get; set; }
+    [Column("CURRENCY")]
+    [StringLength(50)]
+    public string Currency { get; set; }
 
-        public double? Budget { get; set; }
+    [Column("PRJ_SKILL_KEYWORD")]
+    [StringLength(50)]
+    public string PrjSkillKeyword { get; set; }
 
-        [StringLength(50)]
-        public string Currency { get; set; }
+    [Column("PRJ_STATUS")]
+    [StringLength(50)]
+    public string PrjStatus { get; set; }
 
-        [StringLength(50)]
-        public string PrjSkillKeyword { get; set; }
+    [Column("SET_PRIORITY")]
+    public double? SetPriority { get; set; }
 
-        [StringLength(50)]
-        public string PrjStatus { get; set; }
+    [Column("PRJ_MODE")]
+    [StringLength(100)]
+    public string PrjMode { get; set; }
 
-        public double? SetPriority { get; set; }
+    [Column("START_TIME")]
+    public DateTime StartTime { get; set; }
 
-        [StringLength(100)]
-        public string PrjMode { get; set; }
+    [Column("END_TIME")]
+    public DateTime EndTime { get; set; }
 
-        public DateTime StartTime { get; set; }
+    [Column("VERSION")]
+    public int? Version { get; set; }
 
-        public DateTime EndTime { get; set; }
+    [Column("LANGUAGE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string Language { get; set; }
 
-        public int? Version { get; set; }
+    [Column("PRJ_TYPE")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string PrjType { get; set; }
 
-        public string Language { get; set; }
+    [Column("CASE_WORKER")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string CaseWorker { get; set; }
 
-        [StringLength(50)]
-        public string PrjType { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(50)]
-        public string CaseWorker { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("FLAG_DELETED")]
+    public bool FlagDeleted { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("GOOGLE_MAP")]
+    [StringLength(500)]
+    public string GoogleMap { get; set; }
 
-        public bool FlagDeleted { get; set; }
+    /// <summary>
+    /// Address
+    /// </summary>
+    [Column("ADDRESS")]
+    [StringLength(500)]
+    public string Address { get; set; }
 
-        [StringLength(500)]
-        public string GoogleMap { get; set; }
+    [Column("CUSTOMER_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string CustomerCode { get; set; }
 
-        [StringLength(500)]
-        public string Address { get; set; }
+    [Column("SUPPLIER_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string SupplierCode { get; set; }
 
-        [StringLength(100)]
-        public string CustomerCode { get; set; }
+    [Column("STATUS")]
+    public string Status { get; set; }
 
-        [StringLength(100)]
-        public string SupplierCode { get; set; }
-        public string Status { get; set; }
-        public string WorkflowCat { get; set; }
-        public string ListUserView { get; set; }
-        public string StatusObject { get; set; }
-        public string StatusObjectLog
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatusObjectLog);
-            }
-            set
-            {
-                ListStatusObjectLog = string.IsNullOrEmpty(value)
-                ? new List<JsonLog>()
-                : JsonConvert.DeserializeObject<List<JsonLog>>(value);
-            }
-        }
+    [Column("LIST_USER_VIEW")]
+    public string ListUserView { get; set; }
 
-        [NotMapped]
-        public List<JsonLog> ListStatusObjectLog { get; set; }
-    }
-    public class ProjectType
-    {
-        public int Id { get; set; }
-        public string Code { get; set; }
-        public string Color { get; set; }
-    }
-    public class ProjectModel
-    {
-        public ProjectModel()
-        {
-            ListStatusObjectLog = new List<JsonLog>();
-        }
+    [Column("WORKFLOW_CAT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WorkflowCat { get; set; }
 
-        [Required]
-        public string ProjectCode { get; set; }
+    [Column("STATUS_OBJECT")]
+    [StringLength(255)]
+    public string StatusObject { get; set; }
 
-        [Required]
-        public string ProjectTitle { get; set; }
-
-        public string Currency { get; set; }
-
-        public string Budget { get; set; }
-
-        [Required]
-        public string StartTime { get; set; }
-
-        [Required]
-        public string EndTime { get; set; }
-
-        public string SetPriority { get; set; }
-
-        [Required]
-        public string CustomerCode { get; set; }
-
-        public string SupplierCode { get; set; }
-
-        public string PrjType { get; set; }
-
-        public string GoogleMap { get; set; }
-
-        public string Address { get; set; }
-        public string Status { get; set; }
-        public string WorkflowCat { get; set; }
-        public string StatusObject { get; set; }
-        public string StatusObjectLog
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatusObjectLog);
-            }
-            set
-            {
-                ListStatusObjectLog = string.IsNullOrEmpty(value)
-                ? new List<JsonLog>()
-                : JsonConvert.DeserializeObject<List<JsonLog>>(value);
-            }
-        }
-
-        [NotMapped]
-        public List<JsonLog> ListStatusObjectLog
-        {
-            get; set;
-        }
-    }
+    [Column("STATUS_OBJECT_LOG")]
+    public string StatusObjectLog { get; set; }
 }

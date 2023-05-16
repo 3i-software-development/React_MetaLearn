@@ -1,89 +1,86 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Table("ASSET_CANCEL_HEADER")]
+public partial class AssetCancelHeader
 {
-    [Table("ASSET_CANCEL_HEADER")]
-    public class AssetCancelHeader
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int AssetID { get; set; }
-        
-        [StringLength(maximumLength: 100)]
-        public string TicketCode { get; set; }
-        
-        [StringLength(maximumLength: 255)]
-        public string Title { get; set; }
+    [Key]
+    [Column("ASSET_ID")]
+    public int AssetId { get; set; }
 
-        [StringLength(100)]
-        public string ObjActCode { get; set; }
+    [Column("TICKET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string TicketCode { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string Branch { get; set; }
-        
-        [StringLength(maximumLength: 255)]
-        public string Person { get; set; }
-        
-        [StringLength(maximumLength: 255)]
-        public string Note { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        public string Status { get; set; }
+    [Column("BRANCH")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Branch { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string CreatedBy { get; set; }
+    [Column("PERSON")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Person { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("NOTE")]
+    [StringLength(500)]
+    public string Note { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string UpdatedBy { get; set; }
+    [Column("STATUS")]
+    public string Status { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
-       
-        [StringLength(maximumLength: 255)]
-        public string DeletedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    public string CreatedBy { get; set; }
 
-        
-        public DateTime? DeletedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public Boolean IsDeleted { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string Adress { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? CancelTime { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        [NotMapped]
-        [StringLength(maximumLength: 50)]
-        public string sStartTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
 
-        [NotMapped]
-        public List<EDMSStatus1> ListStatus { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public string WorkflowCat { get; set; }
-        public string LogStatus
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatus);
-            }
-            set
-            {
-                ListStatus = string.IsNullOrEmpty(value)
-                ? new List<EDMSStatus1>()
-                : JsonConvert.DeserializeObject<List<EDMSStatus1>>(value);
-            }
-        }
-    }
-    public class EDMSStatus1
-    {
-        public string Type { get; set; }
-        public string Status { get; set; }
-        public string Reason { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
-    }
+    [Column("CANCEL_TIME")]
+    public DateTime? CancelTime { get; set; }
+
+    [Column("ADRESS")]
+    [StringLength(255)]
+    public string Adress { get; set; }
+
+    [Column("LOG_STATUS")]
+    public string LogStatus { get; set; }
+
+    [Column("OBJ_ACT_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ObjActCode { get; set; }
+
+    [Column("WORKFLOW_CAT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WorkflowCat { get; set; }
 }

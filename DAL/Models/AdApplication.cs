@@ -1,89 +1,91 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("AD_APPLICATION")]
+public partial class AdApplication
 {
-    [Table("AD_APPLICATION")]
-    public class AdApplication
-    {
-        public AdApplication()
-        {
-            AppFunctions = new HashSet<AdAppFunction>();
-            Permissions = new HashSet<AdPermission>();
-            UserInGroups = new HashSet<AdUserInGroup>();
-            //AppGroupResources = new HashSet<AdAppGroupResource>();
-            //ESEndpointApps = new HashSet<ESEndpointApp>();
-            //ESOrgApps = new HashSet<ESOrgApp>();
-            //ESRoleApps = new HashSet<ESRoleApp>();
-            //ESUserApps = new HashSet<ESUserApp>();
-            //ESGroupApps = new HashSet<ESGroupApp>();
-        }
+    [Required]
+    [Column("APPLICATION_CODE")]
+    [StringLength(50)]
+    public string ApplicationCode { get; set; }
 
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ApplicationId { get; set; }
+    [Column("DESCRIPTION")]
+    [StringLength(500)]
+    public string Description { get; set; }
 
-        [Key]
-        [StringLength(50)]
-        public string ApplicationCode { get; set; }
+    [Column("APP_URL")]
+    [StringLength(300)]
+    public string AppUrl { get; set; }
 
-        [StringLength(255)]
-        public string Title { get; set; }
+    [Column("ICON")]
+    [StringLength(300)]
+    public string Icon { get; set; }
 
-        public int Status { get; set; }
+    [Column("STATUS")]
+    public int Status { get; set; }
 
-        [StringLength(500)]
-        public string Description { get; set; }
+    [Column("ORD")]
+    public int? Ord { get; set; }
 
-        [StringLength(300)]
-        public string Icon { get; set; }
+    [Column("AUTHENTICATION_SCHEME")]
+    [StringLength(255)]
+    public string AuthenticationScheme { get; set; }
 
-        [StringLength(300)]
-        public string AppUrl { get; set; }
+    [Column("AUTHORITY")]
+    [StringLength(255)]
+    public string Authority { get; set; }
 
-        public int? Ord { get; set; }
+    [Column("CLIENT_ID")]
+    [StringLength(255)]
+    public string ClientId { get; set; }
 
-        [StringLength(255)]
-        public string ClientId { get; set; }
+    [Column("CLIENT_SECRET")]
+    [StringLength(255)]
+    public string ClientSecret { get; set; }
 
-        [StringLength(255)]
-        public string ClientSecret { get; set; }
+    [Column("NAME_CLAIM_TYPE")]
+    [StringLength(255)]
+    public string NameClaimType { get; set; }
 
-        [StringLength(255)]
-        public string Authority { get; set; }
+    [Column("REQUIRE_HTTPS")]
+    public int? RequireHttps { get; set; }
 
-        [StringLength(255)]
-        public string Scope { get; set; }
+    [Column("RESPONSE_TYPE")]
+    [StringLength(255)]
+    public string ResponseType { get; set; }
 
-        [StringLength(255)]
-        public string ResponseType { get; set; }
+    [Column("ROLE_CLAIM_TYPE")]
+    [StringLength(255)]
+    public string RoleClaimType { get; set; }
 
-        [StringLength(255)]
-        public string AuthenticationScheme { get; set; }
+    [Column("SCOPE")]
+    [StringLength(255)]
+    public string Scope { get; set; }
 
-        public bool? RequireHttps { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(255)]
-        public string NameClaimType { get; set; }
+    [Column("CREATED_DATE")]
+    public DateTime? CreatedDate { get; set; }
 
-        [StringLength(255)]
-        public string RoleClaimType { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? CreatedDate { get; set; }
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
-        public DateTime? UpdatedDate { get; set; }
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_DATE")]
+    public DateTime? UpdatedDate { get; set; }
 
-        [JsonIgnore]
-        public virtual ICollection<AdAppFunction> AppFunctions { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<AdPermission> Permissions { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<AdUserInGroup> UserInGroups { get; set; }
-    }
+    [Column("APPLICATION_ID")]
+    public int ApplicationId { get; set; }
 }

@@ -2,40 +2,52 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("VC_JNANA_NEWS_CAT")]
+public partial class VcJnanaNewsCat
 {
-    [Table("VC_JNANA_NEWS_CAT")]
-   public class VCJnanaNewsCat
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string cat_code { get; set; }
+    [Column("CAT_CODE")]
+    [StringLength(250)]
+    public string CatCode { get; set; }
 
+    [Column("CAT_TITLE")]
+    [StringLength(1000)]
+    public string CatTitle { get; set; }
 
-        [StringLength(maximumLength: 1000)]
-        public string cat_title { get; set; }
+    [Column("CAT_DESCRIPTION")]
+    [StringLength(1000)]
+    public string CatDescription { get; set; }
 
-        [StringLength(maximumLength: 1000)]
-        public string cat_description { get; set; }
+    [Column("CAT_PARENT_CODE")]
+    public int? CatParentCode { get; set; }
 
-        public int? cat_parent_code { get; set; }
+    [Column("CREATED_BY")]
+    public int? CreatedBy { get; set; }
 
-        public int? created_by { get; set; }
-        public int? update_by { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
 
+    [Column("UPDATE_BY")]
+    public int? UpdateBy { get; set; }
 
+    [Column("UPDATE_TIME")]
+    public DateTime? UpdateTime { get; set; }
 
-        [StringLength(maximumLength: 1000)]
-        public string cat_avarta { get; set; }
-        [StringLength(maximumLength:255)]
-        public string Company_Code { get; set; }
+    [Column("CAT_STATUS")]
+    public int CatStatus { get; set; }
 
-        public DateTime? created_time { get; set; }
-        public DateTime? update_time { get; set; }
-        public int cat_status { get; set; }
-    }
+    [Column("CAT_AVARTA")]
+    [StringLength(1000)]
+    public string CatAvarta { get; set; }
+
+    [Column("COMPANY_CODE")]
+    [StringLength(255)]
+    public string CompanyCode { get; set; }
 }

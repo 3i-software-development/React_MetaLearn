@@ -2,27 +2,48 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ASSIGN_MEMBER_TO_OBJECT")]
+public partial class AssignMemberToObject
 {
-    [Table("ASSIGN_MEMBER_TO_OBJECT")]
-    public class AssignMemberToOject
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        public string ObjType { get; set; }
-        public string ObjId { get; set; }
-        public string UserId { get; set; }
-        public string Note { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
+    [Column("OBJ_TYPE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ObjType { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
-        public bool IsDeleted { get; set; }
-    }
+    [Column("OBJ_ID")]
+    [StringLength(255)]
+    public string ObjId { get; set; }
+
+    [Column("USER_ID")]
+    [StringLength(255)]
+    public string UserId { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
+
+    [Column("NOTE")]
+    [StringLength(1000)]
+    public string Note { get; set; }
 }

@@ -1,140 +1,111 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("LMS_TUTORING_SCHEDULE")]
+public partial class LmsTutoringSchedule
 {
-    [Table("LMS_TUTORING_SCHEDULE")]
-    public class LmsTutoringSchedule : IPurchasableObject
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string Title { get; set; }
-        public string SessionCode { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        public DateTime? StartTime { get; set; }
-        public DateTime? EndTime { get; set; }
+    [Column("SESSION_CODE")]
+    [StringLength(255)]
+    public string SessionCode { get; set; }
 
-        public string Description { get; set; }
-        public string JsonStatus { get; set; }
-        public string BackgroundColor { get; set; }
-        public string BackgroundImage { get; set; }
-        public string ClassCode { get; set; }
-        public string AccountZoom { get; set; }
+    [Column("START_TIME")]
+    public DateTime? StartTime { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("END_TIME")]
+    public DateTime? EndTime { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("DESCRIPTION")]
+    [StringLength(255)]
+    public string Description { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("JSON_STATUS")]
+    public string JsonStatus { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("LIST_USER_APPROVED")]
+    public string ListUserApproved { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("BACKGROUND_COLOR")]
+    [StringLength(255)]
+    public string BackgroundColor { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
+    [Column("BACKGROUND_IMAGE")]
+    [StringLength(255)]
+    public string BackgroundImage { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("TEACHER")]
+    [StringLength(255)]
+    public string Teacher { get; set; }
 
-        public bool? IsPopupAllowed { get; set; }
+    [Column("SUBJECT_CODE")]
+    [StringLength(255)]
+    public string SubjectCode { get; set; }
 
-        public string Teacher { get; set; }
+    [Column("COURSE_CODE")]
+    [StringLength(255)]
+    public string CourseCode { get; set; }
 
-        public string SubjectCode { get; set; }
-        public string CourseCode { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [NotMapped]
-        public List<UserApprovedTutoring> ListUserObject { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public string ListUserApproved
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListUserObject);
-            }
-            set
-            {
-                ListUserObject = string.IsNullOrEmpty(value)
-                ? new List<UserApprovedTutoring>()
-                : JsonConvert.DeserializeObject<List<UserApprovedTutoring>>(value);
-            }
-        }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        [NotMapped]
-        public List<Lesson> ListLessons { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public string LessonDoc
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListLessons);
-            }
-            set
-            {
-                ListLessons = string.IsNullOrEmpty(value)
-                ? new List<Lesson>()
-                : JsonConvert.DeserializeObject<List<Lesson>>(value);
-            }
-        }
-        public int? MeetingId { get; set; }
-        public decimal? Price { get; set; }
-        public string PathNotepad { get; set; }
-        [NotMapped]
-        public bool? IsPurchased { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        public string JsonCanvas { get; set; }
-    }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-    public class LmsTutoringScheduleModel
-    {
-        public int Id { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public string Title { get; set; }
-        public string SessionCode { get; set; }
+    [Column("ACCOUNT_ZOOM")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string AccountZoom { get; set; }
 
-        public string StartTime { get; set; }
-        public DateTime StartDateTime { get; set; }
+    [Column("LESSON_DOC")]
+    public string LessonDoc { get; set; }
 
-        public string EndTime { get; set; }
-        public string BackgroundColor { get; set; }
-        public string BackgroundImage { get; set; }
+    [Column("IS_POPUP_ALLOWED")]
+    public bool? IsPopupAllowed { get; set; }
 
-        public string Description { get; set; }
-        public string ClassCode { get; set; }
-        public string AccountZoom { get; set; }
+    [Column("MEETING_ID")]
+    public int? MeetingId { get; set; }
 
-        public string ListUserApproved { get; set; }
-        public string JsonStatus { get; set; }
-        public bool? IsPopupAllowed { get; set; }
+    [Column("PRICE", TypeName = "decimal(18, 0)")]
+    public decimal? Price { get; set; }
 
-        public string Teacher { get; set; }
+    [Column("PATH_NOTEPAD")]
+    [StringLength(1000)]
+    public string PathNotepad { get; set; }
 
-        public string SubjectCode { get; set; }
-        public string CourseCode { get; set; }
+    [Column("JSON_CANVAS")]
+    public string JsonCanvas { get; set; }
 
-        public string LessonDoc { get; set; }
-
-        public string CreatedBy { get; set; }
-
-        public string UpdatedBy { get; set; }
-        public int? MeetingId { get; set; }
-        public decimal? Price { get; set; }
-        public string PathNotepad { get; set; }
-
-        public string JsonCanvas { get; set; }
-    }
-    
-    public class UserApprovedTutoring
-    {
-        public string userName { get; set; }
-        public string status { get; set; }
-        public DateTime? timeStamp { get; set; }
-    }
+    [Column("CLASS_CODE")]
+    [StringLength(255)]
+    public string ClassCode { get; set; }
 }

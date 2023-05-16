@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("RECORD_DELIVERY_DETAIL")]
+public partial class RecordDeliveryDetail
 {
-    [Table("RECORD_DELIVERY_DETAIL")]
-    public class RecordDeliveryDetail
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string RecordCode { get; set; }
+    [Column("RECORD_CODE")]
+    [StringLength(255)]
+    public string RecordCode { get; set; }
 
-        public string DeliveryCode { get; set; }
-
-    }
+    [Column("DELIVERY_CODE")]
+    [StringLength(255)]
+    public string DeliveryCode { get; set; }
 }

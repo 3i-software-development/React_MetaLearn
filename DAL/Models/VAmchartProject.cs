@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+public partial class VAmchartProject
 {
-    [Table("V_AMCHART_PROJECT")]
-    public class VAmchartProject
-    {
-        [Key]
-        public Guid ID { get; set; }
-        public string Status { get; set; }
-        public int StatusCount { get; set; }
-        public int LstMonth { get; set; }
-    }
+    [Column("ID")]
+    public Guid? Id { get; set; }
+
+    [Column("STATUS")]
+    [StringLength(255)]
+    public string Status { get; set; }
+
+    [Column("STATUS_COUNT")]
+    public int? StatusCount { get; set; }
+
+    [Column("LST_MONTH")]
+    public int? LstMonth { get; set; }
 }

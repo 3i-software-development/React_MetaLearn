@@ -2,40 +2,57 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("CANDIDATE_WORK_EVENT")]
+public partial class CandidateWorkEvent
 {
-    [Table("CANDIDATE_WORK_EVENT")]
-    public class CandidateWorkEvent
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string CandidateCode { get; set; }
+    [Column("CANDIDATE_CODE")]
+    [StringLength(255)]
+    public string CandidateCode { get; set; }
 
-        [StringLength(255)]
-        public string EventTitle { get; set; }
+    [Column("EVENT_TITLE")]
+    [StringLength(255)]
+    public string EventTitle { get; set; }
 
-        public DateTime DatetimeEvent { get; set; }
+    [Column("DATETIME_EVENT")]
+    public DateTime DatetimeEvent { get; set; }
 
-        [StringLength(255)]
-        public string FrameTime { get; set; }
+    [Column("FRAME_TIME")]
+    [StringLength(255)]
+    public string FrameTime { get; set; }
 
-        [StringLength(255)]
-        public string FormatSetting { get; set; }
+    [Column("FORMAT_SETTING")]
+    [StringLength(255)]
+    public string FormatSetting { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public bool FlagDelete { get; set; }
-    }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("FLAG_DELETE")]
+    public bool FlagDelete { get; set; }
 }

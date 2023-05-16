@@ -2,61 +2,47 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Keyless]
+[Table("ITEM_PACK_USER")]
+public partial class ItemPackUser
 {
+    [Column("ID")]
+    public int Id { get; set; }
 
-    [Table("ITEM_PACK_USER")]
-    public class ItemPackUser 
-    {
-        public ItemPackUser()
-        {
-            ListItemPack = new List<PackItem>();
-        }
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        
-        public string UserName { get; set; }
-        public string ItemPack
-        {
-            get => JsonConvert.SerializeObject(ListItemPack);
-            set =>
-                ListItemPack = string.IsNullOrEmpty(value)
-                    ? new List<PackItem>()
-                    : JsonConvert.DeserializeObject<List<PackItem>>(value);
-        }
-        [NotMapped]
-        public List<PackItem> ListItemPack { get; set; }
+    [Column("USER_NAME")]
+    [StringLength(255)]
+    public string UserName { get; set; }
 
-        [StringLength(50)]
-        public string CreateBy { get; set; }
+    [Column("ITEM_PACK")]
+    public string ItemPack { get; set; }
 
-        public DateTime? CreateTime { get; set; }
+    [Column("CREATE_BY")]
+    [StringLength(50)]
+    public string CreateBy { get; set; }
 
-        public string UpdatedBy { get; set; }
+    [Column("CREATE_TIME")]
+    [Precision(6)]
+    public DateTime? CreateTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    [Precision(6)]
+    public DateTime? UpdatedTime { get; set; }
 
-        public string DeletedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-    public class PackItem
-    {
-        public string ItemType { get; set; }
-
-        public string ItemCode { get; set; }
-
-        public string Status { get; set; }
-
-        public decimal? Price { get; set; }
-        
-        public DateTime? StartTime { get; set; }
-        public DateTime? EndTime { get; set; }
-    }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 }

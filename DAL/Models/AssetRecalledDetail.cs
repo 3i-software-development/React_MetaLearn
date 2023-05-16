@@ -2,42 +2,65 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ASSET_RECALLED_DETAIL")]
+public partial class AssetRecalledDetail
 {
-    [Table("ASSET_RECALLED_DETAIL")]
-    public class AssetRecalledDetail
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string TicketCode { get; set; }
+    [Column("ASSET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string AssetCode { get; set; }
 
-        [StringLength(100)]
-        public string AssetCode { get; set; }
-        public int Quantity { get; set; }
-        public decimal CostValue { get; set; }
-        public decimal TotalMoney { get; set; }
+    [Column("QUANTITY")]
+    public int? Quantity { get; set; }
 
-        [StringLength(100)]
-        public string Status { get; set; }
+    [Column("STATUS")]
+    [StringLength(100)]
+    public string Status { get; set; }
 
-        [StringLength(1000)]
-        public string Note { get; set; }
-        public bool IsDeleted { get; set; }
+    [Column("NOTE")]
+    [StringLength(1000)]
+    public string Note { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
+    [Column("COST_VALUE", TypeName = "decimal(18, 0)")]
+    public decimal? CostValue { get; set; }
 
-        [StringLength(100)]
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
-    }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
+
+    [Column("TICKET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string TicketCode { get; set; }
+
+    [Column("TOTAL_MONEY", TypeName = "decimal(18, 0)")]
+    public decimal? TotalMoney { get; set; }
 }

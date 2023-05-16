@@ -2,131 +2,147 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PROD_DELIVERY_HEADER")]
+public partial class ProdDeliveryHeader
 {
-    [Table("PROD_DELIVERY_HEADER")]
-    public class ProdDeliveryHeader
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    /// <summary>
+    /// Customer Id
+    /// </summary>
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string TicketCode { get; set; }
+    [Column("TICKET_CODE")]
+    [StringLength(255)]
+    public string TicketCode { get; set; }
 
-        [StringLength(255)]
-        public string LotProductCode { get; set; }
+    [Column("LOT_PRODUCT_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string LotProductCode { get; set; }
 
-        [StringLength(100)]
-        public string CusCode { get; set; }
+    [Column("CUS_CODE")]
+    [StringLength(100)]
+    public string CusCode { get; set; }
 
-        [StringLength(100)]
-        public string StoreCode { get; set; }
+    [Column("STORE_CODE")]
+    [StringLength(100)]
+    public string StoreCode { get; set; }
 
-        [StringLength(255)]
-        public string Title { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        [StringLength(50)]
-        public string UserExport { get; set; }
+    [Column("USER_EXPORT")]
+    [StringLength(50)]
+    public string UserExport { get; set; }
 
-        [StringLength(50)]
-        public string UserReceipt { get; set; }
+    [Column("USER_RECEIPT")]
+    [StringLength(50)]
+    public string UserReceipt { get; set; }
 
-        public decimal? CostTotal { get; set; }
+    [Column("COST_TOTAL", TypeName = "decimal(18, 2)")]
+    public decimal? CostTotal { get; set; }
 
-        [StringLength(50)]
-        public string Currency { get; set; }
+    [Column("CURRENCY")]
+    [StringLength(50)]
+    public string Currency { get; set; }
 
-        public decimal? Discount { get; set; }
+    [Column("DISCOUNT", TypeName = "decimal(18, 2)")]
+    public decimal? Discount { get; set; }
 
-        public decimal? Commission { get; set; }
+    [Column("COMMISSION", TypeName = "decimal(18, 2)")]
+    public decimal? Commission { get; set; }
 
-        public decimal? TaxTotal { get; set; }
+    [Column("TAX_TOTAL", TypeName = "decimal(18, 2)")]
+    public decimal? TaxTotal { get; set; }
 
-        [StringLength(500)]
-        public string Note { get; set; }
+    [Column("NOTE")]
+    [StringLength(500)]
+    public string Note { get; set; }
 
-        [StringLength(255)]
-        public string PositionGps { get; set; }
+    [Column("POSITION_GPS")]
+    [StringLength(255)]
+    public string PositionGps { get; set; }
 
-        [StringLength(255)]
-        public string PositionText { get; set; }
+    [Column("POSITION_TEXT")]
+    [StringLength(255)]
+    public string PositionText { get; set; }
 
-        [StringLength(50)]
-        public string FromDevice { get; set; }
+    [Column("FROM_DEVICE")]
+    [StringLength(50)]
+    public string FromDevice { get; set; }
 
-        public decimal? TotalPayed { get; set; }
+    [Column("TOTAL_PAYED", TypeName = "decimal(18, 2)")]
+    public decimal? TotalPayed { get; set; }
 
-        public decimal? TotalMustPayment { get; set; }
+    [Column("TOTAL_MUST_PAYMENT", TypeName = "decimal(18, 2)")]
+    public decimal? TotalMustPayment { get; set; }
 
-        public DateTime? InsurantTime { get; set; }
+    [Column("INSURANT_TIME", TypeName = "datetime")]
+    public DateTime? InsurantTime { get; set; }
 
-        public DateTime? TimeTicketCreate { get; set; }
+    [Column("TIME_TICKET_CREATE", TypeName = "datetime")]
+    public DateTime? TimeTicketCreate { get; set; }
 
-        public DateTime? NextTimePayment { get; set; }
+    [Column("NEXT_TIME_PAYMENT", TypeName = "datetime")]
+    public DateTime? NextTimePayment { get; set; }
 
-        [StringLength(500)]
-        public string Reason { get; set; }
+    [Column("REASON")]
+    [StringLength(500)]
+    public string Reason { get; set; }
 
-        [StringLength(100)]
-        public string StoreCodeReceipt { get; set; }
+    [Column("STORE_CODE_RECEIPT")]
+    [StringLength(100)]
+    public string StoreCodeReceipt { get; set; }
 
-        [StringLength(50)]
-        public string PaymentStatus { get; set; }
+    [Column("PAYMENT_STATUS")]
+    [StringLength(50)]
+    public string PaymentStatus { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 
-        [StringLength(100)]
-        public string ContractCode { get; set; }
-        public string LogData { get; set; }
-        public string Status { get; set; }
-        public string WorkflowCat { get; set; }
-        public string JsonData { get; set; }
-    }
+    [Column("CONTRACT_CODE")]
+    [StringLength(100)]
+    public string ContractCode { get; set; }
 
-    public class MaterialStoreExpGoodsHeaderExport
-    {
-        public string TicketCode { get; set; }
-        public string LotProductCode { get; set; }
-        public string CusCode { get; set; }
-        public string StoreCode { get; set; }
-        public string Title { get; set; }
-        public string UserImport { get; set; }
-        public string UserSend { get; set; }
-        public decimal? CostTotal { get; set; }
-        public string Currency { get; set; }
-        public decimal? Discount { get; set; }
-        public decimal? Commission { get; set; }
-        public decimal? TaxTotal { get; set; }
-        public string Note { get; set; }
-        public string PositionGps { get; set; }
-        public string PositionText { get; set; }
-        public string FromDevice { get; set; }
-        public decimal? TotalPayed { get; set; }
-        public decimal? TotalMustPayment { get; set; }
-        public DateTime? InsurantTime { get; set; }
-        public DateTime? TimeTicketCreate { get; set; }
-        public DateTime? NextTimePayment { get; set; }
-        public string Reason { get; set; }
-        public string StoreCodeSend { get; set; }
-        public string PaymentStatus { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime CreatedTime { get; set; }
-    }
+    [Column("LOG_DATA")]
+    public string LogData { get; set; }
+
+    [Column("STATUS")]
+    public string Status { get; set; }
+
+    [Column("WORKFLOW_CAT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WorkflowCat { get; set; }
+
+    [Column("JSON_DATA")]
+    public string JsonData { get; set; }
 }

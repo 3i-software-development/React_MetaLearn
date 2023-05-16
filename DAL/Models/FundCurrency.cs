@@ -2,61 +2,53 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("FUND_CURRENCY")]
+public partial class FundCurrency
 {
-    [Table("FUND_CURRENCY")]
-    public class FundCurrency
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string CurrencyCode { get; set; }
-        
-        public bool? DefaultPayment { get; set; }
+    [Required]
+    [Column("CURRENCY_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string CurrencyCode { get; set; }
 
-        [StringLength(255)]
-        public string Note { get; set; }
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
-        
-        public DateTime? DeletedTime { get; set; }
+    [Column("DEFAULT_PAYMENT")]
+    public bool? DefaultPayment { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("NOTE")]
+    public string Note { get; set; }
 
-        public decimal ConversionRate { get; set; }
-    }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-    public class FundCurrencyModel
-    {
-        public int Id { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(100)]
-        public string CurrencyCode { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public bool? DefaultPayment { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(255)]
-        public string Note { get; set; }
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
-        public string CreatedTime { get; set; }
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
-        public string UpdatedTime { get; set; }
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public string DeletedTime { get; set; }
-    }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 
+    [Column("CONVERSION_RATE", TypeName = "decimal(14, 5)")]
+    public decimal? ConversionRate { get; set; }
 }

@@ -2,71 +2,60 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("NOTIFICATION_MANAGER")]
+public partial class NotificationManager
 {
-	[Table("NOTIFICATION_MANAGER")]
-	public class NotificationManager
-    {
-		public NotificationManager()
-		{
-            ListUser = new List<UserNotify>();
-		}
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public int Id { get; set; }
+    [Column("NOTIFY_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string NotifyCode { get; set; }
 
-		[StringLength(255)]
-		public string NotifyCode { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-		[StringLength(255)]
-		public string Title { get; set; }
+    [Column("OBJ_TYPE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ObjType { get; set; }
 
-		[StringLength(255)]
-		public string ObjType { get; set; }
+    [Column("OBJ_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ObjCode { get; set; }
 
-		[StringLength(255)]
-		public string ObjCode { get; set; }
+    [Column("JSON_DATA")]
+    public string JsonData { get; set; }
 
-        [StringLength(50)]
-		public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-		public DateTime? CreatedTime { get; set; }
-		[StringLength(50)]
-		public string UpdatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-		public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-		[StringLength(50)]
-		public string DeletedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-		public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-		public bool IsDeleted { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        [NotMapped]
-        public List<UserNotify> ListUser { get; set; }
-
-        public string JsonData
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListUser);
-            }
-            set
-            {
-                ListUser = string.IsNullOrEmpty(value)
-                ? new List<UserNotify>()
-                : JsonConvert.DeserializeObject<List<UserNotify>>(value);
-            }
-        }
-    }
-
-    public class UserNotify
-    {
-        public string UserId { get; set; }
-        public bool IsRead { get; set; }
-    }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 }

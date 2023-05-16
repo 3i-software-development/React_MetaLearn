@@ -2,34 +2,65 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("ACTIVITY_FILE")]
+public partial class ActivityFile
 {
-    [Table("ACTIVITY_FILE")]
-    public class ActivityFile
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string ActivityCode { get; set; }
-        public string FileID { get; set; }
-        public string FileName { get; set; }
-        public string FilePath { get; set; }
-        public string FileType { get; set; }
-        public decimal FileSize { get; set; }
+    [Column("ACTIVITY_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ActivityCode { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
+    [Column("FILE_ID")]
+    [StringLength(255)]
+    public string FileId { get; set; }
 
-        [StringLength(100)]
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
+    [Column("FILE_NAME")]
+    [StringLength(255)]
+    public string FileName { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
-        public bool IsDeleted { get; set; }
-    }
+    [Column("FILE_PATH")]
+    [StringLength(255)]
+    public string FilePath { get; set; }
+
+    [Column("FILE_TYPE")]
+    [StringLength(255)]
+    public string FileType { get; set; }
+
+    [Column("FILE_SIZE", TypeName = "decimal(18, 0)")]
+    public decimal? FileSize { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string UpdatedBy { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 }

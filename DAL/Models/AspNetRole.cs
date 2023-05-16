@@ -1,55 +1,70 @@
-﻿
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ASP_NET_ROLES")]
+[Index("NormalizedName", Name = "ROLE_NAME_INDEX", IsUnique = true)]
+public partial class AspNetRole
 {
+    [Key]
+    [Column("ID")]
+    [StringLength(50)]
+    public string Id { get; set; }
 
-    [Table("ASP_NET_ROLES")]
-    public class AspNetRole : IdentityRole
-    {
-        public AspNetRole() : base()
-        {
-            // AspNetRoleClaims = new HashSet<AspNetRoleClaim>();
-            //AspNetUserRoles = new HashSet<AspNetUserRole>();
-            //ESRoleApps = new HashSet<ESRoleApp>();
-            //ESRolePrivileges = new HashSet<ESRolePrivilege>();
-            AdUserInGroups = new HashSet<AdUserInGroup>();
-            AdPermissions = new HashSet<AdPermission>();
-        }
+    [Column("CONCURRENCY_STAMP")]
+    [StringLength(255)]
+    public string ConcurrencyStamp { get; set; }
 
-        [StringLength(50)]
-        public string Code { get; set; }
+    [Column("NAME")]
+    [StringLength(256)]
+    public string Name { get; set; }
 
-        [StringLength(255)]
-        public string Title { get; set; }
+    [Column("NORMALIZED_NAME")]
+    [StringLength(256)]
+    public string NormalizedName { get; set; }
 
-        [StringLength(2000)]
-        public string Description { get; set; }
+    [Column("CODE")]
+    [StringLength(50)]
+    public string Code { get; set; }
 
-        public int? Ord { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        public int? Priority { get; set; }
+    [Column("DESCRIPTION")]
+    [StringLength(2000)]
+    public string Description { get; set; }
 
-        public DateTime? CreatedDate { get; set; }
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
-        public bool Status { get; set; }
-        public string Color { get; set; }
-        public string Type { get; set; }
-        public string TypeRole { get; set; }
+    [Column("ORD")]
+    public int? Ord { get; set; }
 
-        //public virtual ICollection<AspNetUserRole> AspNetUserRoles { get; set; }
-        //public virtual ICollection<ESRoleApp> ESRoleApps { get; set; }
-        //public virtual ICollection<ESRolePrivilege> ESRolePrivileges { get; set; }
-        public virtual ICollection<AdUserInGroup> AdUserInGroups { get; set; }
-        public virtual ICollection<AdPermission> AdPermissions { get; set; }
-        // public virtual ICollection<AspNetRoleClaim> AspNetRoleClaims { get; set; }
-    }
+    [Column("STATUS")]
+    public bool Status { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_DATE")]
+    public DateTime? CreatedDate { get; set; }
+
+    [Column("PRIORITY")]
+    public int? Priority { get; set; }
+
+    [Column("COLOR")]
+    [StringLength(255)]
+    public string Color { get; set; }
+
+    [Column("TYPE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Type { get; set; }
+
+    [Column("TYPE_ROLE")]
+    [StringLength(255)]
+    public string TypeRole { get; set; }
 }

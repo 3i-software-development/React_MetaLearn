@@ -2,34 +2,22 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("SUPPLIER_FILE")]
+public partial class SupplierFile
 {
-    [Table("SUPPLIER_FILE")]
-    public class SupplierFile
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public int SupplierId { get; set; }
+    [Column("SUPPLIER_ID")]
+    public int? SupplierId { get; set; }
 
-        [StringLength(100)]
-        public string FileCode { get; set; }
-
-        [NotMapped]
-        public string RepoCode { get; set; }
-
-        [NotMapped]
-        public string FileName { get; set; }
-
-        [NotMapped]
-        public string Desc { get; set; }
-
-        [NotMapped]
-        public string NumberDocument { get; set; }
-
-        [NotMapped]
-        public string Tags { get; set; }
-    }
+    [Column("FILE_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string FileCode { get; set; }
 }

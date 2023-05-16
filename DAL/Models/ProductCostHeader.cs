@@ -2,43 +2,73 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PRODUCT_COST_HEADER")]
+public partial class ProductCostHeader
 {
-    [Table("PRODUCT_COST_HEADER")]
-    public class ProductCostHeader
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        [StringLength(255)]
-        public string HeaderCode { get;set; }
-        [StringLength(255)]
-        public string Title { get; set; }
-        public DateTime EffectiveDate { get; set; }
-        public DateTime ExpiryDate { get; set; }
-        public string Note { get; set; }
-        public string QrCode { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime CreatedTime { get; set; }
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
-        public bool IsDeleted { get; set; }
-        [NotMapped]
-        public string sEffectiveDate { get; set; }
-        [NotMapped]
-        public string sExpiryDate { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string ResponsibleUser { get; set; }
+    [Column("HEADER_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string HeaderCode { get; set; }
 
-        [StringLength(255)]
-        public string Status { get; set; }
-        [NotMapped]
-        public string GivenName { get; set; }
-    }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
+
+    [Column("EFFECTIVE_DATE")]
+    public DateTime EffectiveDate { get; set; }
+
+    [Column("EXPIRY_DATE")]
+    public DateTime ExpiryDate { get; set; }
+
+    [Column("NOTE")]
+    [StringLength(500)]
+    public string Note { get; set; }
+
+    [Column("QR_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string QrCode { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("STATUS")]
+    [StringLength(255)]
+    public string Status { get; set; }
+
+    [Column("RESPONSIBLE_USER")]
+    [StringLength(255)]
+    public string ResponsibleUser { get; set; }
 }

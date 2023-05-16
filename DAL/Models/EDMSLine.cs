@@ -2,54 +2,70 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("EDMS_LINE")]
+public partial class EdmsLine
 {
-    [Table("EDMS_LINE")]
-    public class EDMSLine
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string LineCode { get; set; }
+    [Column("LINE_CODE")]
+    [StringLength(255)]
+    public string LineCode { get; set; }
 
-        [StringLength(255)]
-        public string QR_Code { get; set; }
+    [Column("L_POSITION")]
+    [StringLength(255)]
+    public string LPosition { get; set; }
 
-        [StringLength(255)]
-        public string L_Position { get; set; }
+    [Column("L_SIZE")]
+    [StringLength(255)]
+    public string LSize { get; set; }
 
-        [StringLength(255)]
-        public string L_Size { get; set; }
+    [Column("L_TEXT")]
+    [StringLength(255)]
+    public string LText { get; set; }
 
-        [StringLength(255)]
-        public string L_Text { get; set; }
+    [Column("CNT_RACK")]
+    public int? CntRack { get; set; }
 
-        public int CNT_Rack { get; set; }
+    [Column("NOTE")]
+    [StringLength(255)]
+    public string Note { get; set; }
 
-        [StringLength(255)]
-        public string Note { get; set; }
+    [Column("FLOOR_CODE")]
+    [StringLength(255)]
+    public string FloorCode { get; set; }
 
-        [StringLength(255)]
-        public string FloorCode { get; set; }
+    [Column("L_COLOR")]
+    [StringLength(255)]
+    public string LColor { get; set; }
 
-        [StringLength(255)]
-        public string L_Color { get; set; }
+    [Column("L_STATUS")]
+    [StringLength(255)]
+    public string LStatus { get; set; }
 
-        [StringLength(255)]
-        public string L_Status { get; set; }
+    [Column("QR_CODE")]
+    [StringLength(255)]
+    public string QrCode { get; set; }
 
-        public string ShapeData { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
-    }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("SHAPE_DATA")]
+    public string ShapeData { get; set; }
 }

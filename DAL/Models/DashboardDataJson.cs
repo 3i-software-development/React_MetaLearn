@@ -1,25 +1,48 @@
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("DASHBOARD_DATA_JSON")]
+public partial class DashboardDataJson
 {
-    [Table("DASHBOARD_DATA_JSON")]
-    public class DashboardDataJson
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        public string ObjectType { get; set; }
-        public string DataJson{ get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
-        public bool IsDeleted { get; set; }
-        public DateTime? DeletedTime { get; set; }
-        public string DeletedBy { get; set; }
-    }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
+
+    [Column("OBJECT_TYPE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ObjectType { get; set; }
+
+    [Column("DATA_JSON")]
+    public string DataJson { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    public string CreatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    public string UpdatedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 }

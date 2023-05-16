@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("EDMS_AUDIO_BOOK")]
+public partial class EdmsAudioBook
 {
-    [Table("EDMS_AUDIO_BOOK")]
-    public class EDMSAudioBook
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        
-        public int FileID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public int Index { get; set; }
-        
-        public string AudioPath { get; set; }
-    }
+    [Column("FILE_ID")]
+    public int? FileId { get; set; }
+
+    [Column("INDEX")]
+    public int? Index { get; set; }
+
+    [Column("AUDIO_PATH")]
+    [StringLength(1000)]
+    public string AudioPath { get; set; }
 }

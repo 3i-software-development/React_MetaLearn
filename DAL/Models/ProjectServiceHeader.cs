@@ -2,79 +2,80 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Keyless]
+[Table("PROJECT_SERVICE_HEADER")]
+public partial class ProjectServiceHeader
 {
-    [Table("PROJECT_SERVICE_HEADER")]
-    public class ProjectServiceHeader
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public int Id { get; set; }
+    [Column("TICKET_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string TicketCode { get; set; }
 
-        [StringLength(255)]
-        public string TicketCode { get; set; }
-        public string Title { get; set; }
-        public string ProjectCode { get; set; }
+    [Column("TICKET_COUNT")]
+    public int? TicketCount { get; set; }
 
-        public DateTime? TicketTime { get; set; }
+    [Column("TITLE")]
+    [StringLength(500)]
+    public string Title { get; set; }
 
-        public string Note { get; set; }
-        public string Sender { get; set; }
-        public string Receiver { get; set; }
-        public string Supplier { get; set; }
-				
-        public string PortType { get; set; }
+    [Column("PROJECT_CODE")]
+    [StringLength(255)]
+    public string ProjectCode { get; set; }
 
-        public string StatusObjectLog
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatusObjectLog);
-            }
-            set
-            {
-                ListStatusObjectLog = string.IsNullOrEmpty(value)
-                    ? new List<JsonLog>()
-                    : JsonConvert.DeserializeObject<List<JsonLog>>(value);
-            }
-        }
+    [Column("NOTE")]
+    [StringLength(500)]
+    public string Note { get; set; }
 
-        [NotMapped]
-        public List<JsonLog> ListStatusObjectLog { get; set; }
+    [Column("PORT_TYPE")]
+    [StringLength(255)]
+    public string PortType { get; set; }
 
-        public int? TicketCount { get; set; }
-				
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("TICKET_TIME")]
+    public DateTime? TicketTime { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("SENDER")]
+    [StringLength(255)]
+    public string Sender { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("RECEIVER")]
+    [StringLength(255)]
+    public string Receiver { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("SUPPLIER")]
+    [StringLength(255)]
+    public string Supplier { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("STATUS_OBJECT_LOG")]
+    public string StatusObjectLog { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
-    public class ProjectServiceHeaderCrudModel
-    {
-        public int? Id { get; set; }
-        public string TicketCode { get; set; }
-        public string Title { get; set; }
-        public int? TicketCount { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    public string CreatedBy { get; set; }
 
-        public string ProjectCode { get; set; }
-        public string TicketTime { get; set; }
-        public string Note { get; set; }
-        public string Sender { get; set; }
-        public string Receiver { get; set; }
-        public string Supplier { get; set; }
-        public string PortType { get; set; }
-    }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(255)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 }

@@ -1,90 +1,87 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ASSET_RECALLED_HEADER")]
+public partial class AssetRecalledHeader
 {
-    [Table("ASSET_RECALLED_HEADER")]
-    public class AssetRecalledHeader
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string TicketCode { get; set; }
+    [Column("TICKET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string TicketCode { get; set; }
 
-        [StringLength(100)]
-        public string ObjActCode { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        [StringLength(255)]
-        public string Title { get; set; }
+    [Column("STATUS")]
+    public string Status { get; set; }
 
-        public string Status { get; set; }
+    [Column("BRANCH_RECALLED")]
+    [StringLength(255)]
+    public string BranchRecalled { get; set; }
 
-        [StringLength(255)]
-        public string BranchRecalled { get; set; }
+    [Column("USER_RECALLED")]
+    [StringLength(100)]
+    public string UserRecalled { get; set; }
 
-        [StringLength(100)]
-        public string UserRecalled { get; set; }
+    [Column("RECALLED_TIME")]
+    public DateTime? RecalledTime { get; set; }
 
-        [StringLength(100)]
-        public string UserConfirm { get; set; }
-        public DateTime? RecalledTime { get; set; }
+    [Column("LOCATION_RECALLED")]
+    [StringLength(255)]
+    public string LocationRecalled { get; set; }
 
-        [NotMapped]
-        public string sRecalledTime { get; set; }
+    [Column("DESCRIPTION")]
+    [StringLength(1000)]
+    public string Description { get; set; }
 
-        [StringLength(255)]
-        public string LocationRecalled { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(1000)]
-        public string Description { get; set; }
-        public bool IsDeleted { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(100)]
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(100)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    public string DeletedBy { get; set; }
 
-        [NotMapped]
-        public List<AssetRecalledStatus> ListStatus { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public string LogStatus
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatus);
-            }
-            set
-            {
-                ListStatus = string.IsNullOrEmpty(value)
-                ? new List<AssetRecalledStatus>()
-                : JsonConvert.DeserializeObject<List<AssetRecalledStatus>>(value);
-            }
-        }
+    [Column("USER_CONFIRM")]
+    [StringLength(100)]
+    public string UserConfirm { get; set; }
 
-        public string WorkflowCat { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        [NotMapped]
-        public string ActRepeat { get; set; }
-    }
+    [Column("LOG_STATUS")]
+    public string LogStatus { get; set; }
 
-    public class AssetRecalledStatus
-    {
-        public string Type { get; set; }
-        public string Status { get; set; }
-        public string Reason { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
-    }
+    [Column("OBJ_ACT_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ObjActCode { get; set; }
+
+    [Column("WORKFLOW_CAT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WorkflowCat { get; set; }
 }

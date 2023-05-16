@@ -1,59 +1,49 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("AD_USER_IN_GROUP")]
+public partial class AdUserInGroup
 {
-    [Table("AD_USER_IN_GROUP")]
-    public class AdUserInGroup
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UserInGroupId { get; set; }
+    [Key]
+    [Column("USER_IN_GROUP_ID")]
+    public int UserInGroupId { get; set; }
 
-        [StringLength(50)]
-        public string GroupUserCode { get; set; }
-        [JsonIgnore]
-        public virtual AdGroupUser GroupUser { get; set; }
+    [Column("GROUP_USER_CODE")]
+    [StringLength(50)]
+    public string GroupUserCode { get; set; }
 
-        [StringLength(50)]
-        public string UserId { get; set; }
-        [JsonIgnore]
-        public virtual AspNetUser User { get; set; }
+    [Column("USER_ID")]
+    [StringLength(50)]
+    public string UserId { get; set; }
 
-        [StringLength(50)]
-        public string RoleId { get; set; }
-        [JsonIgnore]
-        public virtual AspNetRole Role { get; set; }
+    [Column("ROLE_ID")]
+    [StringLength(50)]
+    public string RoleId { get; set; }
 
-        public bool GrantAll { get; set; }
-        public bool IsMain { get; set; }
-        public bool IsDeleted { get; set; }
+    [Column("GRANT_ALL")]
+    public bool? GrantAll { get; set; }
 
-        [StringLength(2000)]
-        public string BranchReference { set; get; }
+    [Column("IS_MAIN")]
+    public bool? IsMain { get; set; }
 
-        [StringLength(50)]
-        public string ApplicationCode { get; set; }
-        [JsonIgnore]
-        public virtual AdApplication Application { get; set; }
+    [Column("BRANCH_REFERENCE")]
+    [StringLength(2000)]
+    public string BranchReference { get; set; }
 
-        public string Branch { get; set; }
-    }
+    [Column("APPLICATION_CODE")]
+    [StringLength(50)]
+    public string ApplicationCode { get; set; }
 
-    public class UserInGroupModel
-    {
-        public string GroupUserCode { get; set; }
-        public List<AdUserInGroup> UserInGroups { get; set; }
-    }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-    public class AdUserInGroupCustom
-    {
-        public int Id { get; set; }
-        public string GroupUserCode { get; set; }
-        public string Title { get; set; }
-        public string CreatedTime { get; set; }
-        public bool Responsibility { get; set; }
-    }
+    [Column("BRANCH")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string Branch { get; set; }
 }

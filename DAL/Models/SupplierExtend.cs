@@ -2,27 +2,41 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("SUPPLIER_EXTEND")]
+public partial class SupplierExtend
 {
-    [Table("SUPPLIER_EXTEND")]
-    public class SupplierExtend
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
+    [Key]
+    [Column("id")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string ext_code { get; set; }
-        public int? supplier_code { get; set; }
-        public DateTime? created_time { get; set; }
-        public DateTime? updated_time { get; set; }
-        public bool? flag { get; set; }
-        [StringLength(maximumLength: 500)]
-        public string ext_value { get; set; }
-        [StringLength(maximumLength: 255)]
-        public string ext_group { get; set; }
-        public bool isdeleted { get; set; }
+    [Column("ext_code")]
+    [StringLength(100)]
+    public string ExtCode { get; set; }
 
-    }
+    [Column("supplier_code")]
+    public int? SupplierCode { get; set; }
+
+    [Column("created_time")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("updated_time")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("flag")]
+    public int? Flag { get; set; }
+
+    [Column("ext_value")]
+    [StringLength(500)]
+    public string ExtValue { get; set; }
+
+    [Column("ext_group")]
+    [StringLength(255)]
+    public string ExtGroup { get; set; }
+
+    [Column("isdeleted")]
+    public bool? Isdeleted { get; set; }
 }

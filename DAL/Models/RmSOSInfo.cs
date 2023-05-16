@@ -1,24 +1,53 @@
-﻿
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("RM_SOS_INFO")]
+public partial class RmSosInfo
 {
-    [Table("RM_SOS_INFO")]
-    public class RmSOSInfo
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string Code { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string Title { get; set; }
+    [Column("CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string Code { get; set; }
 
-        public string Data { get; set; }
-        public string Address { get; set; }
-        public int Priority { get; set; }
-        public string Note { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime CreatedTime { get; set; }
-    }
+    [Column("TITLE")]
+    [StringLength(100)]
+    public string Title { get; set; }
+
+    [Column("DATA")]
+    [StringLength(1000)]
+    [Unicode(false)]
+    public string Data { get; set; }
+
+    [Column("PRIORITY")]
+    public int? Priority { get; set; }
+
+    [Column("NOTE")]
+    [StringLength(100)]
+    public string Note { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("ADDRESS")]
+    [StringLength(255)]
+    public string Address { get; set; }
+
+    [Column("IMAGE_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ImageCode { get; set; }
 }

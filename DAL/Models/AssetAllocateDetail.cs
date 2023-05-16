@@ -1,47 +1,69 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Table("ASSET_ALLOCATE_DETAILS")]
+public partial class AssetAllocateDetail
 {
-    [Table("ASSET_ALLOCATE_DETAILS")]
-    public class AssetAllocateDetail
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string AssetCode { get; set; }
-        [StringLength(50)]
-        public int Quantity { get; set; }
-        [StringLength(255)]
-        public string CostValue { get; set; }
-        [StringLength(255)]
-        public string ListImages { get; set; }
-        [StringLength(100)]
-        public string Status { get; set; }
-        [StringLength(100)]
-        public string Note { get; set; }
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
-        [StringLength(7)]
-        public DateTime? CreatedTime { get; set; }
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
-        [StringLength(7)]
-        public DateTime? UpdatedTime { get; set; }
-        //[StringLength(50)]
-        public bool IsDeleted { get; set; }
+    [Column("NOTE")]
+    public string Note { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(100)]
-        public string TicketCode { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-    }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
+
+    [Column("ASSET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string AssetCode { get; set; }
+
+    [Column("QUANTITY")]
+    public int? Quantity { get; set; }
+
+    [Column("COST_VALUE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CostValue { get; set; }
+
+    [Column("LIST_IMAGES")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ListImages { get; set; }
+
+    [Column("STATUS")]
+    [StringLength(255)]
+    public string Status { get; set; }
+
+    [Column("TICKET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string TicketCode { get; set; }
 }

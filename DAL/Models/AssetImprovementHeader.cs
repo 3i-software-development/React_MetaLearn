@@ -1,84 +1,106 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ASSET_IMPROVEMENT_HEADER")]
+public partial class AssetImprovementHeader
 {
-    [Table("ASSET_IMPROVEMENT_HEADER")]
-    public class AssetImprovementHeader
-	{
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int TicketID { get; set; }
+    [Key]
+    [Column("TICKET_ID")]
+    public int TicketId { get; set; }
 
-        [StringLength(100)]
-        public string TicketCode { get; set; }
+    [Column("TICKET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string TicketCode { get; set; }
 
-        [StringLength(255)]
-        public string Title { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-		[StringLength(255)]
-		public string Branch { get; set; }
-		
-		[StringLength(255)]
-        public string DepartTransfer { get; set; }
-		
-		[StringLength(255)]
-        public string UserTransfer { get; set; }
+    [Column("BRANCH")]
+    [StringLength(255)]
+    public string Branch { get; set; }
 
-		public DateTime? StartTime { get; set; }
+    [Column("DEPART_TRANSFER")]
+    [StringLength(255)]
+    public string DepartTransfer { get; set; }
 
-		[NotMapped]
-		[StringLength(50)]
-		public string sStartTime { get; set; }
+    [Column("USER_TRANSFER")]
+    [StringLength(255)]
+    public string UserTransfer { get; set; }
 
-		[StringLength(255)]
-		public string LocationTransfer { get; set; }
+    [Column("START_TIME")]
+    public DateTime? StartTime { get; set; }
 
-		[StringLength(255)]
-		public string UnitMaintenance { get; set; }
+    [Column("LOCATION_TRANSFER")]
+    [StringLength(255)]
+    public string LocationTransfer { get; set; }
 
-		public DateTime? ReceivedTime { get; set; }
+    [Column("UNIT_MAINTENANCE")]
+    [StringLength(255)]
+    public string UnitMaintenance { get; set; }
 
-		[NotMapped]
-		[StringLength(50)]
-		public string sReceivedTime { get; set; }
+    [Column("RECEIVED_TIME")]
+    public DateTime? ReceivedTime { get; set; }
 
-		[StringLength(255)]
-		public string LocationReceived { get; set; }
+    [Column("LOCATION_RECEIVED")]
+    [StringLength(255)]
+    public string LocationReceived { get; set; }
 
-		public string Status { get; set; }
+    [Column("STATUS")]
+    public string Status { get; set; }
 
-		[StringLength(255)]
-		public string Note { get; set; }
+    [Column("LOG_STATUS")]
+    public string LogStatus { get; set; }
 
-        [StringLength(255)]
-        public string ObjActCode { get; set; }
+    [Column("NOTE")]
+    [StringLength(500)]
+    public string Note { get; set; }
 
-        [StringLength(50)]
-		public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-		public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-		[StringLength(50)]
-		public string UpdatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-		public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-		[StringLength(50)]
-		public string DeletedBy { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-		public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-		public bool IsDeleted { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        [StringLength(50)]
-        public string Currency { get; set; }
+    [Column("OBJ_ACT_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ObjActCode { get; set; }
 
-        public int TotalMoney { get; set; }
+    [Column("TOTAL_MONEY")]
+    public int? TotalMoney { get; set; }
 
-        public string WorkflowCat { get; set; }
-    }
+    [Column("CURRENCY")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string Currency { get; set; }
+
+    [Column("WORKFLOW_CAT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WorkflowCat { get; set; }
 }

@@ -2,21 +2,41 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+public partial class VProjectProductRemain
 {
-    [Table("V_PROJECT_PRODUCT_REMAIN")]
-    public class VProjectProductRemain
-    {
-        [Key]
-        public Guid Id { get; set; }
-        public string ProductCode { get; set; }
-        public string ProductName { get; set; }
-        public string Unit { get; set; }
-        public string UnitName { get; set; }
-        public string ProjectCode { get; set; }
-        public string ProjectTitle { get; set; }
-        public decimal? TotalRemain { get; set; }
-    }
+    [Column("ID")]
+    public Guid? Id { get; set; }
+
+    [Column("PRODUCT_CODE")]
+    [StringLength(100)]
+    public string ProductCode { get; set; }
+
+    [Column("PRODUCT_NAME")]
+    [StringLength(255)]
+    public string ProductName { get; set; }
+
+    [Column("UNIT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Unit { get; set; }
+
+    [Column("UNIT_NAME")]
+    [StringLength(255)]
+    public string UnitName { get; set; }
+
+    [Column("PROJECT_CODE")]
+    [StringLength(100)]
+    public string ProjectCode { get; set; }
+
+    [Column("PROJECT_TITLE")]
+    [StringLength(255)]
+    public string ProjectTitle { get; set; }
+
+    [Column("TOTAL_REMAIN", TypeName = "decimal(38, 2)")]
+    public decimal? TotalRemain { get; set; }
 }

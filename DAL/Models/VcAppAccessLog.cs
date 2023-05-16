@@ -2,28 +2,35 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("VC_APP_ACCESS_LOG")]
+public partial class VcAppAccessLog
 {
-    [Table("VC_APP_ACCESS_LOG")]
-    public class VcAppAccessLog
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string UserName { get; set; }
+    [Column("USER_NAME")]
+    [StringLength(255)]
+    public string UserName { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string Password { get; set; }
+    [Column("PASSWORD")]
+    [StringLength(255)]
+    public string Password { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
-        public string Token { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string Status { get; set; }
+    [Column("TOKEN")]
+    public string Token { get; set; }
 
-        public string Imei { get; set; }
-    }
+    [Column("STATUS")]
+    [StringLength(50)]
+    public string Status { get; set; }
+
+    [Column("IMEI")]
+    public string Imei { get; set; }
 }

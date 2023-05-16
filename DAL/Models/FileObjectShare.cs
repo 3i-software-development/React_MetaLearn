@@ -2,45 +2,56 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("FILE_OBJECT_SHARE")]
+public partial class FileObjectShare
 {
-    [Table("EDMS_OBJECT_SHARE_FILE")]
-    public class EDMSObjectShareFile
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255), Required]
-        public string ObjectType { get; set; }
+    [Column("OBJECT_TYPE")]
+    [StringLength(255)]
+    public string ObjectType { get; set; }
 
-        [StringLength(255), Required]
-        public string ObjectCode { get; set; }
+    [Column("OBJECT_CODE")]
+    [StringLength(255)]
+    public string ObjectCode { get; set; }
 
-        [StringLength(255),Required]
-        public string ObjectCodeShared { get; set; }
+    [Column("FILE_NAME")]
+    [StringLength(255)]
+    public string FileName { get; set; }
 
-        [StringLength(255), Required]
-        public string ObjectTypeShared { get; set; }
+    [Column("FILE_PATH")]
+    [StringLength(255)]
+    public string FilePath { get; set; }
 
-        [StringLength(255), Required]
-        public string FileCode { get; set; }
+    [Column("PERMISSION")]
+    [StringLength(255)]
+    public string Permission { get; set; }
 
-        [StringLength(255)]
-        public string FileName { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(255)]
-        public string FilePath { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("FILE_CODE")]
+    [StringLength(255)]
+    public string FileCode { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
-    }
+    [Column("OBJECT_CODE_SHARED")]
+    [StringLength(255)]
+    public string ObjectCodeShared { get; set; }
 }

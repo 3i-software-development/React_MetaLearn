@@ -1,40 +1,50 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("CARD_USER_ACTIVITY")]
+public partial class CardUserActivity
 {
-    [Table("CARD_USER_ACTIVITY")]
-    public class CardUserActivity
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        
-        [StringLength(100)]
-        public string UserId { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string CardCode { get; set; }
+    [Column("USER_ID")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string UserId { get; set; }
 
-        [StringLength(100)]
-        public string Action { get; set; }
+    [Column("CARD_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string CardCode { get; set; }
 
-        public bool IsCheck { get; set; }
+    [Column("ACTION")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string Action { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+    [Column("IS_CHECK")]
+    public bool IsCheck { get; set; }
 
-        [StringLength(100)]
-        public string FromDevice { get; set;}
-        public string IdObject { get; set;}
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
 
-        [StringLength(1000)]
-        public string ChangeDetails { get; set; }
+    [Column("FROM_DEVICE")]
+    [StringLength(255)]
+    public string FromDevice { get; set; }
 
-        [NotMapped]
-        public List<String> ListLog { get; set; }
+    [Column("ID_OBJECT")]
+    [StringLength(255)]
+    public string IdObject { get; set; }
 
-        public string Log { get; set; }
-    }
+    [Column("CHANGE_DETAILS")]
+    public string ChangeDetails { get; set; }
+
+    [Column("LOG")]
+    public string Log { get; set; }
 }

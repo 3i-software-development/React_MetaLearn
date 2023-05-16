@@ -1,37 +1,43 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("CUSTOMER_REMINDER")]
+public partial class CustomerReminder
 {
-    [Table("CUSTOMER_REMINDER")]
-    public class CustomerReminder
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public int CustomerId { get; set; }
+    [Column("CUSTOMER_ID")]
+    public int? CustomerId { get; set; }
 
-        [StringLength(100), Required]
-        public string ReminderCode { get; set; }
+    [Column("REMINDER_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ReminderCode { get; set; }
 
-        public DateTime? ReminderTime { get; set; }
+    [Column("REMINDER_TIME")]
+    public DateTime? ReminderTime { get; set; }
 
-        [NotMapped, Required]
-        public string ReminderTimeView { get; set; }
+    [Column("NOTE")]
+    public string Note { get; set; }
 
-        [Required]
-        public string Note { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
-
-        public DateTime? UpdatedTime { get; set; }
-
-    }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 }

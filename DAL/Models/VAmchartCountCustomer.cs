@@ -1,17 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+public partial class VAmchartCountCustomer
 {
-    [Table("V_AMCHART_COUNT_CUSTOMER")]
-    public class VAmchartCountCustomer
-    {
-        [Key]
-        public Guid Id { get; set; }
-        public int? Month { get; set; }
-        public int? Income { get; set; }
-        [NotMapped]
-        public decimal? Total { get; set; }
-    }
+    [Column("ID")]
+    public Guid? Id { get; set; }
+
+    [Column("MONTH")]
+    public int? Month { get; set; }
+
+    [Column("INCOME")]
+    public int? Income { get; set; }
 }

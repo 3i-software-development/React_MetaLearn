@@ -2,24 +2,29 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("MATERIAL_ATTRIBUTE")]
+public partial class MaterialAttribute
 {
-    [Table("MATERIAL_ATTRIBUTE")]
-    public class MaterialAttribute
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string Attribute { get; set; }
+    [Column("ATTRIBUTE")]
+    [StringLength(100)]
+    public string Attribute { get; set; }
 
-        [StringLength(255)]
-        public string AttributeValue { get; set; }
+    [Column("ATTRIBUTE_VALUE")]
+    [StringLength(255)]
+    public string AttributeValue { get; set; }
 
-        [StringLength(500)]
-        public string Note { get; set; }
-        public int? ProductId { get; set; }
-    }
+    [Column("NOTE")]
+    [StringLength(500)]
+    public string Note { get; set; }
+
+    [Column("PRODUCT_ID")]
+    public int? ProductId { get; set; }
 }

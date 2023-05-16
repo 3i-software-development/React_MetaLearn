@@ -1,45 +1,52 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("AD_PARAMETER")]
+public partial class AdParameter
 {
-    [Table("AD_PARAMETER")]
-    public class AdParameter
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public decimal ParameterId { get; set; }
+    [Column("PARAMETER_ID", TypeName = "decimal(10, 0)")]
+    public decimal ParameterId { get; set; }
 
-        [Key]
-        [StringLength(50)]
-        public string ParameterCode { get; set; }
+    [Required]
+    [Column("PARAMETER_CODE")]
+    [StringLength(50)]
+    public string ParameterCode { get; set; }
 
-        [StringLength(255)]
-        public string Title { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        [StringLength(500)]
-        public string Description { get; set; }
+    [Column("DESCRIPTION")]
+    [StringLength(500)]
+    public string Description { get; set; }
 
-        [StringLength(50)]
-        public string Value { get; set; }
-        [StringLength(50)]
-        public string Value2 { get; set; }
-        [StringLength(50)]
-        public string Value3 { get; set; }
-        [StringLength(50)]
-        public string Value4 { get; set; }
-        [StringLength(50)]
-        public string Value5 { get; set; }
+    [Column("PARENT_CODE")]
+    [StringLength(50)]
+    public string ParentCode { get; set; }
 
-        [StringLength(50)]
-        public string ParentCode { get; set; }
-        [JsonIgnore]
-        [ForeignKey("ParentCode")]
-        [InverseProperty("InverseParent")]
-        public virtual AdParameter Parent { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<AdParameter> InverseParent { get; set; }
-    }
+    [Column("VALUE")]
+    [StringLength(50)]
+    public string Value { get; set; }
+
+    [Column("VALUE2")]
+    [StringLength(50)]
+    public string Value2 { get; set; }
+
+    [Column("VALUE3")]
+    [StringLength(50)]
+    public string Value3 { get; set; }
+
+    [Column("VALUE4")]
+    [StringLength(50)]
+    public string Value4 { get; set; }
+
+    [Column("VALUE5")]
+    [StringLength(50)]
+    public string Value5 { get; set; }
 }

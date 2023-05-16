@@ -2,37 +2,53 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ASSET_ZONE_MAPPING")]
+public partial class AssetZoneMapping
 {
-    [Table("ASSET_ZONE_MAPPING")]
-    public class AssetZoneMapping
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string AssetCode { get; set; }
+    [Column("ASSET_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string AssetCode { get; set; }
 
-        public string ZoneCode { get; set; }
+    [Column("ZONE_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ZoneCode { get; set; }
 
-        public string PackCode { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(100)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("PACK_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string PackCode { get; set; }
 }

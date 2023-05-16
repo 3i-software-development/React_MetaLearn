@@ -2,43 +2,61 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("LMS_SUBJECT")]
+public partial class LmsSubject
 {
-    [Table("LMS_SUBJECT")]
-    public class LMSSubject
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string LmsSubjectCode { get; set; }
+    [Column("LMS_SUBJECT_CODE")]
+    [StringLength(255)]
+    public string LmsSubjectCode { get; set; }
 
-        [StringLength(255)]
-        public string LmsSubjectName { get; set; }
+    [Column("LMS_SUBJECT_NAME")]
+    [StringLength(255)]
+    public string LmsSubjectName { get; set; }
 
-        public string LmsSubjectDesc { get; set; }
+    [Column("LMS_SUBJECT_DESC")]
+    [StringLength(255)]
+    public string LmsSubjectDesc { get; set; }
 
-        [StringLength(50)]
-        public string LmsSubjectType { get; set; }
+    [Column("LMS_SUBJECT_GROUP")]
+    [StringLength(255)]
+    public string LmsSubjectGroup { get; set; }
 
-        public string LmsSubjectGroup { get; set; }
-        
-        public string CreatedBy { get; set; }
+    [Column("LMS_SUBJECT_TYPE")]
+    [StringLength(255)]
+    public string LmsSubjectType { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 }

@@ -1,166 +1,225 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ASP_NET_USERS")]
+[Index("NormalizedEmail", Name = "EMAIL_INDEX")]
+[Index("AccountExecutiveId", Name = "IX_1366617594")]
+[Index("BranchId", Name = "IX_ASP_NET_USERS_BRANCH_ID")]
+[Index("NormalizedUserName", Name = "USER_NAME_INDEX", IsUnique = true)]
+public partial class AspNetUser
 {
-    [Table("AspNetUsers")]
-    public class AspNetUser : IdentityUser
-    {
-        public AspNetUser() : base()
-        {
-            //AspNetUserClaims = new HashSet<AspNetUserClaim>();
-            //AspNetUserLogins = new HashSet<AspNetUserLogin>();
-            //AspNetUserRoles = new HashSet<AspNetUserRole>();
-            AdUserInGroups = new HashSet<AdUserInGroup>();
-            AdPermissions = new HashSet<AdPermission>();
-            //ESUserInGroups = new HashSet<ESUserInGroup>();
-            //ESExtendAccounts = new HashSet<ESExtendAccount>();
-            //ESUserApps = new HashSet<ESUserApp>();
-            //ESUserPrivileges = new HashSet<ESUserPrivilege>();
-        }
+    [Key]
+    [Column("ID")]
+    [StringLength(50)]
+    public string Id { get; set; }
 
-        public int? OfficeNumber { get; set; }
-        [StringLength(256)]
-        public string FamilyName { get; set; }
-        [StringLength(256)]
-        public string GivenName { get; set; }
-        [StringLength(256)]
-        public string MiddleName { get; set; }
-        [StringLength(256)]
-        public string Picture { get; set; }
-        [StringLength(256)]
-        public string FrontFace { get; set; }
-        [StringLength(256)]
-        public string BackFace { get; set; }
+    [Column("CONCURRENCY_STAMP")]
+    [StringLength(50)]
+    public string ConcurrencyStamp { get; set; }
 
-        public DateTime? CreatedDate { get; set; }
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
-        public DateTime? UpdatedDate { get; set; }
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Required]
+    [Column("USER_NAME")]
+    [StringLength(256)]
+    public string UserName { get; set; }
 
-        public bool Active { get; set; }
+    [Required]
+    [Column("NORMALIZED_USER_NAME")]
+    [StringLength(256)]
+    public string NormalizedUserName { get; set; }
 
-        [StringLength(50)]
-        public string EmployeeCode { get; set; }
-        [StringLength(2000)]
-        public string Description { get; set; }
-        [StringLength(2000)]
-        public string Note { get; set; }
+    [Column("EMAIL")]
+    [StringLength(256)]
+    public string Email { get; set; }
 
-        [StringLength(2000)]
-        public string Reason { get; set; }
+    [Column("NORMALIZED_EMAIL")]
+    [StringLength(256)]
+    public string NormalizedEmail { get; set; }
 
-        public int? UserType { get; set; }
-        public bool IsExceeded { get; set; }
+    [Column("EMAIL_CONFIRMED")]
+    public bool EmailConfirmed { get; set; }
 
-        public bool? Gender { get; set; }
+    [Column("TWO_FACTOR_ENABLED")]
+    public bool TwoFactorEnabled { get; set; }
 
-        public bool? IsCheckin { get; set; }
-        public int IsOnline { get; set; }
-        public DateTime? LoginTime { get; set; }
-        public DateTime? LogoutTime { get; set; }
-        public string Area { get; set; }
-        public int? TypeStaff { get; set; }
-        public string TypeWork { get; set; }
+    [Column("ACCESS_FAILED_COUNT")]
+    public int AccessFailedCount { get; set; }
 
-        [StringLength(2000)]
-        public string RoleCombination { get; set; }
+    [Column("LOCKOUT_ENABLED")]
+    public bool LockoutEnabled { get; set; }
 
-        [StringLength(50)]
-        public string DepartmentId { set; get; }
+    [Column("LOCKOUT_END")]
+    public DateTime? LockoutEnd { get; set; }
 
-        public string SessionLogin { get; set; }
+    [Column("SECURITY_STAMP")]
+    [StringLength(50)]
+    public string SecurityStamp { get; set; }
 
-        //[JsonIgnore]
-        //[ForeignKey("DepartmentId")]
-        //[InverseProperty("DepartmentUsers")]
-        //public virtual VIBOrganization Department { get; set; }
+    [Column("PASSWORD_HASH")]
+    [StringLength(2000)]
+    public string PasswordHash { get; set; }
 
-        [StringLength(50)]
-        public string BranchId { set; get; }
-        [JsonIgnore]
-        [ForeignKey("BranchId")]
-        [InverseProperty("BranchUsers")]
-        public virtual AdOrganization Branch { get; set; }
+    [Column("PHONE_NUMBER")]
+    [StringLength(100)]
+    public string PhoneNumber { get; set; }
 
-        //[StringLength(50)]
-        //public string ProfitCenterId { set; get; }
-        //[JsonIgnore]
-        //[ForeignKey("ProfitCenterId")]
-        //[InverseProperty("ProfitCenterUsers")]
-        //public virtual VIBOrganization ProfitCenter { get; set; }
+    [Column("PHONE_NUMBER_CONFIRMED")]
+    public bool PhoneNumberConfirmed { get; set; }
 
-        [StringLength(5)]
-        public string AccountExecutiveId { set; get; }
-        //[JsonIgnore]
-        //[ForeignKey("AccountExecutiveId")]
-        //[InverseProperty("AccountExecutiveUsers")]
-        //public virtual VIBOrganization AccountExecutive { get; set; }
+    [Column("FAMILY_NAME")]
+    [StringLength(256)]
+    public string FamilyName { get; set; }
 
-        [StringLength(2000)]
-        public string OrgReference { set; get; }
+    [Column("MIDDLE_NAME")]
+    [StringLength(256)]
+    public string MiddleName { get; set; }
 
-        [JsonIgnore]
-        public virtual ICollection<AdUserInGroup> AdUserInGroups { get; set; }
-        [JsonIgnore]
-        public virtual ICollection<AdPermission> AdPermissions { get; set; }
-        //public virtual ICollection<ESUserInGroup> ESUserInGroups { get; set; }
-        //public virtual ICollection<ESExtendAccount> ESExtendAccounts { get; set; }
-        //public virtual ICollection<ESUserApp> ESUserApps { get; set; }
-        //public virtual ICollection<ESUserPrivilege> ESUserPrivileges { get; set; }
-        [JsonIgnore]
-        [NotMapped]
-        public virtual ICollection<IdentityUserRole<string>> AspNetUserRoles { get; set; }
-        public int? LoginFailCount { set; get; }
-        public decimal? Balance { set; get; }
+    [Column("GIVEN_NAME")]
+    [StringLength(256)]
+    public string GivenName { get; set; }
 
-        public string ShiftList { get; set; }
-        public string SignImage { get; set; }
-        public string LeadersOfUser { get; set; }
-    }
-    /*public class AspNetUserCustom
-    {
-        public string Id { set; get; }
-        public string UserName { set; get; }
-        public string Password { set; get; }
-        public string Email { set; get; }
-        public string PhoneNumber { set; get; }
-        public string Company_Code { set; get; }
-        public int? OfficeNumber { set; get; }
-        public string FamilyName { set; get; }
-        public string MiddleName { set; get; }
-        public string GivenName { set; get; }
-        public string EmployeeCode { set; get; }
-        public int? OrgId { set; get; }
-        public string DepartmentId { set; get; }
-        public string BranchId { set; get; }
-        public string ProfitCenterId { set; get; }
-        public string AccountExecutiveId { set; get; }
+    [Column("OFFICE_NUMBER", TypeName = "decimal(10, 0)")]
+    public decimal? OfficeNumber { get; set; }
 
-        public string ApplicationCode { set; get; }
-        public bool Active { get; set; }
-        public short UserType { get; set; }
-        public string Description { get; set; }
-        public string Note { get; set; }
-        public string Reason { get; set; }
-        public string Picture { get; set; }
-        public string FrontFace { get; set; }
-        public string BackFace { get; set; }
-        public string RoleId { set; get; }
-        public ESEIM.Utils.TempSub TempSub { set; get; }
-        public int? TypeStaff { set; get; }
-        public string Area { set; get; }
-        public string RoleCombination { get; set; }
-        public string GroupUserCode { set; get; }
-        public string ShiftList { get; set; }
-        public string SignImage { get; set; }
+    [Column("PICTURE")]
+    [StringLength(256)]
+    public string Picture { get; set; }
 
-        public string LeadersOfUser { get; set; }
-    }*/
+    [Column("ACTIVE")]
+    public bool Active { get; set; }
+
+    [Column("EMPLOYEE_CODE")]
+    [StringLength(50)]
+    public string EmployeeCode { get; set; }
+
+    [Column("BRANCH_ID")]
+    [StringLength(50)]
+    public string BranchId { get; set; }
+
+    [Column("ACCOUNT_EXECUTIVE_ID")]
+    [StringLength(50)]
+    public string AccountExecutiveId { get; set; }
+
+    [Column("ORG_REFERENCE")]
+    [StringLength(2000)]
+    public string OrgReference { get; set; }
+
+    [Column("DESCRIPTION")]
+    [StringLength(2000)]
+    public string Description { get; set; }
+
+    [Column("NOTE")]
+    [StringLength(2000)]
+    public string Note { get; set; }
+
+    [Column("REASON")]
+    [StringLength(2000)]
+    public string Reason { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_DATE")]
+    public DateTime? CreatedDate { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_DATE")]
+    public DateTime? UpdatedDate { get; set; }
+
+    [Column("USER_TYPE")]
+    public int? UserType { get; set; }
+
+    [Column("IS_EXCEEDED")]
+    public bool IsExceeded { get; set; }
+
+    [Column("GENDER")]
+    public bool? Gender { get; set; }
+
+    [Column("IS_CHECKIN")]
+    public bool? IsCheckin { get; set; }
+
+    [Column("IS_ONLINE")]
+    public int IsOnline { get; set; }
+
+    [Column("AREA")]
+    [StringLength(4000)]
+    public string Area { get; set; }
+
+    [Column("TYPE_STAFF")]
+    public int? TypeStaff { get; set; }
+
+    [Column("TYPE_WORK")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string TypeWork { get; set; }
+
+    [Column("DEPARTMENT_ID")]
+    [StringLength(50)]
+    public string DepartmentId { get; set; }
+
+    [Column("ROLE_COMBINATION")]
+    [StringLength(2000)]
+    public string RoleCombination { get; set; }
+
+    [Column("LOGIN_FAIL_COUNT")]
+    public int? LoginFailCount { get; set; }
+
+    [Column("SHIFT_LIST")]
+    [StringLength(255)]
+    public string ShiftList { get; set; }
+
+    [Column("SIGN_IMAGE")]
+    [StringLength(255)]
+    public string SignImage { get; set; }
+
+    [Column("SESSION_LOGIN")]
+    public string SessionLogin { get; set; }
+
+    [Column("ROAD")]
+    [StringLength(4000)]
+    [Unicode(false)]
+    public string Road { get; set; }
+
+    [Column("GROUP")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Group { get; set; }
+
+    [Column("CUSTOMER_ID")]
+    [StringLength(255)]
+    public string CustomerId { get; set; }
+
+    [Column("USER_ACTIVE")]
+    [StringLength(10)]
+    [Unicode(false)]
+    public string UserActive { get; set; }
+
+    [Column("LEADERS_OF_USER")]
+    [StringLength(1000)]
+    public string LeadersOfUser { get; set; }
+
+    [Column("LOGIN_TIME")]
+    public DateTime? LoginTime { get; set; }
+
+    [Column("LOGOUT_TIME")]
+    public DateTime? LogoutTime { get; set; }
+
+    [Column("BALANCE", TypeName = "decimal(18, 0)")]
+    public decimal? Balance { get; set; }
+
+    [Column("FRONT_FACE")]
+    [StringLength(256)]
+    public string FrontFace { get; set; }
+
+    [Column("BACK_FACE")]
+    [StringLength(256)]
+    public string BackFace { get; set; }
 }

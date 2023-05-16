@@ -1,58 +1,89 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("CARD_MAPPING")]
+public partial class CardMapping
 {
-    [Table("CARD_MAPPING")]
-    public class CardMapping
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string CardCode { get; set; }
+    [Column("CARD_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CardCode { get; set; }
 
-        [StringLength(255)]
-        public string BoardCode { get; set; }
+    [Column("BOARD_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string BoardCode { get; set; }
 
-        [StringLength(255)]
-        public string ListCode { get; set; }
+    [Column("LIST_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ListCode { get; set; }
 
-        [StringLength(255)]
-        public string ProjectCode { get; set; }
+    [Column("PROJECT_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ProjectCode { get; set; }
 
-        [StringLength(255)]
-        public string ContractCode { get; set; }
+    [Column("CONTRACT_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ContractCode { get; set; }
 
-        [StringLength(255)]
-        public string CustomerCode { get; set; }
+    [Column("CUSTOMER_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CustomerCode { get; set; }
 
-        [StringLength(255)]
-        public string SupplierCode { get; set; }
+    [Column("SUPPLIER_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string SupplierCode { get; set; }
 
-        [StringLength(50)]
-        public string Relative { get; set; }
+    [Column("RELATIVE")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string Relative { get; set; }
 
-        [StringLength(255)]
-        public string TeamCode { get; set; }
+    [Column("TEAM_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string TeamCode { get; set; }
 
-        [StringLength(255)]
-        public string GroupUserCode { get; set; }
+    [Column("GROUP_USER_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string GroupUserCode { get; set; }
 
-        [StringLength(255)]
-        public string UserId { get; set; }
+    [Column("USER_ID")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string UserId { get; set; }
 
-        public string Responsibility { get; set; }
+    [Column("RESPONSIBILITY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string Responsibility { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
-    }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 }

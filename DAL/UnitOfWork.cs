@@ -20,8 +20,8 @@ namespace DAL
         readonly ApplicationDbContext _context;
 
         ICustomerRepository _customers;
-        IProductRepository _products;
-        IOrdersRepository _orders;
+        //IProductRepository _products;
+        //IOrdersRepository _orders;
 
 
 
@@ -46,7 +46,7 @@ namespace DAL
 
 
 
-        public IProductRepository Products
+        /*public IProductRepository Products
         {
             get
             {
@@ -68,7 +68,7 @@ namespace DAL
 
                 return _orders;
             }
-        }
+        }*/
 
 
 

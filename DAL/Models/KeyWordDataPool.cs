@@ -2,33 +2,53 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Table("KEY_WORD_DATA_POOL")]
+public partial class KeyWordDataPool
 {
-    [Table("KEY_WORD_DATA_POOL")]
-    public class KeyWordDataPool
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        public string KeyWord { get; set; }
-        public string Describe { get; set; }
-        public string Group { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
+    [Column("KEY_WORD")]
+    [StringLength(255)]
+    public string KeyWord { get; set; }
 
-        [StringLength(100)]
-        public string UpdatedBy { get; set; }
+    [Column("DESCRIBE")]
+    [StringLength(255)]
+    public string Describe { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("GROUP")]
+    [StringLength(255)]
+    public string Group { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string UpdatedBy { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 }

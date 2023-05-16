@@ -2,28 +2,58 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("LOG_MESSAGE")]
+public partial class LogMessage
 {
-    [Table("LOG_MESSAGE")]
-    public class LogMessage
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        public string GroupCode { get; set; }
-        public string Channel { get; set; }
-        public string Content { get; set; }
-        public string User { get; set; }
-        public DateTime TimeChat { get; set; }
-        public string Image { get; set; }
-        public string GivenName { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime CreatedTime { get; set; }
-        [NotMapped]
-        public string Time { get; set; }
-        public bool IsFile { get; set; }
-        public int? FileId { get; set; }
-        public string Url { get; set; }
-    }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
+
+    [Column("CHANNEL")]
+    [StringLength(255)]
+    public string Channel { get; set; }
+
+    [Column("CONTENT")]
+    public string Content { get; set; }
+
+    [Column("USER")]
+    [StringLength(255)]
+    public string User { get; set; }
+
+    [Column("TIME_CHAT")]
+    public DateTime? TimeChat { get; set; }
+
+    [Column("IMAGE")]
+    [StringLength(1000)]
+    public string Image { get; set; }
+
+    [Column("GIVEN_NAME")]
+    [StringLength(255)]
+    public string GivenName { get; set; }
+
+    [Column("GROUP_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string GroupCode { get; set; }
+
+    [Column("IS_FILE")]
+    public bool? IsFile { get; set; }
+
+    [Column("FILE_ID")]
+    public int? FileId { get; set; }
+
+    [Column("URL")]
+    [StringLength(255)]
+    public string Url { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 }

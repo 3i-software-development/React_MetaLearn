@@ -2,28 +2,33 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("VC_FCM_MESSAGE")]
+public partial class VcFcmMessage
 {
-    [Table("VC_FCM_MESSAGE")]
-    public class VcFcmMessage
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string UserName { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(maximumLength: 500)]
+    [Column("MESSAGE")]
+    [StringLength(1000)]
+    public string Message { get; set; }
 
-        public string Title { get; set; }
+    [Column("TITLE")]
+    [StringLength(500)]
+    public string Title { get; set; }
 
-        [StringLength(maximumLength: 1000)]
-        public string Message { get; set; }
+    [Column("TYPE")]
+    public int Type { get; set; }
 
-        public int Type { get; set; }
-
-        public DateTime? CreatedTime { get; set; }
-    }
+    [Required]
+    [Column("USER_NAME")]
+    [StringLength(50)]
+    public string UserName { get; set; }
 }

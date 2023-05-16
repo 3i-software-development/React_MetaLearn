@@ -2,20 +2,28 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("VC_JNANA_NEWS_ARTICLE_FILE")]
+public partial class VcJnanaNewsArticleFile
 {
-    [Table("VC_JNANA_NEWS_ARTICLE_FILE")]
-    public class VCJnanaNewsArticleFile
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public string file_code { get; set; }
-        public string article_code { get; set; }
-        public int? created_by { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public DateTime? created_time { get; set; }
-       
-    }
+    [Column("FILE_CODE")]
+    [StringLength(250)]
+    public string FileCode { get; set; }
+
+    [Column("CREATED_BY")]
+    public int? CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("ARTICLE_CODE")]
+    [StringLength(250)]
+    public string ArticleCode { get; set; }
 }

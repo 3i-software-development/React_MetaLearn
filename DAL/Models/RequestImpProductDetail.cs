@@ -1,93 +1,83 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("REQUEST_IMP_PRODUCT_DETAIL")]
+public partial class RequestImpProductDetail
 {
-    [Table("REQUEST_IMP_PRODUCT_DETAIL")]
-    public class RequestImpProductDetail
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string ReqCode { get; set; }
+    [Column("REQ_CODE")]
+    [StringLength(255)]
+    public string ReqCode { get; set; }
 
-        [StringLength(255)]
-        public string ProductCode { get; set; }
-        [NotMapped]
-        public string ProductName { get; set; }
-        public string ProductType { get; set; }
+    [Column("PRODUCT_CODE")]
+    [StringLength(255)]
+    public string ProductCode { get; set; }
 
-        [StringLength(255)]
-        public string PoCount { get; set; }
+    [Column("PO_COUNT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string PoCount { get; set; }
 
-        public decimal? RateConversion { get; set; }
+    [Column("RATE_CONVERSION", TypeName = "decimal(18, 2)")]
+    public decimal? RateConversion { get; set; }
 
-        public decimal? RateLoss { get; set; }
+    [Column("RATE_LOSS", TypeName = "decimal(18, 2)")]
+    public decimal? RateLoss { get; set; }
 
-        public decimal Quantity { get; set; }
+    [Column("QUANTITY", TypeName = "decimal(18, 0)")]
+    public decimal? Quantity { get; set; }
 
-        [StringLength(50)]
-        public string Unit { get; set; }
-        [NotMapped]
-        public decimal? UnitPrice { get; set; }
-        [NotMapped]
-        public string UnitName { get; set; }
+    [Column("NOTE")]
+    [StringLength(255)]
+    public string Note { get; set; }
 
-        [StringLength(500)]
-        public string Note { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
-        public string SupCode { get; set; }
-        public DateTime? ExpectedDate { get; set; }
-        [NotMapped]
-        public string sExpectedDate { get; set; }
-        public bool IsDeleted { get; set; }
-    }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-    public class RequestImpProductDetailExport
-    {
-        public int No { get; set; }
-        //public string ReqCode { get; set; }
-        public string ProductCode { get; set; }
-        public string ProductName { get; set; }
-        public string SupName { get; set; }
-        public string Title { get; set; }
-        public string PoCount { get; set; }
-        public decimal? RateConversion { get; set; }
-        public decimal? RateLoss { get; set; }
-        public decimal Quantity { get; set; }
-        public string Unit { get; set; }
-        public string ExpectedDate { get; set; }
-        public string CreatedTime { get; set; }
-        public string Note { get; set; }
-    }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-    public class RequestImpProductDetailExportManufacurer
-    {
-        public int No { get; set; }
-        //public string ReqCode { get; set; }
-        public string ProductCode { get; set; }
-        public string ProductName { get; set; }
-        public string SupName { get; set; }
-        public decimal Quantity { get; set; }
-        public string Unit { get; set; }
-        public string Note { get; set; }
-    }
+    [Column("UNIT")]
+    [StringLength(50)]
+    public string Unit { get; set; }
+
+    [Column("PRODUCT_TYPE")]
+    [StringLength(255)]
+    public string ProductType { get; set; }
+
+    [Column("SUP_CODE")]
+    [StringLength(255)]
+    public string SupCode { get; set; }
+
+    [Column("EXPECTED_DATE")]
+    public DateTime? ExpectedDate { get; set; }
 }

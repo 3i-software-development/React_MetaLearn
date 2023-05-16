@@ -2,53 +2,61 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("HR_CONTACT")]
+public partial class HrContact
 {
-    [Table("HR_CONTACT")]
-    public class HRContact
-    {
+    [Key]
+    [Column("id")]
+    public int Id { get; set; }
 
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
+    [Column("Created_Time")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string Name { get; set; }
+    [Column("Updated_Time")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string Relationship { get; set; }
+    [StringLength(250)]
+    public string Address { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string Address { get; set; }
+    [StringLength(250)]
+    public string Phone { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string Phone { get; set; }
+    [StringLength(250)]
+    public string Email { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string Job_Name { get; set; }
+    [StringLength(250)]
+    public string Fax { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string Fax { get; set; }
+    [StringLength(250)]
+    public string Note { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string Email { get; set; }
+    [Column("Employee_Id")]
+    public int EmployeeId { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string Note { get; set; }
+    [StringLength(250)]
+    public string Relationship { get; set; }
 
-        public int? Employee_Id { get; set; } 
+    [StringLength(250)]
+    public string Name { get; set; }
 
-        public DateTime? Created_Time { get; set; }
-        public DateTime? Updated_Time { get; set; }
+    [Column("Created_By")]
+    [StringLength(250)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string Created_By { get; set; }
+    [Column("Updated_By")]
+    [StringLength(250)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string Updated_By { get; set; }
-        public DateTime? Birthday { get; set; }
-        public int? flag { get; set; }
-    }
+    [Column("Job_Name")]
+    [StringLength(250)]
+    public string JobName { get; set; }
+
+    public DateTime? Birthday { get; set; }
+
+    [Column("flag")]
+    public int? Flag { get; set; }
 }

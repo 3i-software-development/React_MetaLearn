@@ -2,43 +2,66 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PROJECT_NOTE")]
+public partial class ProjectNote
 {
-    [Table("PROJECT_NOTE")]
-    public class ProjectNote
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    /// <summary>
+    /// Customer Id
+    /// </summary>
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string ProjectCode { get; set; }
+    [Column("PROJECT_CODE")]
+    [StringLength(100)]
+    public string ProjectCode { get; set; }
 
-        [StringLength(100)]
-        public int? ProjectVersion { get; set; }
+    [Column("PROJECT_VERSION")]
+    public int? ProjectVersion { get; set; }
 
-        [StringLength(500)]
-        public string Note { get; set; }
+    [Column("NOTE")]
+    [StringLength(500)]
+    public string Note { get; set; }
 
-        [StringLength(100)]
-        public string Title { get; set; }
+    [Column("TITLE")]
+    [StringLength(100)]
+    public string Title { get; set; }
 
-        [StringLength(50)]
-        public string Tags { get; set; }
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("TAGS")]
+    [StringLength(50)]
+    public string Tags { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("FROM_DATE")]
+    public DateTime? FromDate { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("TO_DATE")]
+    public DateTime? ToDate { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 }

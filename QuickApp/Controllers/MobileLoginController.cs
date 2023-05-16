@@ -1,6 +1,5 @@
 ﻿using DAL;
 using DAL.Models;
-using ESEIM.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -23,20 +22,28 @@ namespace QuickApp.Controllers
 
             return View();
         }
-        public List<LmsCourse> GetListCourseMobile(int Price)
+        public class CourseItem
+        {
+            public string courseCode { get; set; }
+            public decimal? price { get; set; }
+            public string courseName { get; set; }
+        }
+
+        public List<CourseItem> GetListCourseMobile(int numb)
         {
             var query = (from item in _context.LmsCourses
-                         where item.Price == Price
-                         select new LmsCourse
+                         where item.Price == numb
+                         select new CourseItem
                          {
-                             Price = item.Price,
-                             CourseCode = item.CourseCode,
-                             CourseName = item.CourseName
+                             price = item.Price,
+                             courseCode = item.CourseCode,
+                             courseName = item.CourseName
 
                          }).ToList();
 
             return query;
-
         }
+
+        
     }
 }

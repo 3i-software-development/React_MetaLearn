@@ -2,33 +2,54 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("MESSAGE_ACTIVITY")]
+public partial class MessageActivity
 {
-    [Table("MESSAGE_ACTIVITY")]
-    public class MessageActivity
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string User { get; set; }
+    [Column("USER")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string User { get; set; }
 
-        public string ActFrom { get; set; }
+    [Column("ACT_FROM")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ActFrom { get; set; }
 
-        public string ActTo { get; set; }
+    [Column("ACT_TO")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ActTo { get; set; }
 
-        public string Command { get; set; }
+    [Column("COMMAND")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Command { get; set; }
 
-        public DateTime CommandTime { get; set; }
+    [Column("COMMAND_TIME")]
+    public DateTime? CommandTime { get; set; }
 
-        public string Confirm { get; set; }
+    [Column("CONFIRM")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Confirm { get; set; }
 
-        public DateTime? ConfirmTime { get; set; }
+    [Column("CONFIRM_TIME")]
+    public DateTime? ConfirmTime { get; set; }
 
-        public string ConfirmedBy { get; set; }
+    [Column("NOTE")]
+    [StringLength(1000)]
+    public string Note { get; set; }
 
-        public string Note { get; set; }
-
-    }
+    [Column("CONFIRMED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ConfirmedBy { get; set; }
 }

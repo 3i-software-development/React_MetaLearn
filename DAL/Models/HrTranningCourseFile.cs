@@ -2,18 +2,29 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Table("HR_TRANNING_COURSE_FILE")]
+public partial class HrTranningCourseFile
 {
-    [Table("HR_TRANNING_COURSE_FILE")]
-    public class HrTranningCourseFile
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        public string FileCode { get; set; }
-        public string FileName { get; set; }
-        public string FilePath { get; set; }
-        public int IdTranningCourse { get; set; }
-    }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
+
+    [Column("FILE_CODE")]
+    [StringLength(255)]
+    public string FileCode { get; set; }
+
+    [Column("FILE_NAME")]
+    [StringLength(255)]
+    public string FileName { get; set; }
+
+    [Column("FILE_PATH")]
+    [StringLength(255)]
+    public string FilePath { get; set; }
+
+    [Column("ID_TRANNING_COURSE")]
+    public int? IdTranningCourse { get; set; }
 }

@@ -2,44 +2,74 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Table("JOBCARD_DATA_LOGGER")]
+public partial class JobcardDataLogger
 {
-    [Table("JOBCARD_DATA_LOGGER")]
-    public class JobcardDataLogger
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        public string DtCode { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string DtTitle { get; set; }
+    [Column("DT_CODE")]
+    [StringLength(255)]
+    public string DtCode { get; set; }
 
-        public string DtValue { get; set; }
+    [Column("DT_TITLE")]
+    [StringLength(255)]
+    public string DtTitle { get; set; }
 
-        public string DtUnit { get; set; }
+    [Column("DT_VALUE")]
+    [StringLength(255)]
+    public string DtValue { get; set; }
 
-        public string DtGroup { get; set; }
+    [Column("DT_UNIT")]
+    [StringLength(255)]
+    public string DtUnit { get; set; }
 
-        public string DtValueType { get; set; }
+    [Column("DT_GROUP")]
+    [StringLength(255)]
+    public string DtGroup { get; set; }
 
-        public string ShiftCode { get; set; }
+    [Column("DT_VALUE_TYPE")]
+    [StringLength(255)]
+    public string DtValueType { get; set; }
 
-        public string ItemList { get; set; }
+    [Column("SHIFT_CODE")]
+    [StringLength(255)]
+    public string ShiftCode { get; set; }
 
-        public string JobcardCode { get; set; }
+    [Column("ITEM_LIST")]
+    public string ItemList { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
+    [Column("JOBCARD_CODE")]
+    [StringLength(255)]
+    public string JobcardCode { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    public string CreatedBy { get; set; }
 
-        public bool Flag { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public string ActInstCode { get; set; }
+    [Column("FLAG")]
+    public bool? Flag { get; set; }
 
-        public string WfInstCode { get; set; }
+    [Column("ACT_INST_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ActInstCode { get; set; }
 
-        public string SessionId { get; set; }
-    }
+    [Column("WF_INST_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WfInstCode { get; set; }
+
+    [Column("SESSION_ID")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string SessionId { get; set; }
 }

@@ -2,81 +2,134 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("LOT_PRODUCT")]
+public partial class LotProduct
 {
-    [Table("LOT_PRODUCT")]
-    public class LotProduct
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string QrCode { get; set; }
-        public string LotProductCode { get; set; }
+    [Column("QR_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string QrCode { get; set; }
 
-        [StringLength(255)]
-        public string BarCode { get; set; }
+    [Column("BAR_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string BarCode { get; set; }
 
-        [StringLength(50)]
-        public string Title { get; set; }
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
 
-        public string Supplier { get; set; }
-        public DateTime? ExpiryDate { get; set; }
-        [NotMapped]
-        public string sExpiryDate { get; set; }
-        [NotMapped]
-        public string sManufactureDate { get; set; }
+    [Column("SUPPLIER")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Supplier { get; set; }
 
-        public decimal Cost { get; set; }
-        public string Unit { get; set; }
-        public string PathImg { get; set; }
-        public string Packing { get; set; }
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("EXPIRY_DATE")]
+    public DateTime? ExpiryDate { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+    [Column("COST", TypeName = "money")]
+    public decimal? Cost { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("UNIT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Unit { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(7)]
+    [Unicode(false)]
+    public string UpdatedBy { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public decimal Tax { get; set; }
-        public decimal CustomFee { get; set; }
-        public decimal PoundAge { get; set; }
-        public decimal TransferCost { get; set; }
-        public decimal Discount { get; set; }
-        public string Note { get; set; }
-        public string LotProductName { get; set; }
-        public int Store { get; set; }
-        public string Origin { get; set; }
-        public DateTime? ManufactureDate { get; set; }
-        [NotMapped]
-        public List<LotFile> LotFile { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
 
-        [StringLength(50)]
-        public string Currency { get; set; }
-        public decimal? TaxMedium { get; set; }
-        public decimal? CostMedium { get; set; }
-    }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-    public class LotFile
-    {
-        public int Id { get; set; }
-        public string FileCode { get; set; }
-        public string FileName { get; set; }
-        public string FilePath { get; set; }
-        public string FileType { get; set; }
-        public string Status { get; set; }
-        public string ContentType { get; set; }
-    }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
+
+    [Column("PATH_IMG")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string PathImg { get; set; }
+
+    [Column("LOT_PRODUCT_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string LotProductCode { get; set; }
+
+    [Column("PACKING")]
+    [StringLength(255)]
+    public string Packing { get; set; }
+
+    [Column("TAX", TypeName = "money")]
+    public decimal? Tax { get; set; }
+
+    [Column("CUSTOM_FEE", TypeName = "money")]
+    public decimal? CustomFee { get; set; }
+
+    [Column("POUND_AGE", TypeName = "money")]
+    public decimal? PoundAge { get; set; }
+
+    [Column("TRANSFER_COST", TypeName = "money")]
+    public decimal? TransferCost { get; set; }
+
+    [Column("DISCOUNT", TypeName = "money")]
+    public decimal? Discount { get; set; }
+
+    [Column("NOTE")]
+    [StringLength(1000)]
+    public string Note { get; set; }
+
+    [Column("LOT_PRODUCT_NAME")]
+    [StringLength(255)]
+    public string LotProductName { get; set; }
+
+    [Column("STORE")]
+    public int? Store { get; set; }
+
+    /// <summary>
+    /// xuất xứ
+    /// </summary>
+    [Column("ORIGIN")]
+    [StringLength(255)]
+    public string Origin { get; set; }
+
+    /// <summary>
+    /// Ngày sản xuất
+    /// </summary>
+    [Column("MANUFACTURE_DATE")]
+    public DateTime? ManufactureDate { get; set; }
+
+    [Column("CURRENCY")]
+    [StringLength(50)]
+    public string Currency { get; set; }
+
+    [Column("TAX_MEDIUM", TypeName = "money")]
+    public decimal? TaxMedium { get; set; }
+
+    [Column("COST_MEDIUM", TypeName = "money")]
+    public decimal? CostMedium { get; set; }
 }

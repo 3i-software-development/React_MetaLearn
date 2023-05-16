@@ -1,158 +1,117 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("WORK_SHIFT_CHECKIN_OUT")]
+public partial class WorkShiftCheckinOut
 {
-    [Table("WORK_SHIFT_CHECKIN_OUT")]
-    public class WorkShiftCheckInOut
-    {
-        //public WorkShiftCheckInOut()
-        //{
-        //    ListStatus = new List<JsonLog>();
-        //}
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ACTION")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string Action { get; set; }
 
-        [StringLength(255)]
-        public string Action { get; set; }
+    [Column("ACTION_TIME")]
+    public DateTime ActionTime { get; set; }
 
-        public DateTime ActionTime { get; set; }
+    [Column("ACTION_TO")]
+    public DateTime? ActionTo { get; set; }
 
-        public DateTime? ActionTo { get; set; }
+    [Column("NOTE")]
+    public string Note { get; set; }
 
-        public string Note { get; set; }
+    [Column("LOCATION_GPS")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string LocationGps { get; set; }
 
-        [StringLength(255)]
-        public string LocationGPS { get; set; }
+    [Column("LOCATION_TEXT")]
+    [StringLength(255)]
+    public string LocationText { get; set; }
 
-        [StringLength(255)]
-        public string LocationText { get; set; }
+    [Column("DEVICE")]
+    [StringLength(50)]
+    public string Device { get; set; }
 
-        [StringLength(50)]
-        public string Device { get; set; }
+    [Column("USER_ID")]
+    [StringLength(50)]
+    public string UserId { get; set; }
 
-        [StringLength(50)]
-        public string UserId { get; set; }
+    [Column("PICTURE")]
+    [StringLength(255)]
+    public string Picture { get; set; }
 
-        [StringLength(255)]
-        public string Picture { get; set; }
+    [Column("IP")]
+    [StringLength(50)]
+    public string Ip { get; set; }
 
+    [Column("SESSION")]
+    public int Session { get; set; }
 
-        [StringLength(255)]
-        public string Ip { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public int Session { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
+    [Column("SHIFT_CODE")]
+    [StringLength(255)]
+    public string ShiftCode { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public string ShiftCode { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public bool Approve { get; set; }
-        public string Approver { get; set; }
-        public DateTime? ApproveTime { get; set; }
-        public string NotWorkType { get; set; }
-        public bool? WorkHoliday { get; set; }
+    [Column("APPROVE")]
+    public bool? Approve { get; set; }
 
-        [NotMapped]
-        public List<JsonLog> ListStatus { get; set; }
+    [Column("NOT_WORK_TYPE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string NotWorkType { get; set; }
 
-        public string Status { get; set; }
-        public string StatusLog
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatus);
-            }
-            set
-            {
-                ListStatus = string.IsNullOrEmpty(value)
-                ? new List<JsonLog>()
-                : JsonConvert.DeserializeObject<List<JsonLog>>(value);
-            }
-        }
+    [Column("WORK_HOLIDAY")]
+    public bool? WorkHoliday { get; set; }
 
-        public string WorkflowCode { get; set; }
-    }
+    [Column("IS_EXCEPTION")]
+    public bool? IsException { get; set; }
 
-    public class StaffTimeKeepingModel
-    {
-        public int? Id { get; set; }
+    [Column("APPROVER")]
+    [StringLength(255)]
+    public string Approver { get; set; }
 
-        [Required]
-        public string UserId { get; set; }
+    [Column("APPROVE_TIME")]
+    public DateTime? ApproveTime { get; set; }
 
-        [Required]
-        public string Action { get; set; }
+    [Column("STATUS")]
+    public string Status { get; set; }
 
-        [Required]
-        public string ActionTime { get; set; }
-        public string ActionTo { get; set; }
-        public string NotWorkType { get; set; }
-        [Required]
-        public double Lat { get; set; }
-        public double Lon { get; set; }
-        public string LocationText { get; set; }
-        public string Ip { get; set; }
-        public string Note { get; set; }
-        public bool? IsException { get; set; }
-        public bool? WorkHoliday { get; set; }
-        public string WorkflowCode { get; set; }
-        public string CreatedBy { get; set; }
-    }
+    [Column("STATUS_LOG")]
+    public string StatusLog { get; set; }
 
-    public class SStaffTimeKeepingModelcheck
-    {
-        public int? Id { get; set; }
-
-        //[Required]
-        public string UserId { get; set; }
-
-        //[Required]
-        public string Action { get; set; }
-
-        //[Required]
-        public string ActionTime { get; set; }
-        public string ActionTo { get; set; }
-
-        //[Required]
-        public double Lat { get; set; }
-
-        //[Required]
-        public double Lon { get; set; }
-        public string LocationText { get; set; }
-        public string Ip { get; set; }
-        public string Note { get; set; }
-        public string ShiftCode { get; set; }
-    }
-
-    public class UserModelCheckIn
-    {
-        [Required]
-        public string UserId { get; set; }
-
-        [Required]
-        public double Lat { get; set; }
-
-        [Required]
-        public double Lon { get; set; }
-        public string Note { get; set; }
-        public string ShiftCode { get; set; }
-    }
+    [Column("WORKFLOW_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WorkflowCode { get; set; }
 }

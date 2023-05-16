@@ -2,66 +2,76 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PROJECT_PRODUCT")]
+public partial class ProjectProduct
 {
-    [Table("PROJECT_PRODUCT")]
-    public class ProjectProduct
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public int Id { get; set; }
+    [Column("PRODUCT_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ProductCode { get; set; }
 
-        [StringLength(100)]
-        public string ProductCode { get; set; }
+    [Column("QUANTITY", TypeName = "decimal(18, 2)")]
+    public decimal? Quantity { get; set; }
 
-        [DataType("decimal(18,2)")]
-        public decimal? Quantity { get; set; }
+    [Column("UNIT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Unit { get; set; }
 
-        [StringLength(255)]
-        public string Unit { get; set; }
+    [Column("PROJECT_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ProjectCode { get; set; }
 
-        [StringLength(255)]
-        public string ProjectCode { get; set; }
+    [Column("COST", TypeName = "decimal(18, 0)")]
+    public decimal Cost { get; set; }
 
-        [Required]
-        [Range(0, double.MaxValue, ErrorMessage = "Please enter input cost greater than 0")]
-        public decimal Cost { get; set; }
+    [Column("TAX")]
+    public double Tax { get; set; }
 
-        public double Tax { get; set; }
+    [Column("COMMISSION")]
+    public double? Commission { get; set; }
 
-        public double? Commission { get; set; }
+    /// <summary>
+    /// CHIẾT KHẤU
+    /// </summary>
+    [Column("CUSTOM_FEE")]
+    public double? CustomFee { get; set; }
 
-        public double? CustomFee { get; set; }
+    /// <summary>
+    /// GIẢM GIÁ
+    /// </summary>
+    [Column("DISCOUNT")]
+    public double? Discount { get; set; }
 
-        public double? Discount { get; set; }
+    [Column("PRICE_TYPE")]
+    [StringLength(255)]
+    public string PriceType { get; set; }
 
-        public string PriceType { get; set; }
+    [Column("PRODUCT_TYPE")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string ProductType { get; set; }
 
-        [StringLength(50)]
-        public string ProductType { get; set; }
+    [Column("QUANTITY_NEED_EXPORT", TypeName = "decimal(18, 2)")]
+    public decimal? QuantityNeedExport { get; set; }
 
-        public decimal? QuantityNeedExport { get; set; }
+    [Column("NOTE")]
+    [StringLength(500)]
+    public string Note { get; set; }
 
-        public string Note { get; set; }
-        public string PortType { get; set; }
+    [Column("PORT_TYPE")]
+    [StringLength(255)]
+    public string PortType { get; set; }
 
-        public string StatusObjectLog
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(ListStatusObjectLog);
-            }
-            set
-            {
-                ListStatusObjectLog = string.IsNullOrEmpty(value)
-                    ? new List<JsonLog>()
-                    : JsonConvert.DeserializeObject<List<JsonLog>>(value);
-            }
-        }
-
-        [NotMapped]
-        public List<JsonLog> ListStatusObjectLog { get; set; }
-    }
+    [Column("STATUS_OBJECT_LOG")]
+    public string StatusObjectLog { get; set; }
 }

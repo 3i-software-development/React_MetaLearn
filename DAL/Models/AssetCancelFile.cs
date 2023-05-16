@@ -1,27 +1,29 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Table("ASSET_CANCEL_FILE")]
+public partial class AssetCancelFile
 {
-    [Table("ASSET_CANCEL_FILE")]
-    public class AssetCancelFile
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        [StringLength(maximumLength: 100)]
-        public string FileCode { get; set; }
-        [StringLength(maximumLength: 100)]
-        public string TicketCode { get; set; }
-        [StringLength(maximumLength: 100)]
-        public string FileName { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
+    [Column("FILE_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string FileCode { get; set; }
 
-    }
+    [Column("TICKET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string TicketCode { get; set; }
 
-
-
+    [Column("FILE_NAME")]
+    [StringLength(100)]
+    public string FileName { get; set; }
 }

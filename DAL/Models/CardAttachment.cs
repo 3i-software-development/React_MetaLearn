@@ -1,46 +1,70 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("CARD_ATTACHMENT")]
+public partial class CardAttachment
 {
-    [Table("CARD_ATTACHMENT")]
-    public class CardAttachment
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string CardCode { get; set; }
+    [Column("CARD_CODE")]
+    [StringLength(255)]
+    public string CardCode { get; set; }
 
-        [StringLength(255)]
-        public string FileCode { get; set; }
+    [Column("FILE_CODE")]
+    [StringLength(255)]
+    public string FileCode { get; set; }
 
-        [StringLength(255)]
-        public string MemberId { get; set; }
-        
-        public DateTime? UpdatedTime { get; set; }
+    [Column("MEMBER_ID")]
+    [StringLength(255)]
+    public string MemberId { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(255)]
-        public string FileName { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(255)]
-        public string FileUrl { get; set; }
+    [Column("FILE_NAME")]
+    [StringLength(255)]
+    public string FileName { get; set; }
 
-        public int FileType { get; set; }
+    [Column("FILE_URL")]
+    [StringLength(255)]
+    public string FileUrl { get; set; }
 
-        public bool Flag { get; set; }
+    /// <summary>
+    /// Type=0(Tệp tin), Type=1(Hình ảnh)
+    /// </summary>
+    [Column("FILE_TYPE")]
+    public int? FileType { get; set; }
 
-        public bool IsEdit { get; set; }
+    [Column("FLAG")]
+    public bool? Flag { get; set; }
 
-        public string ListUserView { get; set; }
+    [Column("IS_EDIT")]
+    public bool? IsEdit { get; set; }
 
-        public string ListPermissionViewFile { get; set; }
+    [Column("LIST_USER_VIEW")]
+    public string ListUserView { get; set; }
 
-        public string ChkListCode { get; set; }
-        public bool IsEdms { get; set; }
-        public int? IdMapping { get; set; }
-    }
+    [Column("LIST_PERMISSION_VIEW_FILE")]
+    [Unicode(false)]
+    public string ListPermissionViewFile { get; set; }
+
+    [Column("CHK_LIST_CODE")]
+    [StringLength(255)]
+    public string ChkListCode { get; set; }
+
+    [Column("IS_EDMS")]
+    public bool? IsEdms { get; set; }
+
+    [Column("ID_MAPPING")]
+    public int? IdMapping { get; set; }
 }

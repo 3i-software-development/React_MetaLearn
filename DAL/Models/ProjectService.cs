@@ -1,37 +1,52 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PROJECT_SERVICE")]
+public partial class ProjectService
 {
-    [Table("PROJECT_SERVICE")]
-    public class ProjectService
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string ServiceCode { get; set; }
+    [Column("SERVICE_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ServiceCode { get; set; }
 
-        [DataType("decimal(18,2)")]
-        public decimal? Quantity { get; set; }
+    [Column("QUANTITY", TypeName = "decimal(18, 2)")]
+    public decimal? Quantity { get; set; }
 
-        [StringLength(255)]
-        public string Unit { get; set; }
+    [Column("UNIT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Unit { get; set; }
 
-        [StringLength(255)]
-        public string Level { get; set; }
+    [Column("LEVEL")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Level { get; set; }
 
-        [StringLength(255)]
-        public string DurationTime { get; set; }
+    [Column("DURATION_TIME")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DurationTime { get; set; }
 
-        [StringLength(255)]
-        public string Status { get; set; }
+    [Column("STATUS")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Status { get; set; }
 
-        [StringLength(255)]
-        public string Note { get; set; }
+    [Column("NOTE")]
+    [StringLength(255)]
+    public string Note { get; set; }
 
-        [StringLength(255)]
-        public string ProjectCode { get; set; }
-    }
+    [Column("PROJECT_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ProjectCode { get; set; }
 }

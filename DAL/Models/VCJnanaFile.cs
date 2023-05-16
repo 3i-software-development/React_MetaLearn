@@ -2,42 +2,61 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("VC_JNANA_FILE")]
+public partial class VcJnanaFile
 {
-    [Table("VC_JNANA_FILE")]
-    public class VCJnanaFile
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string file_code { get; set; }
+    [Column("FILE_CODE")]
+    [StringLength(255)]
+    public string FileCode { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string file_name { get; set; }
+    [Column("FILE_NAME")]
+    [StringLength(255)]
+    public string FileName { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string file_title { get; set; }
-        [StringLength(maximumLength: 255)]
-        public string file_note { get; set; }
+    [Column("FILE_TITLE")]
+    [StringLength(255)]
+    public string FileTitle { get; set; }
 
-        public float? file_size { get; set; }
+    [Column("FILE_NOTE")]
+    [StringLength(255)]
+    public string FileNote { get; set; }
 
-        [StringLength(maximumLength: 10)]
-        public string file_ext { get; set; }
+    [Column("FILE_SIZE")]
+    public double? FileSize { get; set; }
 
-        public int? created_by { get; set; }
-       
-        public DateTime? created_time { get; set; }
-        public DateTime? updated_time { get; set; }
-        public int file_status { get; set; }
+    [Column("FILE_EXT")]
+    [StringLength(10)]
+    [Unicode(false)]
+    public string FileExt { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string file_cat_code { get; set; }
+    [Column("CREATED_BY")]
+    public int? CreatedBy { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string file_path { get; set; }
-    }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("FILE_STATUS")]
+    public int? FileStatus { get; set; }
+
+    [Column("FILE_CAT_CODE")]
+    [StringLength(250)]
+    public string FileCatCode { get; set; }
+
+    [Column("FILE_PATH")]
+    [StringLength(255)]
+    public string FilePath { get; set; }
+
+    [Column("UPDATED_BY")]
+    public int? UpdatedBy { get; set; }
 }

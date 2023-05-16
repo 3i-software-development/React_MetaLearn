@@ -2,19 +2,23 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("VC_FCM")]
+public partial class VcFcm
 {
-    [Table("VC_FCM")]
-    public class VcFcm
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        [StringLength(maximumLength: 50)]
-        public string UserName { get; set; }
-        [StringLength(maximumLength: 250)]
-        public string Token { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-    }
+    [Column("TOKEN")]
+    [StringLength(250)]
+    public string Token { get; set; }
+
+    [Required]
+    [Column("USER_NAME")]
+    [StringLength(50)]
+    public string UserName { get; set; }
 }

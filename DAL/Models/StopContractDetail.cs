@@ -1,26 +1,58 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("STOP_CONTRACT_DETAIL")]
+public partial class StopContractDetail
 {
-    [Table("STOP_CONTRACT_DETAIL")]
-    public class StopContractDetail
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string EmployeeCode { get; set; }
-        public string DecisionNum { get; set; }
-        public DateTime? SessionDate { get; set; }
-        public string Reason { get; set; }
-        public string FilePath { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? CreatedTime { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedTime { get; set; }
-        public string DeletedBy { get; set; }
-        public DateTime? DeletedTime { get; set; }
-        public bool IsDeleted { get; set; }
-    }
-}
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
+    [Column("EMPLOYEE_CODE")]
+    [StringLength(255)]
+    public string EmployeeCode { get; set; }
+
+    [Column("DECISION_NUM")]
+    [StringLength(255)]
+    public string DecisionNum { get; set; }
+
+    [Column("REASON")]
+    [StringLength(500)]
+    public string Reason { get; set; }
+
+    [Column("FILE_PATH")]
+    [StringLength(500)]
+    public string FilePath { get; set; }
+
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
+
+    [Column("SESSION_DATE")]
+    public DateTime? SessionDate { get; set; }
+}

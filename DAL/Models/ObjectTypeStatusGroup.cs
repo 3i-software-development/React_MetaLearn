@@ -2,19 +2,24 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("OBJECT_TYPE_STATUS_GROUP")]
+public partial class ObjectTypeStatusGroup
 {
-    [Table("OBJECT_TYPE_STATUS_GROUP")]
-    public class ObjectTypeStatusGroup
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string ObjectTypeCode { get; set; }
+    [Column("OBJECT_TYPE_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ObjectTypeCode { get; set; }
 
-        public string StatusGroupCode { get; set; }
-        
-    }
+    [Column("STATUS_GROUP_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string StatusGroupCode { get; set; }
 }

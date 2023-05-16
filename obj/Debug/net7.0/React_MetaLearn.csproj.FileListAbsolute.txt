@@ -1,0 +1,5 @@
+C:\Users\Admin\Desktop\project\React_MetaLearn\obj\Debug\net7.0\React_MetaLearn.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\project\React_MetaLearn\obj\Debug\net7.0\React_MetaLearn.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\project\React_MetaLearn\obj\Debug\net7.0\React_MetaLearn.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\project\React_MetaLearn\obj\Debug\net7.0\React_MetaLearn.AssemblyInfo.cs
+C:\Users\Admin\Desktop\project\React_MetaLearn\obj\Debug\net7.0\React_MetaLearn.csproj.CoreCompileInputs.cache

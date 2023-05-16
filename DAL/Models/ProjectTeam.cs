@@ -2,16 +2,24 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PROJECT_TEAM")]
+public partial class ProjectTeam
 {
-    [Table("PROJECT_TEAM")]
-    public class ProjectTeam
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string ProjectCode { get; set; }
-        public string TeamCode { get; set; }
-    }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
+
+    [Column("PROJECT_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ProjectCode { get; set; }
+
+    [Column("TEAM_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string TeamCode { get; set; }
 }

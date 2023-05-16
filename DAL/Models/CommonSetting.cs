@@ -1,59 +1,84 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("COMMON_SETTING")]
+public partial class CommonSetting
 {
-    [Table("COMMON_SETTING")]
-    public class CommonSetting
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int SettingID { get; set; }
+    [Column("SETTING_ID")]
+    public int SettingId { get; set; }
 
-        [StringLength(255)]
-        public string CodeSet { get; set; }
+    [Required]
+    [Column("CODE_SET")]
+    [StringLength(255)]
+    public string CodeSet { get; set; }
 
-        [StringLength(255)]
-        public string ValueSet { get; set; }
+    [Column("VALUE_SET")]
+    [StringLength(255)]
+    public string ValueSet { get; set; }
 
-        [StringLength(255)]
-        public string Group { get; set; }
+    [Column("GROUP")]
+    [StringLength(255)]
+    public string Group { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    /// <summary>
+    /// Asset_code ==null không được quản lý
+    /// </summary>
+    [Column("ASSET_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string AssetCode { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        [StringLength(255)]
-        public string AssetCode { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        [StringLength(255)]
-        public string GroupNote { get; set; }
+    [Column("GROUP_NOTE")]
+    [StringLength(255)]
+    public string GroupNote { get; set; }
 
-        public bool IsDeleted { get; set; }
-        public int? Priority { get; set; }
-        public string Logo { get; set; }
-        public string Type { get; set; }
-        public string Unit { get; set; }
-        public string Title { get; set; }
-    }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-    public class JsonStatus
-    {
-        public int Id { get; set; }
-        public string StatusCode { get; set; }
-        public string StatusName { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime CreatedTime { get; set; }
-    }
+    [Column("PRIORITY")]
+    public int? Priority { get; set; }
+
+    [Column("LOGO")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Logo { get; set; }
+
+    [Column("TYPE")]
+    [StringLength(255)]
+    public string Type { get; set; }
+
+    [Column("TITLE")]
+    [StringLength(255)]
+    public string Title { get; set; }
+
+    [Column("UNIT")]
+    [StringLength(255)]
+    public string Unit { get; set; }
 }

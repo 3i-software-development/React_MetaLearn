@@ -2,47 +2,72 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("VC_CUSTOMER_DECLARE_INFO")]
+public partial class VcCustomerDeclareInfo
 {
-    [Table("VC_CUSTOMER_DECLARE_INFO")]
-    public class VcCustomerDeclareInfo
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(100)]
-        public string BrandCode { get; set; }
+    [Required]
+    [Column("BRAND_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string BrandCode { get; set; }
 
-        [StringLength(100)]
-        public string ProductCode { get; set; }
+    [Required]
+    [Column("PRODUCT_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ProductCode { get; set; }
 
-        public decimal? BuyCost { get; set; }
-        public decimal? SaleCost { get; set; }
-        public decimal? ConsumpMonthly { get; set; }
-        public decimal? Instock { get; set; }
-        public decimal? Proportion { get; set; }
-        public decimal? TotalCanImp { get; set; }
+    [Column("BUY_COST", TypeName = "decimal(18, 3)")]
+    public decimal? BuyCost { get; set; }
 
-        [StringLength(1000)]
-        public string Note { get; set; }
+    [Column("SALE_COST", TypeName = "decimal(18, 3)")]
+    public decimal? SaleCost { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CONSUMP_MONTHLY", TypeName = "decimal(18, 3)")]
+    public decimal? ConsumpMonthly { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+    [Column("INSTOCK", TypeName = "decimal(18, 3)")]
+    public decimal? Instock { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("PROPORTION", TypeName = "decimal(18, 0)")]
+    public decimal? Proportion { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("TOTAL_CAN_IMP", TypeName = "decimal(18, 3)")]
+    public decimal? TotalCanImp { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("NOTE")]
+    [StringLength(1000)]
+    public string Note { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
+
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
+
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
+
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 }

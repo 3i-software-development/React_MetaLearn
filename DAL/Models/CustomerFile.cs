@@ -2,34 +2,22 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("CUSTOMER_FILE")]
+public partial class CustomerFile
 {
-    [Table("CUSTOMER_FILE")]
-    public class CustomerFile
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public int CustomerId { get; set; }
+    [Column("CUSTOMER_ID")]
+    public int? CustomerId { get; set; }
 
-        [StringLength(100)]
-        public string FileCode { get; set; }
-
-        [NotMapped]
-        public string RepoCode { get; set; }
-
-        [NotMapped]
-        public string FileName { get; set; }
-
-        [NotMapped]
-        public string Desc { get; set; }
-
-        [NotMapped]
-        public string NumberDocument { get; set; }
-
-        [NotMapped]
-        public string Tags { get; set; }
-    }
+    [Column("FILE_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string FileCode { get; set; }
 }

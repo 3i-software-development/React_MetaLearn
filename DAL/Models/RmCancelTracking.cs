@@ -2,40 +2,49 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Keyless]
+[Table("RM_CANCEL_TRACKING")]
+public partial class RmCancelTracking
 {
-    [Table("RM_CANCEL_TRACKING")]
-    public class RmCancelTracking
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string LocationGPS { get; set; }
+    [Column("LOCATION_GPS")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string LocationGps { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string LocationText { get; set; }
+    [Column("LOCATION_TEXT")]
+    [StringLength(100)]
+    public string LocationText { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string ParkingCode { get; set; }
+    [Column("REASON_CANCEL")]
+    [StringLength(100)]
+    public string ReasonCancel { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string ReasonCancel { get; set; }
+    [Column("TRIP_CODE")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string TripCode { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string TripCode { get; set; }
+    [Column("CREATE_DATE", TypeName = "datetime")]
+    public DateTime? CreateDate { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string CreateBy { get; set; }
+    [Column("PARKING_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ParkingCode { get; set; }
 
-        [StringLength(maximumLength: 255)]
-        public string Note { get; set; }
+    [Column("CREATE_BY")]
+    [StringLength(50)]
+    [Unicode(false)]
+    public string CreateBy { get; set; }
 
-        [StringLength(maximumLength: 255)]
-
-        public DateTime? CreateDate { get; set; }
-
-    }
+    [Column("NOTE")]
+    [StringLength(300)]
+    public string Note { get; set; }
 }

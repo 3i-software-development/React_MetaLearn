@@ -2,48 +2,65 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PRODUCT_ATTRIBUTE")]
+public partial class ProductAttribute
 {
-    [Table("PRODUCT_ATTRIBUTE")]
-    public class ProductAttribute
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string AttributeCode { get; set; }
+    [Column("ATTRIBUTE_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string AttributeCode { get; set; }
 
-        [StringLength(255)]
-        public string AttributeName { get; set; }
+    [Column("ATTRIBUTE_NAME")]
+    [StringLength(255)]
+    public string AttributeName { get; set; }
 
-        public string AttributeValue { get; set; }
+    [Column("ATTRIBUTE_VALUE")]
+    public string AttributeValue { get; set; }
 
-        [StringLength(255)]
-        public string FieldType { get; set; }
+    [Column("FIELD_TYPE")]
+    [StringLength(255)]
+    public string FieldType { get; set; }
 
-        [StringLength(500)]
-        public string Note { get; set; }
+    [Column("NOTE")]
+    [StringLength(500)]
+    public string Note { get; set; }
 
-        [StringLength(255)]
-        public string ProductCode { get;set; }
+    [Column("PRODUCT_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ProductCode { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(255)]
+    public string UpdatedBy { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
-    }
+    [Column("DELETED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
 }

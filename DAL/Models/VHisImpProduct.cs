@@ -2,32 +2,88 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+public partial class VHisImpProduct
 {
-    [Table("V_HIS_IMP_PRODUCT")]
-    public class VHisImpProduct
-    {
-        [Key]
-        public string Id { get; set; }
-        public string TicketImpCode { get; set; }
-        public string PoSupCode { get; set; }
-        public string SupCode { get; set; }
-        public string SupName { get; set; }
-        public string ProductCode { get; set; }
-        public string ProductType { get; set; }
-        public string ProductQrCode { get; set; }
-        public decimal QuantityImp { get; set; }
-        public string Unit { get; set; }
-        public string UnitName { get; set; }
-        public DateTime CreatedTime { get; set; }
-        public decimal? SupPrice { get; set; }
-        public string Currency { get; set; }
-        public string CurrencyName { get; set; }
-        public string TicketExpCode { get; set; }
-        public string PoCusCode { get; set; }
-        public string CusCode { get; set; }
-        public string CusName { get; set; }
-        public decimal? QuantityExp { get; set; }
-    }
+    [Column("ID")]
+    public Guid? Id { get; set; }
+
+    [Column("TICKET_IMP_CODE")]
+    [StringLength(255)]
+    public string TicketImpCode { get; set; }
+
+    [Column("PO_SUP_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string PoSupCode { get; set; }
+
+    [Column("SUP_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string SupCode { get; set; }
+
+    [Column("SUP_NAME")]
+    [StringLength(255)]
+    public string SupName { get; set; }
+
+    [Column("PRODUCT_CODE")]
+    [StringLength(100)]
+    public string ProductCode { get; set; }
+
+    [Column("PRODUCT_TYPE")]
+    [StringLength(50)]
+    public string ProductType { get; set; }
+
+    [Column("PRODUCT_QR_CODE")]
+    [StringLength(255)]
+    public string ProductQrCode { get; set; }
+
+    [Column("QUANTITY_IMP", TypeName = "decimal(18, 2)")]
+    public decimal? QuantityImp { get; set; }
+
+    [Column("UNIT")]
+    [StringLength(50)]
+    public string Unit { get; set; }
+
+    [Column("UNIT_NAME")]
+    [StringLength(255)]
+    public string UnitName { get; set; }
+
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
+
+    [Column("SUP_PRICE", TypeName = "decimal(18, 0)")]
+    public decimal? SupPrice { get; set; }
+
+    [Column("CURRENCY")]
+    [StringLength(50)]
+    public string Currency { get; set; }
+
+    [Column("CURRENCY_NAME")]
+    [StringLength(255)]
+    public string CurrencyName { get; set; }
+
+    [Column("TICKET_EXP_CODE")]
+    [StringLength(255)]
+    public string TicketExpCode { get; set; }
+
+    [Column("PO_CUS_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string PoCusCode { get; set; }
+
+    [Column("CUS_CODE")]
+    [StringLength(100)]
+    public string CusCode { get; set; }
+
+    [Column("CUS_NAME")]
+    [StringLength(255)]
+    public string CusName { get; set; }
+
+    [Column("QUANTITY_EXP", TypeName = "decimal(18, 2)")]
+    public decimal? QuantityExp { get; set; }
 }

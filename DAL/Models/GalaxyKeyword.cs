@@ -2,29 +2,38 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("GALAXY_KEYWORD")]
+public partial class GalaxyKeyword
 {
-    [Table("GALAXY_KEYWORD")]
-    public class GalaxyKeyword
-    { 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-            
-        public string Keyword { get; set; }
+    /// <summary>
+    /// Customer Id
+    /// </summary>
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string Group { get; set; }
+    [Column("KEYWORD")]
+    public string Keyword { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("GROUP")]
+    [StringLength(255)]
+    public string Group { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
-    }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
+
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 }

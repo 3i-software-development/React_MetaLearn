@@ -2,52 +2,65 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("PRODUCT_ENTITY_MAPPING_LOG")]
+public partial class ProductEntityMappingLog
 {
-    [Table("PRODUCT_ENTITY_MAPPING_LOG")]
-    public class ProductEntityMappingLog
-    { 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string WHS_Code { get; set; }
+    [Column("WHS_CODE")]
+    [StringLength(255)]
+    public string WhsCode { get; set; }
 
-        [StringLength(255)]
-        public string FloorCode { get; set; }
+    [Column("FLOOR_CODE")]
+    [StringLength(255)]
+    public string FloorCode { get; set; }
 
-        [StringLength(255)]
-        public string LineCode { get; set; }
+    [Column("LINE_CODE")]
+    [StringLength(255)]
+    public string LineCode { get; set; }
 
-        [StringLength(255)]
-        public string RackCode { get; set; }
+    [Column("RACK_CODE")]
+    [StringLength(255)]
+    public string RackCode { get; set; }
 
-        [StringLength(255)]
-        public string RackPosition { get; set; }
+    [Column("RACK_POSITION")]
+    [StringLength(255)]
+    public string RackPosition { get; set; }
 
-        [StringLength(255)]
-        public string Ordering { get; set; }
+    [Column("ORDERING")]
+    [StringLength(255)]
+    public string Ordering { get; set; }
 
-        [StringLength(255)]
-        public string ProductQrCode { get; set; }
+    [Column("PRODUCT_QR_CODE")]
+    [StringLength(255)]
+    public string ProductQrCode { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("IS_DELETED")]
+    public bool IsDeleted { get; set; }
 
-        public decimal? Quantity { get; set; }
-        [StringLength(50)]
-        public string Unit { get; set; }
+    [Column("QUANTITY", TypeName = "decimal(18, 2)")]
+    public decimal? Quantity { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string CreatedBy { get; set; }
+    [Column("UNIT")]
+    [StringLength(50)]
+    public string Unit { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(maximumLength: 50)]
-        public string UpdatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-    }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 }

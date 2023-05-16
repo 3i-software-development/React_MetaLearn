@@ -1,31 +1,41 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("REMINDER_ATTR")]
+public partial class ReminderAttr
 {
-    [Table("REMINDER_ATTR")]
-    public class ReminderAttr
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string ReminderCode { get; set; }
+    [Column("REMINDER_CODE")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string ReminderCode { get; set; }
 
-        [StringLength(255)]
-        public string ReminderTitle { get; set; }
+    [Column("REMINDER_TITLE")]
+    [StringLength(255)]
+    public string ReminderTitle { get; set; }
 
-        public string Note { get; set; }
+    [Column("NOTE")]
+    public string Note { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
-    }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 }

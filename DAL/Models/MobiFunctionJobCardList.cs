@@ -2,29 +2,37 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("MOBI_FUNCTION_JOBCARD_LIST")]
+public partial class MobiFunctionJobcardList
 {
-    [Table("MOBI_FUNCTION_JOBCARD_LIST")]
-    public class MobiFunctionJobCardList
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string Code { get; set; }
+    [Column("CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Code { get; set; }
 
-        [StringLength(255)]
-        public string Value { get; set; }
+    [Column("VALUE")]
+    [StringLength(255)]
+    public string Value { get; set; }
 
-        public string Desc { get; set; }
+    [Column("DESC")]
+    public string Desc { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 }

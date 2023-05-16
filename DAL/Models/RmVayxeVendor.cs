@@ -1,53 +1,75 @@
-﻿
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Keyless]
+[Table("RM_VAYXE_VENDOR")]
+public partial class RmVayxeVendor
 {
-    [Table("RM_VAYXE_VENDOR")]
-    public class RmVayxeVendor
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string VendorCode { get; set; }
+    [Column("VENDOR_CODE")]
+    [StringLength(250)]
+    public string VendorCode { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string VendorContact { get; set; }
+    [Column("VENDOR_CONTACT")]
+    [StringLength(250)]
+    public string VendorContact { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string VendorName { get; set; }
+    [Column("VENDOR_NAME")]
+    [StringLength(250)]
+    public string VendorName { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string VendorLogo { get; set; }
+    [Column("VENDOR_LOGO")]
+    [StringLength(250)]
+    public string VendorLogo { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string VendorPhone { get; set; }
-        public string VendorAddress { get; set; }
+    [Column("VENDOR_PHONE")]
+    [StringLength(250)]
+    public string VendorPhone { get; set; }
 
-        public int? VendorType { get; set; }
+    [Column("VENDOR_TYPE")]
+    public int? VendorType { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string VendorWebsite { get; set; }
+    [Column("VENDOR_WEBSITE")]
+    [StringLength(250)]
+    public string VendorWebsite { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string VendorFB { get; set; }
+    [Column("VENDOR_FB")]
+    [StringLength(250)]
+    public string VendorFb { get; set; }
 
-        [StringLength(maximumLength: 2000)]
-        public string VendorDesc { get; set; }
-        public string GeoCode { get; set; }
+    [Column("VENDOR_DESC")]
+    [StringLength(2000)]
+    public string VendorDesc { get; set; }
 
-        public int? Flag { get; set; }
-        public bool? IsDelete { get; set; }
+    [Column("FLAG")]
+    public int? Flag { get; set; }
 
-        public int? CreateBy { get; set; }
-        public int? UpdateBy { get; set; }
+    [Column("CREATE_TIME")]
+    public DateTime? CreateTime { get; set; }
 
-        public DateTime? CreateTime { get; set; }
+    [Column("UPDATE_TIME")]
+    public DateTime? UpdateTime { get; set; }
 
-        public DateTime? UpdateTime { get; set; }
+    [Column("CREATE_BY")]
+    public int? CreateBy { get; set; }
 
-    }
+    [Column("UPDATE_BY")]
+    public int? UpdateBy { get; set; }
+
+    [Column("VENDOR_ADDRESS")]
+    public string VendorAddress { get; set; }
+
+    [Column("IS_DELETE")]
+    public bool? IsDelete { get; set; }
+
+    [Column("GEO_CODE")]
+    [StringLength(255)]
+    public string GeoCode { get; set; }
 }

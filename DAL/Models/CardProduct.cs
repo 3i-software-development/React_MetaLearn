@@ -2,27 +2,35 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("CARD_PRODUCT")]
+public partial class CardProduct
 {
-    [Table("CARD_PRODUCT")]
-    public class CardProduct
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(255)]
-        public string CardCode { get; set; }
+    [Column("CARD_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CardCode { get; set; }
 
-        [StringLength(255)]
-        public string ProductCode { get; set; }
+    [Column("PRODUCT_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ProductCode { get; set; }
 
-        public int Quantity { get; set; }
+    [Column("QUANTITY")]
+    public int Quantity { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
 
-        public DateTime CreatedTime { get; set; }
-    }
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
 }

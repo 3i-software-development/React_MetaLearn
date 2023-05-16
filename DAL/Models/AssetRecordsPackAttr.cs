@@ -2,49 +2,81 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("ASSET_RECORDS_PACK_ATTR")]
+public partial class AssetRecordsPackAttr
 {
-    [Table("ASSET_RECORDS_PACK_ATTR")]
-    public class AssetRecordsPackAttr
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string Zone { get; set; }
+    [Column("ZONE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string Zone { get; set; }
 
-        public string PackAttrCode { get; set; }
+    [Column("PACK_ATTR_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string PackAttrCode { get; set; }
 
-        public string PackAttrName { get; set; }
+    [Column("PACK_ATTR_NAME")]
+    [StringLength(255)]
+    public string PackAttrName { get; set; }
 
-        public string PackAttrValue { get; set; }
+    [Column("PACK_ATTR_VALUE")]
+    [StringLength(255)]
+    public string PackAttrValue { get; set; }
 
-        public string PackAttrUnit { get; set; }
+    [Column("PACK_ATTR_UNIT")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string PackAttrUnit { get; set; }
 
-        public string PackAttrType { get; set; }
+    [Column("PACK_ATTR_TYPE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string PackAttrType { get; set; }
 
-        public string PackAttrSize { get; set; }
+    [Column("PACK_ATTR_SIZE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string PackAttrSize { get; set; }
 
-        public string PackAttrGroup { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 
-        public string PackAttrDataType { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(50)]
+    public string UpdatedBy { get; set; }
 
-        public DateTime? CreatedTime { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        [StringLength(100)]
-        public string UpdatedBy { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(50)]
+    public string DeletedBy { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        [StringLength(100)]
-        public string DeletedBy { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("PACK_ATTR_DATA_TYPE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string PackAttrDataType { get; set; }
 
-        public bool IsDeleted { get; set; }
-    }
+    [Column("PACK_ATTR_GROUP")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string PackAttrGroup { get; set; }
 }

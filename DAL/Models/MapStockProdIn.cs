@@ -2,21 +2,34 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Table("MAP_STOCK_PROD_IN")]
+public partial class MapStockProdIn
 {
-    [Table("MAP_STOCK_PROD_IN")]
-    public class MapStockProdIn
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public int MapId { get; set; }
-        public decimal? Quantity { get; set; }
-        public string ProdCode { get; set; }
-        public string Unit { get; set; }
-        public bool IsDeleted { get; set; }
-        public int? ParentId { get; set; }
-    }
+    [Column("MAP_ID")]
+    public int? MapId { get; set; }
+
+    [Column("PROD_CODE")]
+    [StringLength(255)]
+    public string ProdCode { get; set; }
+
+    [Column("QUANTITY", TypeName = "decimal(18, 0)")]
+    public decimal? Quantity { get; set; }
+
+    [Column("UNIT")]
+    [StringLength(255)]
+    public string Unit { get; set; }
+
+    [Column("PARENT_ID")]
+    public int? ParentId { get; set; }
+
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 }

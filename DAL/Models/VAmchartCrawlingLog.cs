@@ -2,19 +2,28 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+public partial class VAmchartCrawlingLog
 {
-    [Table("V_AMCHART_CRAWLING_LOG")]
-    public class VAmchartCrawlingLog
-    {
-        [Key]
-        public Guid ID { get; set; }
-        public int SumPasscap { get; set; }
-        public int SumTimeScan { get; set; }
-        public int SumUrl { get; set; }
-        public int SumFile { get; set; }
-        public int LstDay { get; set; }
-    }
+    [Column("ID")]
+    public Guid? Id { get; set; }
+
+    [Column("SUM_PASSCAP")]
+    public int? SumPasscap { get; set; }
+
+    [Column("SUM_TIME_SCAN")]
+    public int? SumTimeScan { get; set; }
+
+    [Column("SUM_URL")]
+    public int? SumUrl { get; set; }
+
+    [Column("SUM_FILE")]
+    public int? SumFile { get; set; }
+
+    [Column("LST_DAY")]
+    public int? LstDay { get; set; }
 }

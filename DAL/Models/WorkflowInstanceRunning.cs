@@ -2,47 +2,72 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace QuickApp.Model;
+
+[Table("WORKFLOW_INSTANCE_RUNNING")]
+public partial class WorkflowInstanceRunning
 {
-    [Table("WORKFLOW_INSTANCE_RUNNING")]
-    public class WorkflowInstanceRunning
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string WorkflowCode { get; set; }
+    [Column("WORKFLOW_CODE")]
+    [StringLength(255)]
+    public string WorkflowCode { get; set; }
 
-        public string WfInstCode { get; set; }
+    [Column("ACTIVITY_INITIAL")]
+    [StringLength(255)]
+    public string ActivityInitial { get; set; }
 
-        public string ActivityInitial { get; set; }
+    [Column("TRANSITION_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string TransitionCode { get; set; }
 
-        public string TransitionCode { get; set; }
+    [Column("ACTIVITY_DESTINATION")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string ActivityDestination { get; set; }
 
-        public string ActivityDestination { get; set; }
+    [Column("COMMAND")]
+    public string Command { get; set; }
 
-        public string Command { get; set; }
+    [Column("CREATED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string CreatedBy { get; set; }
 
-        [StringLength(100)]
-        public string CreatedBy { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime? CreatedTime { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+    [Column("UPDATED_BY")]
+    [StringLength(100)]
+    public string UpdatedBy { get; set; }
 
-        [StringLength(50)]
-        public string UpdatedBy { get; set; }
+    [Column("UPDATED_TIME")]
+    public DateTime? UpdatedTime { get; set; }
 
-        public DateTime? UpdatedTime { get; set; }
+    [Column("DELETED_BY")]
+    [StringLength(100)]
+    [Unicode(false)]
+    public string DeletedBy { get; set; }
 
-        [StringLength(50)]
-        public string DeletedBy { get; set; }
+    [Column("DELETED_TIME")]
+    public DateTime? DeletedTime { get; set; }
 
-        public DateTime? DeletedTime { get; set; }
+    [Column("IS_DELETED")]
+    public bool? IsDeleted { get; set; }
 
-        public bool IsDeleted { get; set; }
+    [Column("WF_INST_CODE")]
+    [StringLength(255)]
+    [Unicode(false)]
+    public string WfInstCode { get; set; }
 
-        public DateTime? StartTime { get; set; }
+    [Column("START_TIME")]
+    public DateTime? StartTime { get; set; }
 
-        public DateTime? EndTime { get; set; }
-    }
+    [Column("END_TIME")]
+    public DateTime? EndTime { get; set; }
 }

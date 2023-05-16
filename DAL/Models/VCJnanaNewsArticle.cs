@@ -2,41 +2,52 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Models;
+
+[Keyless]
+[Table("VC_JNANA_NEWS_ARTICLE")]
+public partial class VcJnanaNewsArticle
 {
-    [Table("VC_JNANA_NEWS_ARTICLE")]
-    public class VCJnanaNewsArticle
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
+    [Column("ID")]
+    public int Id { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string article_code { get; set; }
+    [Column("ARTICLE_CODE")]
+    [StringLength(250)]
+    public string ArticleCode { get; set; }
 
+    [Column("ARTICLE_TITLE")]
+    [StringLength(1000)]
+    public string ArticleTitle { get; set; }
 
-        [StringLength(maximumLength: 1000)]
-        public string article_title { get; set; }
+    [Column("CREATED_BY")]
+    public int? CreatedBy { get; set; }
 
-        public int? artile_order { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
 
-        public int? created_by { get; set; }
-        public int? update_by { get; set; }
+    [Column("UPDATE_BY")]
+    public int? UpdateBy { get; set; }
 
-        [StringLength(maximumLength: 1000)]
-        public string article_content { get; set; }
+    [Column("UPDATE_TIME")]
+    public DateTime? UpdateTime { get; set; }
 
-        [StringLength(maximumLength: 1000)]
-        public string article_avarta { get; set; }
+    [Column("ARTICLE_STATUS")]
+    public int ArticleStatus { get; set; }
 
-      
-        public DateTime? created_time { get; set; }
-        public DateTime? update_time { get; set; }
-        public int article_status { get; set; }
+    [Column("ARTICLE_AVARTA")]
+    [StringLength(1000)]
+    public string ArticleAvarta { get; set; }
 
-        [StringLength(maximumLength: 250)]
-        public string cat_code { get; set; }
+    [Column("CAT_CODE")]
+    [StringLength(250)]
+    public string CatCode { get; set; }
 
-    }
+    [Column("ARTICLE_CONTENT")]
+    [StringLength(1000)]
+    public string ArticleContent { get; set; }
+
+    [Column("ARTILE_ORDER")]
+    public int? ArtileOrder { get; set; }
 }

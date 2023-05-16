@@ -2,31 +2,44 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace ESEIM.Models
+namespace DAL.Model;
+
+[Table("WEEK_WORKING_SCHEDULER")]
+public partial class WeekWorkingScheduler
 {
-    [Table("WEEK_WORKING_SCHEDULER")]
-    public class WeekWorkingScheduler
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+    [Key]
+    [Column("ID")]
+    public int Id { get; set; }
 
-        public string Content { get; set; }
+    [Column("CONTENT")]
+    public string Content { get; set; }
 
-        public string Chair { get; set; }
+    [Column("COMPOSITION")]
+    [StringLength(255)]
+    public string Composition { get; set; }
 
-        public string Room { get; set; }
+    [Column("CHAIR")]
+    [StringLength(50)]
+    public string Chair { get; set; }
 
-        public string Composition { get; set; }
+    [Column("ROOM")]
+    [StringLength(255)]
+    public string Room { get; set; }
 
-        public string TimeStart { get; set; }
+    [Column("CREATED_TIME")]
+    public DateTime CreatedTime { get; set; }
 
-        public string TimeEnd { get; set; }
+    [Column("TIME_START")]
+    [StringLength(225)]
+    public string TimeStart { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+    [Column("TIME_END")]
+    [StringLength(225)]
+    public string TimeEnd { get; set; }
 
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
-    }
+    [Column("CREATED_BY")]
+    [StringLength(50)]
+    public string CreatedBy { get; set; }
 }

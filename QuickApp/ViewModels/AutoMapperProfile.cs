@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace QuickApp.ViewModels
 {
-    public class AutoMapperProfile : Profile
+   /* public class AutoMapperProfile : Profile
     {
         public AutoMapperProfile()
         {
@@ -63,5 +63,5 @@ namespace QuickApp.ViewModels
             CreateMap<Order, OrderViewModel>()
                 .ReverseMap();
         }
-    }
+    }*/
 }
