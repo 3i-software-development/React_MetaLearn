@@ -2,7 +2,7 @@
 "SpaProxyServer": {
 "ServerUrl": "https://localhost:44450",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "C:\\Users\\Admin\\Desktop\\project\\React_MetaLearn\\QuickApp\\ClientApp\\",
+"WorkingDirectory": "E:\\1.Project\\React_MetaLearn\\QuickApp\\ClientApp\\",
 "MaxTimeoutInSeconds": "120"
 }
 }

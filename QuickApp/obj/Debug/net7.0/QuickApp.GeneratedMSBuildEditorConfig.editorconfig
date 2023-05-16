@@ -9,17 +9,17 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = QuickApp
 build_property.RootNamespace = QuickApp
-build_property.ProjectDir = C:\Users\Admin\Desktop\project\React_MetaLearn\QuickApp\
+build_property.ProjectDir = E:\1.Project\React_MetaLearn\QuickApp\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Admin\Desktop\project\React_MetaLearn\QuickApp
+build_property.MSBuildProjectDirectory = E:\1.Project\React_MetaLearn\QuickApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Admin/Desktop/project/React_MetaLearn/QuickApp/Pages/Error.cshtml]
+[E:/1.Project/React_MetaLearn/QuickApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/project/React_MetaLearn/QuickApp/Pages/_ViewImports.cshtml]
+[E:/1.Project/React_MetaLearn/QuickApp/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
