@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\React_CanhSatBien\\QuickApp\\QuickApp.csproj": {}
+    "E:\\1.Project\\React_MetaLearn\\QuickApp\\QuickApp.csproj": {}
   },
   "projects": {
-    "E:\\React_CanhSatBien\\DAL\\DAL.csproj": {
+    "E:\\1.Project\\React_MetaLearn\\DAL\\DAL.csproj": {
       "version": "7.0.1",
       "restore": {
-        "projectUniqueName": "E:\\React_CanhSatBien\\DAL\\DAL.csproj",
+        "projectUniqueName": "E:\\1.Project\\React_MetaLearn\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "E:\\React_CanhSatBien\\DAL\\DAL.csproj",
+        "projectPath": "E:\\1.Project\\React_MetaLearn\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "E:\\React_CanhSatBien\\DAL\\obj\\",
+        "outputPath": "E:\\1.Project\\React_MetaLearn\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -93,14 +93,14 @@
         }
       }
     },
-    "E:\\React_CanhSatBien\\QuickApp\\QuickApp.csproj": {
+    "E:\\1.Project\\React_MetaLearn\\QuickApp\\QuickApp.csproj": {
       "version": "7.1.0",
       "restore": {
-        "projectUniqueName": "E:\\React_CanhSatBien\\QuickApp\\QuickApp.csproj",
+        "projectUniqueName": "E:\\1.Project\\React_MetaLearn\\QuickApp\\QuickApp.csproj",
         "projectName": "QuickApp",
-        "projectPath": "E:\\React_CanhSatBien\\QuickApp\\QuickApp.csproj",
+        "projectPath": "E:\\1.Project\\React_MetaLearn\\QuickApp\\QuickApp.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "E:\\React_CanhSatBien\\QuickApp\\obj\\",
+        "outputPath": "E:\\1.Project\\React_MetaLearn\\QuickApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -123,8 +123,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\React_CanhSatBien\\DAL\\DAL.csproj": {
-                "projectPath": "E:\\React_CanhSatBien\\DAL\\DAL.csproj"
+              "E:\\1.Project\\React_MetaLearn\\DAL\\DAL.csproj": {
+                "projectPath": "E:\\1.Project\\React_MetaLearn\\DAL\\DAL.csproj"
               }
             }
           }

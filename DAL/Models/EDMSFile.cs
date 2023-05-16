@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using III.Domain.Common;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
 namespace ESEIM.Models
 {
     [Table("EDMS_FILES")]
-    public class EDMSFile : IPurchasableObject, StringExtensions.IEntity<int>
+    public class EDMSFile : IPurchasableObject
     {
         [NotMapped]
         public int Id {

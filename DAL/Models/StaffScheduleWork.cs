@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
-using ESEIM.Utils;
 
 namespace ESEIM.Models
 {
@@ -40,7 +39,7 @@ namespace ESEIM.Models
         public bool FlagDelete { get; set; }
         public string Log { get; set; }
     }
-    public class EventModel : JTableModel
+    /*public class EventModel : JTableModel
     {
         public string MemberId { get; set; }
         public string FromDate { get; set; }
@@ -50,5 +49,5 @@ namespace ESEIM.Models
         public bool Evening { get; set; }
         public bool Sunday { get; set; }
         public bool Saturday { get; set; }
-    }
+    }*/
 }

@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\1.Project\\React_MetaLearn\\QuickApp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.QuickApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.QuickApp.props",
+      "PackagePath": "build\\QuickApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.QuickApp.props",
+      "PackagePath": "buildMultiTargeting\\QuickApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.QuickApp.props",
+      "PackagePath": "buildTransitive\\QuickApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

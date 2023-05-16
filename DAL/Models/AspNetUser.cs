@@ -124,7 +124,7 @@ namespace ESEIM.Models
         public string SignImage { get; set; }
         public string LeadersOfUser { get; set; }
     }
-    public class AspNetUserCustom
+    /*public class AspNetUserCustom
     {
         public string Id { set; get; }
         public string UserName { set; get; }
@@ -162,5 +162,5 @@ namespace ESEIM.Models
         public string SignImage { get; set; }
 
         public string LeadersOfUser { get; set; }
-    }
+    }*/
 }

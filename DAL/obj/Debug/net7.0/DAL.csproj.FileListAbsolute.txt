@@ -12,3 +12,17 @@ D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\obj\Debug\net7.0\DAL.pdb
 D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\obj\Debug\net7.0\ref\DAL.dll
 D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\bin\Debug\net7.0\DAL.runtimeconfig.json
 D:\ProjectReact\CSB_NUMBER_TWO\React_CanhSatBien\DAL\obj\Debug\net7.0\DAL.genruntimeconfig.cache
+E:\1.Project\React_MetaLearn\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+E:\1.Project\React_MetaLearn\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\1.Project\React_MetaLearn\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+E:\1.Project\React_MetaLearn\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+E:\1.Project\React_MetaLearn\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+E:\1.Project\React_MetaLearn\DAL\bin\Debug\net7.0\DAL.deps.json
+E:\1.Project\React_MetaLearn\DAL\bin\Debug\net7.0\DAL.runtimeconfig.json
+E:\1.Project\React_MetaLearn\DAL\bin\Debug\net7.0\DAL.dll
+E:\1.Project\React_MetaLearn\DAL\bin\Debug\net7.0\DAL.pdb
+E:\1.Project\React_MetaLearn\DAL\obj\Debug\net7.0\DAL.dll
+E:\1.Project\React_MetaLearn\DAL\obj\Debug\net7.0\refint\DAL.dll
+E:\1.Project\React_MetaLearn\DAL\obj\Debug\net7.0\DAL.pdb
+E:\1.Project\React_MetaLearn\DAL\obj\Debug\net7.0\DAL.genruntimeconfig.cache
+E:\1.Project\React_MetaLearn\DAL\obj\Debug\net7.0\ref\DAL.dll

@@ -22,7 +22,7 @@ using Microsoft.AspNetCore.JsonPatch;
 using DAL.Core;
 
 namespace QuickApp.Controllers
-{
+{   
     [Authorize]
     [Route("api/[controller]")]
     public class AccountController : ControllerBase

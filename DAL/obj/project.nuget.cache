@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gu3kPdojii/kFLg7auktcceK9Ncth0RQmDCk/Gd9mTJ29oGZQqtOkHPCZoyOIZdUA++MaXrU1iKZ6+cu+nv5pw==",
+  "dgSpecHash": "gI1UFdCYzyjD/gFzUnnY12FwHOMivCxJHG1tlTuS8MirBzD1JRzxkTacNU8tc67N3eu8mo4+nJ0WKj7rcHjp8w==",
   "success": true,
-  "projectFilePath": "E:\\React_CanhSatBien\\DAL\\DAL.csproj",
+  "projectFilePath": "E:\\1.Project\\React_MetaLearn\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

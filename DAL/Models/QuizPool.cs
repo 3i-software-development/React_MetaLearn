@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using III.Domain.Common;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
 namespace ESEIM.Models
 {
 	[Table("QUIZ_POOL")]
-	public class QuizPool : IPurchasableObject, StringExtensions.IEntity<int>
+	public class QuizPool : IPurchasableObject/*, StringExtensions.IEntity<int>*/
 	{
 		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }

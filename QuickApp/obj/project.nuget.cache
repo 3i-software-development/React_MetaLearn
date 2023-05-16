@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bo1ZpQFYU+ExcejftSAfbfnT2tii/ap0dRaLIKhfnm7aycybAiirxRreWxhZgt7OXRq43SQggv53sc+Ln1S8WQ==",
+  "dgSpecHash": "hjeurpZYVIeXAtopQI6egY/HTEQAOgcLkfzGHS2BXEC/M/52IeeXJlsblZiThe8L5SZI3iuBTAmcXsc5wR9CCw==",
   "success": true,
-  "projectFilePath": "E:\\React_CanhSatBien\\QuickApp\\QuickApp.csproj",
+  "projectFilePath": "E:\\1.Project\\React_MetaLearn\\QuickApp\\QuickApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

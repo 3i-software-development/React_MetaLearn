@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DAL.Models;
+using ESEIM.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -26,19 +27,19 @@ namespace QuickApp.Controllers
 
             return View();
         }
-        /*public List<Object> SelectCousre(int Price)
+        /*public List<LmsCourse> SelectCousre(int Price)
         {
-            var query = (from item in _context.LmsCourses where item.Price == Price
-                        select new  {
-                            Price = item.Price,
-                            CourseCode = item.CourseCode,
-                            CourseName = item.CourseName,
-                            }).ToList();
+            var query = (from item in _context.LmsCourses
+                         where item.Price == Price
+                         select new
+                         {
+                             Price = item.Price,
+                             CourseCode = item.CourseCode,
+                             CourseName = item.CourseName,
+                         }).ToList();
 
-            return query;
+            return query.ToList();
 
         }*/
-
-        //
     }
 }

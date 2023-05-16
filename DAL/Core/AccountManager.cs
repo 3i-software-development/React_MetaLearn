@@ -22,20 +22,20 @@ namespace DAL.Core
     public class AccountManager /*: IAccountManager*/
     {
         private readonly ApplicationDbContext _context;
-       /* private readonly UserManager<ApplicationUser> _userManager;
-        private readonly RoleManager<ApplicationRole> _roleManager;*/
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
 
 
         public AccountManager(
             ApplicationDbContext context,
-           /* UserManager<ApplicationUser> userManager,
-            RoleManager<ApplicationRole> roleManager,*/
+            UserManager<ApplicationUser> userManager,
+            RoleManager<ApplicationRole> roleManager,
             IHttpContextAccessor httpAccessor)
         {
             _context = context;
             //_context.CurrentUserId = httpAccessor.HttpContext?.User.FindFirst(ClaimConstants.Subject)?.Value?.Trim();
-            /*_userManager = userManager;
-            _roleManager = roleManager;*/
+            _userManager = userManager;
+            _roleManager = roleManager;
 
         }
 
@@ -82,7 +82,7 @@ namespace DAL.Core
 
         //    return (user, roles);
         //}
-        //
+
 
         //public async Task<List<(ApplicationUser User, string[] Roles)>> GetUsersAndRolesAsync(int page, int pageSize)
         //{

@@ -20,7 +20,7 @@ namespace ESEIM.Models
 
         public string SubjectList
         {
-            get => ListWishListSubject.Join(",");
+            get => String.Join(",", ListWishListSubject.ToArray());
             set =>
                 ListWishListSubject = string.IsNullOrEmpty(value)
                     ? new List<string>()

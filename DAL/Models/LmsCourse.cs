@@ -1,5 +1,4 @@
-﻿using IdentityModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,14 +7,13 @@ using System.Text;
 namespace ESEIM.Models
 {
     [Table("lms_course")]
-    public class LmsCourse : IPurchasableObject
+    public class LmsCourse : IPurchasableObject/*, StringExtensions.IEntity<int>*/
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [StringLength(100)]
         public string CourseCode { get; set; }
-        
 
         [StringLength(255)]
         public string CourseName { get; set; }

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace ESEIM.Models
 {
-    public partial class AspNetRoleClaim: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<int>
+    /*public partial class AspNetRoleClaim: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<int>
     {
         
         public virtual AspNetRole Role { get; set; }
-    }
+    }*/
 }

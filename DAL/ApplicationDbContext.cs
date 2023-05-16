@@ -30,7 +30,56 @@ namespace DAL
             : base(options)
         {
         }
-        /// Pin Data
+
+        public virtual DbSet<AdGroup> AdGroups { get; set; }
+
+        public virtual DbSet<AdUser> AdUsers { get; set; }
+
+        public virtual DbSet<AdUserGroup> AdUserGroups { get; set; }
+
+        public virtual DbSet<AdUserInfo> AdUserInfos { get; set; }
+
+        public virtual DbSet<AdUserLog> AdUserLogs { get; set; }
+
+        public virtual DbSet<AdUserReset> AdUserResets { get; set; }
+
+        public virtual DbSet<CmsAttachment> CmsAttachments { get; set; }
+
+        public virtual DbSet<CmsCategory> CmsCategories { get; set; }
+
+        public virtual DbSet<CmsComment> CmsComments { get; set; }
+
+        public virtual DbSet<CmsExtraField> CmsExtraFields { get; set; }
+
+        public virtual DbSet<CmsExtraFieldsGroup> CmsExtraFieldsGroups { get; set; }
+
+        public virtual DbSet<CmsExtraFieldsValue> CmsExtraFieldsValues { get; set; }
+
+        public virtual DbSet<CmsFunction> CmsFunctions { get; set; }
+
+        public virtual DbSet<CmsFunctionGroup> CmsFunctionGroups { get; set; }
+
+        public virtual DbSet<CmsFunctionResource> CmsFunctionResources { get; set; }
+
+        public virtual DbSet<CmsItem> CmsItems { get; set; }
+
+        public virtual DbSet<CmsRating> CmsRatings { get; set; }
+
+        public virtual DbSet<CmsRole> CmsRoles { get; set; }
+
+        public virtual DbSet<CmsSetting> CmsSettings { get; set; }
+
+        public virtual DbSet<CmsTag> CmsTags { get; set; }
+
+        public virtual DbSet<CmsTagsXref> CmsTagsXrefs { get; set; }
+
+        public virtual DbSet<Statistic> Statistics { get; set; }
+
+        public virtual DbSet<StatisticHist> StatisticHists { get; set; }
+
+        public virtual DbSet<StatisticRef> StatisticRefs { get; set; }
+
+        public virtual DbSet<StatisticRefHist> StatisticRefHists { get; set; }
         public virtual DbSet<PinData> PinDatas { get; set; }
         /// <summary>
         /// Define Status Group
@@ -396,21 +445,7 @@ namespace DAL
         public virtual DbSet<RequestPriceDetail> RequestPriceDetails { get; set; }
         public virtual DbSet<PoSupRequestImpProduct> PoSupRequestImpProducts { get; set; }
         public virtual DbSet<RequestPoSup> RequestPoSups { get; set; }
-        public virtual DbSet<cms_attachments> cms_attachments { get; set; }
-        public virtual DbSet<cms_categories> cms_categories { get; set; }
-        public virtual DbSet<cms_comments> cms_comments { get; set; }
-        public virtual DbSet<cms_extra_fields> cms_extra_fields { get; set; }
-        public virtual DbSet<cms_extra_fields_groups> cms_extra_fields_groups { get; set; }
-        public virtual DbSet<cms_extra_fields_value> cms_extra_fields_value { get; set; }
-        public virtual DbSet<cms_functions> cms_functions { get; set; }
-        public virtual DbSet<cms_function_group> cms_function_group { get; set; }
-        public virtual DbSet<cms_function_resource> cms_function_resource { get; set; }
-        public virtual DbSet<cms_items> cms_items { get; set; }
-        public virtual DbSet<cms_rating> cms_rating { get; set; }
-        public virtual DbSet<cms_roles> cms_roles { get; set; }
-        public virtual DbSet<cms_setting> cms_setting { get; set; }
-        public virtual DbSet<cms_tags> cms_tags { get; set; }
-        public virtual DbSet<cms_tags_xref> cms_tags_xref { get; set; }
+       
         public virtual DbSet<CommonSettingArticle> CommonSettingArticles { get; set; }
         public virtual DbSet<SettingUserguide> SettingUserguides { get; set; }
 
@@ -832,704 +867,703 @@ namespace DAL
         /// 
         public virtual DbSet<PaySheet> PaySheets { get; set; }
         public virtual DbSet<CameraRoom> CameraRooms { get; set; }
-        
-        #region cmt
+       
 
         //        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         //            => optionsBuilder.UseSqlServer("Server=117.6.131.222,1437;Database=CMS_TriAnLietSi;Uid=admin;Password=Vietnam@799;TrustServerCertificate=True");
 
-        /* protected override void OnModelCreating(ModelBuilder modelBuilder)
-         {
-             modelBuilder.Entity<AdGroup>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__ad_group__3213E83F4316F928");
-
-                 entity.ToTable("ad_group");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.CreatedBy).HasColumnName("created_by");
-                 entity.Property(e => e.CreatedDate)
-                     .HasDefaultValueSql("(getdate())")
-                     .HasColumnType("datetime")
-                     .HasColumnName("created_date");
-                 entity.Property(e => e.Description)
-                     .HasMaxLength(500)
-                     .HasColumnName("description");
-                 entity.Property(e => e.GroupName)
-                     .HasMaxLength(255)
-                     .HasColumnName("group_name");
-                 entity.Property(e => e.GroupParent).HasColumnName("group_parent");
-                 entity.Property(e => e.IsActive)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("is_active");
-                 entity.Property(e => e.IsDelete)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("is_delete");
-                 entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
-                 entity.Property(e => e.ModifiedDate)
-                     .HasColumnType("datetime")
-                     .HasColumnName("modified_date");
-             });
-
-             modelBuilder.Entity<AdUser>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__ad_group__3213E83F46E78A0C");
-
-                 entity.ToTable("ad_user");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.CreatedBy).HasColumnName("created_by");
-                 entity.Property(e => e.CreatedDate)
-                     .HasDefaultValueSql("(getdate())")
-                     .HasColumnType("datetime")
-                     .HasColumnName("created_date");
-                 entity.Property(e => e.Email)
-                     .HasMaxLength(255)
-                     .HasColumnName("email");
-                 entity.Property(e => e.FullName)
-                     .HasMaxLength(255)
-                     .HasColumnName("full_name");
-                 entity.Property(e => e.IsActive)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("is_active");
-                 entity.Property(e => e.IsDelete)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("is_delete");
-                 entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
-                 entity.Property(e => e.ModifiedDate)
-                     .HasColumnType("datetime")
-                     .HasColumnName("modified_date");
-                 entity.Property(e => e.PassSalt)
-                     .HasMaxLength(50)
-                     .HasColumnName("pass_salt");
-                 entity.Property(e => e.Password)
-                     .HasMaxLength(255)
-                     .HasColumnName("password");
-                 entity.Property(e => e.ResetCount).HasColumnName("reset_count");
-                 entity.Property(e => e.ResetDate)
-                     .HasColumnType("datetime")
-                     .HasColumnName("reset_date");
-                 entity.Property(e => e.RoleId).HasColumnName("role_id");
-                 entity.Property(e => e.UserName)
-                     .IsRequired()
-                     .HasMaxLength(255)
-                     .HasColumnName("user_name");
-             });
-
-             modelBuilder.Entity<AdUserGroup>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__ad_user___3213E83F4AB81AF0");
-
-                 entity.ToTable("ad_user_group");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.CreatedBy).HasColumnName("created_by");
-                 entity.Property(e => e.CreatedDate)
-                     .HasDefaultValueSql("(getdate())")
-                     .HasColumnType("datetime")
-                     .HasColumnName("created_date");
-                 entity.Property(e => e.GroupId).HasColumnName("group_id");
-                 entity.Property(e => e.IsActive)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("is_active");
-                 entity.Property(e => e.IsDelete)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("is_delete");
-                 entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
-                 entity.Property(e => e.ModifiedDate)
-                     .HasColumnType("datetime")
-                     .HasColumnName("modified_date");
-                 entity.Property(e => e.UserId).HasColumnName("user_id");
-             });
-
-             modelBuilder.Entity<AdUserInfo>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__ad_user___3213E83F4F7CD00D");
-
-                 entity.ToTable("ad_user_info");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.Address)
-                     .HasMaxLength(500)
-                     .HasColumnName("address");
-                 entity.Property(e => e.Birthday)
-                     .HasColumnType("datetime")
-                     .HasColumnName("birthday");
-                 entity.Property(e => e.CreatedDate)
-                     .HasDefaultValueSql("(getdate())")
-                     .HasColumnType("datetime")
-                     .HasColumnName("created_date");
-                 entity.Property(e => e.Gender).HasColumnName("gender");
-                 entity.Property(e => e.HomePhone)
-                     .HasMaxLength(25)
-                     .IsUnicode(false)
-                     .HasColumnName("home_phone");
-                 entity.Property(e => e.IsDelete)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("is_delete");
-                 entity.Property(e => e.MobilePhone)
-                     .HasMaxLength(25)
-                     .IsUnicode(false)
-                     .HasColumnName("mobile_phone");
-                 entity.Property(e => e.ModifiedDate)
-                     .HasColumnType("datetime")
-                     .HasColumnName("modified_date");
-                 entity.Property(e => e.UserId).HasColumnName("user_id");
-             });
-
-             modelBuilder.Entity<AdUserLog>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__ad_user___3213E83F6383C8BA");
-
-                 entity.ToTable("ad_user_log");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.Content)
-                     .HasMaxLength(500)
-                     .HasColumnName("content");
-                 entity.Property(e => e.CreatedBy).HasColumnName("created_by");
-                 entity.Property(e => e.CreatedDate)
-                     .HasDefaultValueSql("(getdate())")
-                     .HasColumnType("datetime")
-                     .HasColumnName("created_date");
-                 entity.Property(e => e.FullName)
-                     .HasMaxLength(50)
-                     .HasColumnName("full_name");
-                 entity.Property(e => e.LogType)
-                     .HasDefaultValueSql("((1))")
-                     .HasComment("Log Type: 1. Login, 2. Create, 3. Update, 4. Delete")
-                     .HasColumnName("log_type");
-                 entity.Property(e => e.UserId).HasColumnName("user_id");
-                 entity.Property(e => e.UserIp)
-                     .HasMaxLength(20)
-                     .HasColumnName("user_ip");
-             });
-
-             modelBuilder.Entity<AdUserReset>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__ad_user___3213E83F5DCAEF64");
-
-                 entity.ToTable("ad_user_reset");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.Activation)
-                     .HasMaxLength(50)
-                     .HasColumnName("activation");
-                 entity.Property(e => e.CreatedDate)
-                     .HasDefaultValueSql("(getdate())")
-                     .HasColumnType("datetime")
-                     .HasColumnName("created_date");
-                 entity.Property(e => e.Email)
-                     .HasMaxLength(255)
-                     .HasColumnName("email");
-                 entity.Property(e => e.ExpriedDate)
-                     .HasDefaultValueSql("(getdate()+(1))")
-                     .HasColumnType("datetime")
-                     .HasColumnName("expried_date");
-                 entity.Property(e => e.IsConfirmed)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("is_confirmed");
-                 entity.Property(e => e.ResetLink)
-                     .HasMaxLength(300)
-                     .HasColumnName("reset_link");
-                 entity.Property(e => e.ResetType)
-                     .HasComment("1. Reset password | 2. Activation")
-                     .HasColumnName("reset_type");
-                 entity.Property(e => e.UserId).HasColumnName("user_id");
-                 entity.Property(e => e.UserName)
-                     .HasMaxLength(255)
-                     .HasColumnName("user_name");
-             });
-
-             modelBuilder.Entity<CmsAttachment>(entity =>
-             {
-                 entity.ToTable("cms_attachments");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.FileName)
-                     .HasMaxLength(255)
-                     .HasColumnName("file_name");
-                 entity.Property(e => e.FilePath)
-                     .HasMaxLength(255)
-                     .HasColumnName("file_path");
-                 entity.Property(e => e.FileType)
-                     .HasMaxLength(255)
-                     .HasColumnName("file_type");
-                 entity.Property(e => e.FileUrl)
-                     .HasMaxLength(255)
-                     .HasColumnName("file_url");
-                 entity.Property(e => e.Hits).HasColumnName("hits");
-                 entity.Property(e => e.ItemId).HasColumnName("item_id");
-                 entity.Property(e => e.Title)
-                     .HasMaxLength(255)
-                     .HasColumnName("title");
-                 entity.Property(e => e.TitleAttribute)
-                     .HasMaxLength(255)
-                     .HasColumnName("title_attribute");
-             });
-
-             modelBuilder.Entity<CmsCategory>(entity =>
-             {
-                 entity.ToTable("cms_categories");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.Access).HasColumnName("access");
-                 entity.Property(e => e.Alias)
-                     .HasMaxLength(255)
-                     .HasColumnName("alias");
-                 entity.Property(e => e.Description)
-                     .HasMaxLength(4000)
-                     .HasColumnName("description");
-                 entity.Property(e => e.ExtraFieldsGroup).HasColumnName("extra_fields_group");
-                 entity.Property(e => e.Image)
-                     .HasMaxLength(255)
-                     .HasColumnName("image");
-                 entity.Property(e => e.Language)
-                     .HasMaxLength(10)
-                     .IsUnicode(false)
-                     .HasColumnName("language");
-                 entity.Property(e => e.Name)
-                     .IsRequired()
-                     .HasMaxLength(255)
-                     .HasColumnName("name");
-                 entity.Property(e => e.Ordering).HasColumnName("ordering");
-                 entity.Property(e => e.Params).HasColumnName("params");
-                 entity.Property(e => e.Parent).HasColumnName("parent");
-                 entity.Property(e => e.Plugins).HasColumnName("plugins");
-                 entity.Property(e => e.Published)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("published");
-                 entity.Property(e => e.Template).HasColumnName("template");
-                 entity.Property(e => e.Trash)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("trash");
-             });
-
-             modelBuilder.Entity<CmsComment>(entity =>
-             {
-                 entity.ToTable("cms_comments");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.CommentDate)
-                     .HasColumnType("datetime")
-                     .HasColumnName("comment_date");
-                 entity.Property(e => e.CommentEmail)
-                     .HasMaxLength(255)
-                     .HasColumnName("comment_email");
-                 entity.Property(e => e.CommentText).HasColumnName("comment_text");
-                 entity.Property(e => e.CommentTitle)
-                     .HasMaxLength(1000)
-                     .HasColumnName("comment_title");
-                 entity.Property(e => e.CommentUrl)
-                     .HasMaxLength(255)
-                     .HasColumnName("comment_url");
-                 entity.Property(e => e.ItemId).HasColumnName("item_id");
-                 entity.Property(e => e.Published)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("published");
-                 entity.Property(e => e.UserId).HasColumnName("user_id");
-                 entity.Property(e => e.UserName)
-                     .HasMaxLength(255)
-                     .HasColumnName("user_name");
-             });
-
-             modelBuilder.Entity<CmsExtraField>(entity =>
-             {
-                 entity.ToTable("cms_extra_fields");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.Group).HasColumnName("group");
-                 entity.Property(e => e.Name)
-                     .IsRequired()
-                     .HasMaxLength(255)
-                     .HasColumnName("name");
-                 entity.Property(e => e.Ordering).HasColumnName("ordering");
-                 entity.Property(e => e.Published)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("published");
-                 entity.Property(e => e.Type)
-                     .HasMaxLength(255)
-                     .HasColumnName("type");
-                 entity.Property(e => e.Value).HasColumnName("value");
-             });
-
-             modelBuilder.Entity<CmsExtraFieldsGroup>(entity =>
-             {
-                 entity.ToTable("cms_extra_fields_groups");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.Name)
-                     .HasMaxLength(255)
-                     .HasColumnName("name");
-             });
-
-             modelBuilder.Entity<CmsExtraFieldsValue>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__cms_bann__3213E83F71D1E811");
-
-                 entity.ToTable("cms_extra_fields_value");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.CreatedBy).HasColumnName("created_by");
-                 entity.Property(e => e.CreatedDate)
-                     .HasColumnType("datetime")
-                     .HasColumnName("created_date");
-                 entity.Property(e => e.DatePost)
-                     .HasColumnType("datetime")
-                     .HasColumnName("date_post");
-                 entity.Property(e => e.FieldGroup)
-                     .HasComment("Vị trí")
-                     .HasColumnName("field_group");
-                 entity.Property(e => e.FieldValue)
-                     .HasComment("Tiêu đề")
-                     .HasColumnName("field_value");
-                 entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
-                 entity.Property(e => e.ModifiedDate)
-                     .HasColumnType("datetime")
-                     .HasColumnName("modified_date");
-                 entity.Property(e => e.Ordering)
-                     .HasComment("Thứ tự")
-                     .HasColumnName("ordering");
-                 entity.Property(e => e.Publish)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("publish");
-                 entity.Property(e => e.Trash)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("trash");
-             });
-
-             modelBuilder.Entity<CmsFunction>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__cms_func__3213E83F7C4F7684");
-
-                 entity.ToTable("cms_functions");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.Created)
-                     .HasColumnType("datetime")
-                     .HasColumnName("created");
-                 entity.Property(e => e.CreatedBy).HasColumnName("created_by");
-                 entity.Property(e => e.Description)
-                     .HasMaxLength(1000)
-                     .HasColumnName("description");
-                 entity.Property(e => e.Flag).HasColumnName("flag");
-                 entity.Property(e => e.Language)
-                     .HasMaxLength(10)
-                     .IsUnicode(false)
-                     .HasColumnName("language");
-                 entity.Property(e => e.Modified)
-                     .HasColumnType("datetime")
-                     .HasColumnName("modified");
-                 entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
-                 entity.Property(e => e.Title)
-                     .HasMaxLength(500)
-                     .HasColumnName("title");
-             });
-
-             modelBuilder.Entity<CmsFunctionGroup>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__cms_func__3213E83F03F0984C");
-
-                 entity.ToTable("cms_function_group");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.Add)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("add");
-                 entity.Property(e => e.Created)
-                     .HasColumnType("datetime")
-                     .HasColumnName("created");
-                 entity.Property(e => e.CreatedBy).HasColumnName("created_by");
-                 entity.Property(e => e.Delete)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("delete");
-                 entity.Property(e => e.Full)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("full");
-                 entity.Property(e => e.FunctionId).HasColumnName("functionId");
-                 entity.Property(e => e.GroupId).HasColumnName("groupId");
-                 entity.Property(e => e.Modified)
-                     .HasColumnType("datetime")
-                     .HasColumnName("modified");
-                 entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
-                 entity.Property(e => e.Status).HasColumnName("status");
-                 entity.Property(e => e.Update)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("update");
-                 entity.Property(e => e.View)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("view");
-             });
-
-             modelBuilder.Entity<CmsFunctionResource>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__cms_func__3213E83F0C85DE4D");
-
-                 entity.ToTable("cms_function_resource");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.CategoryId).HasColumnName("categoryId");
-                 entity.Property(e => e.Created)
-                     .HasColumnType("datetime")
-                     .HasColumnName("created");
-                 entity.Property(e => e.CreatedBy).HasColumnName("created_by");
-                 entity.Property(e => e.FunctionId).HasColumnName("functionId");
-                 entity.Property(e => e.Modified)
-                     .HasColumnType("datetime")
-                     .HasColumnName("modified");
-                 entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
-                 entity.Property(e => e.Status).HasColumnName("status");
-             });
-
-             modelBuilder.Entity<CmsItem>(entity =>
-             {
-                 entity.ToTable("cms_items");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.Access).HasColumnName("access");
-                 entity.Property(e => e.Alias)
-                     .HasMaxLength(1000)
-                     .HasColumnName("alias");
-                 entity.Property(e => e.CatId).HasColumnName("cat_id");
-                 entity.Property(e => e.CheckedOut).HasColumnName("checked_out");
-                 entity.Property(e => e.CheckedOutTime)
-                     .HasColumnType("datetime")
-                     .HasColumnName("checked_out_time");
-                 entity.Property(e => e.Created)
-                     .HasDefaultValueSql("(getdate())")
-                     .HasColumnType("datetime")
-                     .HasColumnName("created");
-                 entity.Property(e => e.CreatedBy).HasColumnName("created_by");
-                 entity.Property(e => e.CreatedByAlias)
-                     .HasMaxLength(255)
-                     .HasColumnName("created_by_alias");
-                 entity.Property(e => e.DatePost)
-                     .HasDefaultValueSql("(getdate())")
-                     .HasColumnType("datetime")
-                     .HasColumnName("date_post");
-                 entity.Property(e => e.ExtraFields).HasColumnName("extra_fields");
-                 entity.Property(e => e.ExtraFieldsSearch)
-                     .HasMaxLength(255)
-                     .HasColumnName("extra_fields_search");
-                 entity.Property(e => e.Featured).HasColumnName("featured");
-                 entity.Property(e => e.FeaturedOrdering)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("featured_ordering");
-                 entity.Property(e => e.FullText).HasColumnName("full_text");
-                 entity.Property(e => e.Gallery)
-                     .HasMaxLength(255)
-                     .HasColumnName("gallery");
-                 entity.Property(e => e.Hits)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("hits");
-                 entity.Property(e => e.ImageCaption)
-                     .HasMaxLength(500)
-                     .HasColumnName("image_caption");
-                 entity.Property(e => e.ImageCredits)
-                     .HasMaxLength(255)
-                     .HasColumnName("image_credits");
-                 entity.Property(e => e.IntroText).HasColumnName("intro_text");
-                 entity.Property(e => e.Language)
-                     .HasMaxLength(10)
-                     .IsUnicode(false)
-                     .HasColumnName("language");
-                 entity.Property(e => e.MetaData)
-                     .HasMaxLength(1000)
-                     .HasColumnName("meta_data");
-                 entity.Property(e => e.MetaDesc)
-                     .HasMaxLength(1000)
-                     .HasColumnName("meta_desc");
-                 entity.Property(e => e.MetaKey)
-                     .HasMaxLength(1000)
-                     .HasColumnName("meta_key");
-                 entity.Property(e => e.Modified)
-                     .HasColumnType("datetime")
-                     .HasColumnName("modified");
-                 entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
-                 entity.Property(e => e.Ordering).HasColumnName("ordering");
-                 entity.Property(e => e.Params).HasColumnName("params");
-                 entity.Property(e => e.Plugins).HasColumnName("plugins");
-                 entity.Property(e => e.PublishDown)
-                     .HasColumnType("datetime")
-                     .HasColumnName("publish_down");
-                 entity.Property(e => e.PublishUp)
-                     .HasColumnType("datetime")
-                     .HasColumnName("publish_up");
-                 entity.Property(e => e.Published)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("published");
-                 entity.Property(e => e.Template).HasColumnName("template");
-                 entity.Property(e => e.Title)
-                     .HasMaxLength(1000)
-                     .HasColumnName("title");
-                 entity.Property(e => e.Trash)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("trash");
-                 entity.Property(e => e.Video)
-                     .HasMaxLength(500)
-                     .HasColumnName("video");
-                 entity.Property(e => e.VideoCaption)
-                     .HasMaxLength(500)
-                     .HasColumnName("video_caption");
-                 entity.Property(e => e.VideoCredits)
-                     .HasMaxLength(255)
-                     .HasColumnName("video_credits");
-             });
-
-             modelBuilder.Entity<CmsRating>(entity =>
-             {
-                 entity.ToTable("cms_rating");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.ItemId).HasColumnName("item_id");
-                 entity.Property(e => e.Lastip)
-                     .HasMaxLength(50)
-                     .IsUnicode(false)
-                     .HasColumnName("lastip");
-                 entity.Property(e => e.RatingCount).HasColumnName("rating_count");
-                 entity.Property(e => e.RatingSum).HasColumnName("rating_sum");
-             });
-
-             modelBuilder.Entity<CmsRole>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__cms_role__3213E83F00200768");
-
-                 entity.ToTable("cms_roles");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.Created)
-                     .HasColumnType("datetime")
-                     .HasColumnName("created");
-                 entity.Property(e => e.CreatedBy).HasColumnName("created_by");
-                 entity.Property(e => e.Modified)
-                     .HasColumnType("datetime")
-                     .HasColumnName("modified");
-                 entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
-                 entity.Property(e => e.Name)
-                     .HasMaxLength(500)
-                     .HasColumnName("name");
-                 entity.Property(e => e.Rank).HasColumnName("rank");
-             });
-
-             modelBuilder.Entity<CmsSetting>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__cms_sett__3213E83F2FCF1A8A");
-
-                 entity.ToTable("cms_setting");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.Name)
-                     .HasMaxLength(255)
-                     .HasColumnName("name");
-                 entity.Property(e => e.Ordering).HasColumnName("ordering");
-                 entity.Property(e => e.Published)
-                     .HasDefaultValueSql("((1))")
-                     .HasColumnName("published");
-                 entity.Property(e => e.Value).HasColumnName("value");
-             });
-
-             modelBuilder.Entity<CmsTag>(entity =>
-             {
-                 entity.ToTable("cms_tags");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.Name)
-                     .HasMaxLength(255)
-                     .HasColumnName("name");
-                 entity.Property(e => e.Published)
-                     .HasDefaultValueSql("((0))")
-                     .HasColumnName("published");
-             });
-
-             modelBuilder.Entity<CmsTagsXref>(entity =>
-             {
-                 entity.ToTable("cms_tags_xref");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.ItemId).HasColumnName("item_id");
-                 entity.Property(e => e.TagId).HasColumnName("tag_id");
-             });
-
-             modelBuilder.Entity<Statistic>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__static__3213E83F151B244E");
-
-                 entity.ToTable("statistic", tb => tb.HasTrigger("before_statistic_insert"));
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.SessionId)
-                     .HasMaxLength(100)
-                     .IsUnicode(false)
-                     .HasColumnName("session_id");
-                 entity.Property(e => e.VisitIp)
-                     .HasMaxLength(20)
-                     .IsUnicode(false)
-                     .HasColumnName("visit_ip");
-                 entity.Property(e => e.VisitTime)
-                     .HasColumnType("datetime")
-                     .HasColumnName("visit_time");
-             });
-
-             modelBuilder.Entity<StatisticHist>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__statisti__3213E83FB96ACB24");
-
-                 entity.ToTable("statistic_hist");
-
-                 entity.Property(e => e.Id)
-                     .ValueGeneratedNever()
-                     .HasColumnName("id");
-                 entity.Property(e => e.SessionId)
-                     .HasMaxLength(100)
-                     .IsUnicode(false)
-                     .HasColumnName("session_id");
-                 entity.Property(e => e.VisitIp)
-                     .HasMaxLength(20)
-                     .IsUnicode(false)
-                     .HasColumnName("visit_ip");
-                 entity.Property(e => e.VisitTime)
-                     .HasColumnType("datetime")
-                     .HasColumnName("visit_time");
-             });
-
-             modelBuilder.Entity<StatisticRef>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__Counter__3214EC071BC821DD");
-
-                 entity.ToTable("statistic_ref");
-
-                 entity.Property(e => e.Id).HasColumnName("id");
-                 entity.Property(e => e.StatisticId).HasColumnName("statistic_id");
-                 entity.Property(e => e.UrlRef)
-                     .HasMaxLength(500)
-                     .HasColumnName("url_ref");
-                 entity.Property(e => e.VisitTime)
-                     .HasColumnType("datetime")
-                     .HasColumnName("visit_time");
-             });
-
-             modelBuilder.Entity<StatisticRefHist>(entity =>
-             {
-                 entity.HasKey(e => e.Id).HasName("PK__statisti__3213E83FB1FE249F");
-
-                 entity.ToTable("statistic_ref_hist");
-
-                 entity.Property(e => e.Id)
-                     .ValueGeneratedNever()
-                     .HasColumnName("id");
-                 entity.Property(e => e.StatisticId).HasColumnName("statistic_id");
-                 entity.Property(e => e.UrlRef)
-                     .HasMaxLength(500)
-                     .HasColumnName("url_ref");
-                 entity.Property(e => e.VisitTime)
-                     .HasColumnType("datetime")
-                     .HasColumnName("visit_time");
-             });
-
-             OnModelCreatingPartial(modelBuilder);
-         }*/
-        #endregion
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<AdGroup>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__ad_group__3213E83F4316F928");
+
+                entity.ToTable("ad_group");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedDate)
+                    .HasDefaultValueSql("(getdate())")
+                    .HasColumnType("datetime")
+                    .HasColumnName("created_date");
+                entity.Property(e => e.Description)
+                    .HasMaxLength(500)
+                    .HasColumnName("description");
+                entity.Property(e => e.GroupName)
+                    .HasMaxLength(255)
+                    .HasColumnName("group_name");
+                entity.Property(e => e.GroupParent).HasColumnName("group_parent");
+                entity.Property(e => e.IsActive)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("is_active");
+                entity.Property(e => e.IsDelete)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("is_delete");
+                entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("modified_date");
+            });
+
+            modelBuilder.Entity<AdUser>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__ad_group__3213E83F46E78A0C");
+
+                entity.ToTable("ad_user");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedDate)
+                    .HasDefaultValueSql("(getdate())")
+                    .HasColumnType("datetime")
+                    .HasColumnName("created_date");
+                entity.Property(e => e.Email)
+                    .HasMaxLength(255)
+                    .HasColumnName("email");
+                entity.Property(e => e.FullName)
+                    .HasMaxLength(255)
+                    .HasColumnName("full_name");
+                entity.Property(e => e.IsActive)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("is_active");
+                entity.Property(e => e.IsDelete)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("is_delete");
+                entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("modified_date");
+                entity.Property(e => e.PassSalt)
+                    .HasMaxLength(50)
+                    .HasColumnName("pass_salt");
+                entity.Property(e => e.Password)
+                    .HasMaxLength(255)
+                    .HasColumnName("password");
+                entity.Property(e => e.ResetCount).HasColumnName("reset_count");
+                entity.Property(e => e.ResetDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("reset_date");
+                entity.Property(e => e.RoleId).HasColumnName("role_id");
+                entity.Property(e => e.UserName)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("user_name");
+            });
+
+            modelBuilder.Entity<AdUserGroup>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__ad_user___3213E83F4AB81AF0");
+
+                entity.ToTable("ad_user_group");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedDate)
+                    .HasDefaultValueSql("(getdate())")
+                    .HasColumnType("datetime")
+                    .HasColumnName("created_date");
+                entity.Property(e => e.GroupId).HasColumnName("group_id");
+                entity.Property(e => e.IsActive)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("is_active");
+                entity.Property(e => e.IsDelete)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("is_delete");
+                entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("modified_date");
+                entity.Property(e => e.UserId).HasColumnName("user_id");
+            });
+
+            modelBuilder.Entity<AdUserInfo>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__ad_user___3213E83F4F7CD00D");
+
+                entity.ToTable("ad_user_info");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Address)
+                    .HasMaxLength(500)
+                    .HasColumnName("address");
+                entity.Property(e => e.Birthday)
+                    .HasColumnType("datetime")
+                    .HasColumnName("birthday");
+                entity.Property(e => e.CreatedDate)
+                    .HasDefaultValueSql("(getdate())")
+                    .HasColumnType("datetime")
+                    .HasColumnName("created_date");
+                entity.Property(e => e.Gender).HasColumnName("gender");
+                entity.Property(e => e.HomePhone)
+                    .HasMaxLength(25)
+                    .IsUnicode(false)
+                    .HasColumnName("home_phone");
+                entity.Property(e => e.IsDelete)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("is_delete");
+                entity.Property(e => e.MobilePhone)
+                    .HasMaxLength(25)
+                    .IsUnicode(false)
+                    .HasColumnName("mobile_phone");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("modified_date");
+                entity.Property(e => e.UserId).HasColumnName("user_id");
+            });
+
+            modelBuilder.Entity<AdUserLog>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__ad_user___3213E83F6383C8BA");
+
+                entity.ToTable("ad_user_log");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Content)
+                    .HasMaxLength(500)
+                    .HasColumnName("content");
+                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedDate)
+                    .HasDefaultValueSql("(getdate())")
+                    .HasColumnType("datetime")
+                    .HasColumnName("created_date");
+                entity.Property(e => e.FullName)
+                    .HasMaxLength(50)
+                    .HasColumnName("full_name");
+                entity.Property(e => e.LogType)
+                    .HasDefaultValueSql("((1))")
+                    .HasComment("Log Type: 1. Login, 2. Create, 3. Update, 4. Delete")
+                    .HasColumnName("log_type");
+                entity.Property(e => e.UserId).HasColumnName("user_id");
+                entity.Property(e => e.UserIp)
+                    .HasMaxLength(20)
+                    .HasColumnName("user_ip");
+            });
+
+            modelBuilder.Entity<AdUserReset>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__ad_user___3213E83F5DCAEF64");
+
+                entity.ToTable("ad_user_reset");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Activation)
+                    .HasMaxLength(50)
+                    .HasColumnName("activation");
+                entity.Property(e => e.CreatedDate)
+                    .HasDefaultValueSql("(getdate())")
+                    .HasColumnType("datetime")
+                    .HasColumnName("created_date");
+                entity.Property(e => e.Email)
+                    .HasMaxLength(255)
+                    .HasColumnName("email");
+                entity.Property(e => e.ExpriedDate)
+                    .HasDefaultValueSql("(getdate()+(1))")
+                    .HasColumnType("datetime")
+                    .HasColumnName("expried_date");
+                entity.Property(e => e.IsConfirmed)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("is_confirmed");
+                entity.Property(e => e.ResetLink)
+                    .HasMaxLength(300)
+                    .HasColumnName("reset_link");
+                entity.Property(e => e.ResetType)
+                    .HasComment("1. Reset password | 2. Activation")
+                    .HasColumnName("reset_type");
+                entity.Property(e => e.UserId).HasColumnName("user_id");
+                entity.Property(e => e.UserName)
+                    .HasMaxLength(255)
+                    .HasColumnName("user_name");
+            });
+
+            modelBuilder.Entity<CmsAttachment>(entity =>
+            {
+                entity.ToTable("cms_attachments");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.FileName)
+                    .HasMaxLength(255)
+                    .HasColumnName("file_name");
+                entity.Property(e => e.FilePath)
+                    .HasMaxLength(255)
+                    .HasColumnName("file_path");
+                entity.Property(e => e.FileType)
+                    .HasMaxLength(255)
+                    .HasColumnName("file_type");
+                entity.Property(e => e.FileUrl)
+                    .HasMaxLength(255)
+                    .HasColumnName("file_url");
+                entity.Property(e => e.Hits).HasColumnName("hits");
+                entity.Property(e => e.ItemId).HasColumnName("item_id");
+                entity.Property(e => e.Title)
+                    .HasMaxLength(255)
+                    .HasColumnName("title");
+                entity.Property(e => e.TitleAttribute)
+                    .HasMaxLength(255)
+                    .HasColumnName("title_attribute");
+            });
+
+            modelBuilder.Entity<CmsCategory>(entity =>
+            {
+                entity.ToTable("cms_categories");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Access).HasColumnName("access");
+                entity.Property(e => e.Alias)
+                    .HasMaxLength(255)
+                    .HasColumnName("alias");
+                entity.Property(e => e.Description)
+                    .HasMaxLength(4000)
+                    .HasColumnName("description");
+                entity.Property(e => e.ExtraFieldsGroup).HasColumnName("extra_fields_group");
+                entity.Property(e => e.Image)
+                    .HasMaxLength(255)
+                    .HasColumnName("image");
+                entity.Property(e => e.Language)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("language");
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("name");
+                entity.Property(e => e.Ordering).HasColumnName("ordering");
+                entity.Property(e => e.Params).HasColumnName("params");
+                entity.Property(e => e.Parent).HasColumnName("parent");
+                entity.Property(e => e.Plugins).HasColumnName("plugins");
+                entity.Property(e => e.Published)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("published");
+                entity.Property(e => e.Template).HasColumnName("template");
+                entity.Property(e => e.Trash)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("trash");
+            });
+
+            modelBuilder.Entity<CmsComment>(entity =>
+            {
+                entity.ToTable("cms_comments");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.CommentDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("comment_date");
+                entity.Property(e => e.CommentEmail)
+                    .HasMaxLength(255)
+                    .HasColumnName("comment_email");
+                entity.Property(e => e.CommentText).HasColumnName("comment_text");
+                entity.Property(e => e.CommentTitle)
+                    .HasMaxLength(1000)
+                    .HasColumnName("comment_title");
+                entity.Property(e => e.CommentUrl)
+                    .HasMaxLength(255)
+                    .HasColumnName("comment_url");
+                entity.Property(e => e.ItemId).HasColumnName("item_id");
+                entity.Property(e => e.Published)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("published");
+                entity.Property(e => e.UserId).HasColumnName("user_id");
+                entity.Property(e => e.UserName)
+                    .HasMaxLength(255)
+                    .HasColumnName("user_name");
+            });
+
+            modelBuilder.Entity<CmsExtraField>(entity =>
+            {
+                entity.ToTable("cms_extra_fields");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Group).HasColumnName("group");
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("name");
+                entity.Property(e => e.Ordering).HasColumnName("ordering");
+                entity.Property(e => e.Published)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("published");
+                entity.Property(e => e.Type)
+                    .HasMaxLength(255)
+                    .HasColumnName("type");
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<CmsExtraFieldsGroup>(entity =>
+            {
+                entity.ToTable("cms_extra_fields_groups");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Name)
+                    .HasMaxLength(255)
+                    .HasColumnName("name");
+            });
+
+            modelBuilder.Entity<CmsExtraFieldsValue>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__cms_bann__3213E83F71D1E811");
+
+                entity.ToTable("cms_extra_fields_value");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("created_date");
+                entity.Property(e => e.DatePost)
+                    .HasColumnType("datetime")
+                    .HasColumnName("date_post");
+                entity.Property(e => e.FieldGroup)
+                    .HasComment("Vị trí")
+                    .HasColumnName("field_group");
+                entity.Property(e => e.FieldValue)
+                    .HasComment("Tiêu đề")
+                    .HasColumnName("field_value");
+                entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("modified_date");
+                entity.Property(e => e.Ordering)
+                    .HasComment("Thứ tự")
+                    .HasColumnName("ordering");
+                entity.Property(e => e.Publish)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("publish");
+                entity.Property(e => e.Trash)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("trash");
+            });
+
+            modelBuilder.Entity<CmsFunction>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__cms_func__3213E83F7C4F7684");
+
+                entity.ToTable("cms_functions");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Created)
+                    .HasColumnType("datetime")
+                    .HasColumnName("created");
+                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.Description)
+                    .HasMaxLength(1000)
+                    .HasColumnName("description");
+                entity.Property(e => e.Flag).HasColumnName("flag");
+                entity.Property(e => e.Language)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("language");
+                entity.Property(e => e.Modified)
+                    .HasColumnType("datetime")
+                    .HasColumnName("modified");
+                entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
+                entity.Property(e => e.Title)
+                    .HasMaxLength(500)
+                    .HasColumnName("title");
+            });
+
+            modelBuilder.Entity<CmsFunctionGroup>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__cms_func__3213E83F03F0984C");
+
+                entity.ToTable("cms_function_group");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Add)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("add");
+                entity.Property(e => e.Created)
+                    .HasColumnType("datetime")
+                    .HasColumnName("created");
+                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.Delete)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("delete");
+                entity.Property(e => e.Full)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("full");
+                entity.Property(e => e.FunctionId).HasColumnName("functionId");
+                entity.Property(e => e.GroupId).HasColumnName("groupId");
+                entity.Property(e => e.Modified)
+                    .HasColumnType("datetime")
+                    .HasColumnName("modified");
+                entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
+                entity.Property(e => e.Status).HasColumnName("status");
+                entity.Property(e => e.Update)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("update");
+                entity.Property(e => e.View)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("view");
+            });
+
+            modelBuilder.Entity<CmsFunctionResource>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__cms_func__3213E83F0C85DE4D");
+
+                entity.ToTable("cms_function_resource");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.CategoryId).HasColumnName("categoryId");
+                entity.Property(e => e.Created)
+                    .HasColumnType("datetime")
+                    .HasColumnName("created");
+                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.FunctionId).HasColumnName("functionId");
+                entity.Property(e => e.Modified)
+                    .HasColumnType("datetime")
+                    .HasColumnName("modified");
+                entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
+                entity.Property(e => e.Status).HasColumnName("status");
+            });
+
+            modelBuilder.Entity<CmsItem>(entity =>
+            {
+                entity.ToTable("cms_items");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Access).HasColumnName("access");
+                entity.Property(e => e.Alias)
+                    .HasMaxLength(1000)
+                    .HasColumnName("alias");
+                entity.Property(e => e.CatId).HasColumnName("cat_id");
+                entity.Property(e => e.CheckedOut).HasColumnName("checked_out");
+                entity.Property(e => e.CheckedOutTime)
+                    .HasColumnType("datetime")
+                    .HasColumnName("checked_out_time");
+                entity.Property(e => e.Created)
+                    .HasDefaultValueSql("(getdate())")
+                    .HasColumnType("datetime")
+                    .HasColumnName("created");
+                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.CreatedByAlias)
+                    .HasMaxLength(255)
+                    .HasColumnName("created_by_alias");
+                entity.Property(e => e.DatePost)
+                    .HasDefaultValueSql("(getdate())")
+                    .HasColumnType("datetime")
+                    .HasColumnName("date_post");
+                entity.Property(e => e.ExtraFields).HasColumnName("extra_fields");
+                entity.Property(e => e.ExtraFieldsSearch)
+                    .HasMaxLength(255)
+                    .HasColumnName("extra_fields_search");
+                entity.Property(e => e.Featured).HasColumnName("featured");
+                entity.Property(e => e.FeaturedOrdering)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("featured_ordering");
+                entity.Property(e => e.FullText).HasColumnName("full_text");
+                entity.Property(e => e.Gallery)
+                    .HasMaxLength(255)
+                    .HasColumnName("gallery");
+                entity.Property(e => e.Hits)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("hits");
+                entity.Property(e => e.ImageCaption)
+                    .HasMaxLength(500)
+                    .HasColumnName("image_caption");
+                entity.Property(e => e.ImageCredits)
+                    .HasMaxLength(255)
+                    .HasColumnName("image_credits");
+                entity.Property(e => e.IntroText).HasColumnName("intro_text");
+                entity.Property(e => e.Language)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("language");
+                entity.Property(e => e.MetaData)
+                    .HasMaxLength(1000)
+                    .HasColumnName("meta_data");
+                entity.Property(e => e.MetaDesc)
+                    .HasMaxLength(1000)
+                    .HasColumnName("meta_desc");
+                entity.Property(e => e.MetaKey)
+                    .HasMaxLength(1000)
+                    .HasColumnName("meta_key");
+                entity.Property(e => e.Modified)
+                    .HasColumnType("datetime")
+                    .HasColumnName("modified");
+                entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
+                entity.Property(e => e.Ordering).HasColumnName("ordering");
+                entity.Property(e => e.Params).HasColumnName("params");
+                entity.Property(e => e.Plugins).HasColumnName("plugins");
+                entity.Property(e => e.PublishDown)
+                    .HasColumnType("datetime")
+                    .HasColumnName("publish_down");
+                entity.Property(e => e.PublishUp)
+                    .HasColumnType("datetime")
+                    .HasColumnName("publish_up");
+                entity.Property(e => e.Published)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("published");
+                entity.Property(e => e.Template).HasColumnName("template");
+                entity.Property(e => e.Title)
+                    .HasMaxLength(1000)
+                    .HasColumnName("title");
+                entity.Property(e => e.Trash)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("trash");
+                entity.Property(e => e.Video)
+                    .HasMaxLength(500)
+                    .HasColumnName("video");
+                entity.Property(e => e.VideoCaption)
+                    .HasMaxLength(500)
+                    .HasColumnName("video_caption");
+                entity.Property(e => e.VideoCredits)
+                    .HasMaxLength(255)
+                    .HasColumnName("video_credits");
+            });
+
+            modelBuilder.Entity<CmsRating>(entity =>
+            {
+                entity.ToTable("cms_rating");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.ItemId).HasColumnName("item_id");
+                entity.Property(e => e.Lastip)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("lastip");
+                entity.Property(e => e.RatingCount).HasColumnName("rating_count");
+                entity.Property(e => e.RatingSum).HasColumnName("rating_sum");
+            });
+
+            modelBuilder.Entity<CmsRole>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__cms_role__3213E83F00200768");
+
+                entity.ToTable("cms_roles");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Created)
+                    .HasColumnType("datetime")
+                    .HasColumnName("created");
+                entity.Property(e => e.CreatedBy).HasColumnName("created_by");
+                entity.Property(e => e.Modified)
+                    .HasColumnType("datetime")
+                    .HasColumnName("modified");
+                entity.Property(e => e.ModifiedBy).HasColumnName("modified_by");
+                entity.Property(e => e.Name)
+                    .HasMaxLength(500)
+                    .HasColumnName("name");
+                entity.Property(e => e.Rank).HasColumnName("rank");
+            });
+
+            modelBuilder.Entity<CmsSetting>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__cms_sett__3213E83F2FCF1A8A");
+
+                entity.ToTable("cms_setting");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Name)
+                    .HasMaxLength(255)
+                    .HasColumnName("name");
+                entity.Property(e => e.Ordering).HasColumnName("ordering");
+                entity.Property(e => e.Published)
+                    .HasDefaultValueSql("((1))")
+                    .HasColumnName("published");
+                entity.Property(e => e.Value).HasColumnName("value");
+            });
+
+            modelBuilder.Entity<CmsTag>(entity =>
+            {
+                entity.ToTable("cms_tags");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Name)
+                    .HasMaxLength(255)
+                    .HasColumnName("name");
+                entity.Property(e => e.Published)
+                    .HasDefaultValueSql("((0))")
+                    .HasColumnName("published");
+            });
+
+            modelBuilder.Entity<CmsTagsXref>(entity =>
+            {
+                entity.ToTable("cms_tags_xref");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.ItemId).HasColumnName("item_id");
+                entity.Property(e => e.TagId).HasColumnName("tag_id");
+            });
+
+            modelBuilder.Entity<Statistic>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__static__3213E83F151B244E");
+
+                entity.ToTable("statistic", tb => tb.HasTrigger("before_statistic_insert"));
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.SessionId)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("session_id");
+                entity.Property(e => e.VisitIp)
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("visit_ip");
+                entity.Property(e => e.VisitTime)
+                    .HasColumnType("datetime")
+                    .HasColumnName("visit_time");
+            });
+
+            modelBuilder.Entity<StatisticHist>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__statisti__3213E83FB96ACB24");
+
+                entity.ToTable("statistic_hist");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+                entity.Property(e => e.SessionId)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("session_id");
+                entity.Property(e => e.VisitIp)
+                    .HasMaxLength(20)
+                    .IsUnicode(false)
+                    .HasColumnName("visit_ip");
+                entity.Property(e => e.VisitTime)
+                    .HasColumnType("datetime")
+                    .HasColumnName("visit_time");
+            });
+
+            modelBuilder.Entity<StatisticRef>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__Counter__3214EC071BC821DD");
+
+                entity.ToTable("statistic_ref");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.StatisticId).HasColumnName("statistic_id");
+                entity.Property(e => e.UrlRef)
+                    .HasMaxLength(500)
+                    .HasColumnName("url_ref");
+                entity.Property(e => e.VisitTime)
+                    .HasColumnType("datetime")
+                    .HasColumnName("visit_time");
+            });
+
+            modelBuilder.Entity<StatisticRefHist>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK__statisti__3213E83FB1FE249F");
+
+                entity.ToTable("statistic_ref_hist");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+                entity.Property(e => e.StatisticId).HasColumnName("statistic_id");
+                entity.Property(e => e.UrlRef)
+                    .HasMaxLength(500)
+                    .HasColumnName("url_ref");
+                entity.Property(e => e.VisitTime)
+                    .HasColumnType("datetime")
+                    .HasColumnName("visit_time");
+            });
+
+            OnModelCreatingPartial(modelBuilder);
+        }
+
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

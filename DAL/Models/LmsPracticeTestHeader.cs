@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using III.Domain.Common;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
 namespace ESEIM.Models
 {
     [Table("LMS_PRACTICE_TEST_HEADER")]
-    public class LmsPracticeTestHeader : IPurchasableObject, StringExtensions.IEntity<int>
+    public class LmsPracticeTestHeader : IPurchasableObject/*, StringExtensions.IEntity<int>*/
     {
         //		EXAM_CODE nvarchar(255)   Checked
         //EXAM_TITLE  nvarchar(255)   Checked
