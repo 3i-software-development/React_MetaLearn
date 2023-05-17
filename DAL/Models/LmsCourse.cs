@@ -6,10 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Models;
 
-[Keyless]
+
 [Table("lms_course")]
 public partial class LmsCourse
 {
+    [Key]
     [Column("id")]
     public int Id { get; set; }
 
